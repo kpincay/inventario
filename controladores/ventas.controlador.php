@@ -629,7 +629,7 @@ class ControladorVentas{
 				$vendedor = ControladorUsuarios::ctrMostrarUsuarios("id", $item["id_vendedor"]);
 
 			 echo utf8_decode("<tr>
-			 			<td style='border:1px solid #eee;'>".$item["codigo"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["imei"]."</td> 
 			 			<td style='border:1px solid #eee;'>".$cliente["nombre"]."</td>
 			 			<td style='border:1px solid #eee;'>".$vendedor["nombre"]."</td>
 			 			<td style='border:1px solid #eee;'>");

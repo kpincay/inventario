@@ -84,7 +84,6 @@ class ControladorTiendas{
 	static public function ctrMostrarTiendas($item, $valor){
 
 		$tabla = "Tiendas";
-        var_dump($item + $valor);
 		$respuesta = ModeloTiendas::mdlMostrarTiendas($tabla, $item, $valor);
 
 		return $respuesta;
@@ -100,7 +99,7 @@ class ControladorTiendas{
 		$tabla = "Tiendas";
         $item = "id_cadena";
 
-		$respuesta = ModeloTiendas::mdlMostrarTiendas($tabla, $item, $valor);
+		$respuesta = ModeloTiendas::mdlMostrarTiendasPorCadenas($tabla, $item, $valor);
 
 		return $respuesta;
 

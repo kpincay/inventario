@@ -184,7 +184,7 @@ MODAL AGREGAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar código" required>
+                <input type="text" class="form-control input-lg" name="nuevoImei" placeholder="Ingresar IMEI" required>
 
               </div>
 

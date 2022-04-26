@@ -74,7 +74,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                 <!--=====================================
                 ENTRADA DEL CÓDIGO
-                ======================================--> 
+                ======================================-->
 
                 <div class="form-group">
                   
@@ -146,6 +146,28 @@ if($_SESSION["perfil"] == "Especial"){
                               }
 
                               ?>
+
+                          </select>
+
+                      </div>
+
+                  </div>
+
+                  <!--=====================================
+                   ENTRADA DE LA TIENDA
+                   ======================================-->
+
+                  <div class="form-group">
+
+                      <div class="input-group">
+
+                          <span class="input-group-addon"><i class="fa fa-building"></i></span>
+
+                          <select class="form-control seleccionarTienda" id="seleccionarTienda" name="seleccionarTienda" required>
+
+                              <option value="">Seleccionar tienda</option>
+
+
 
                           </select>
 
@@ -289,8 +311,8 @@ if($_SESSION["perfil"] == "Especial"){
                       <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
                         <option value="">Seleccione método de pago</option>
                         <option value="Efectivo">Efectivo</option>
-                        <option value="TC">Tarjeta Crédito</option>
-                        <option value="TD">Tarjeta Débito</option>                  
+                        <option value="TC">Crédito</option>
+                        <!-- <option value="TD">Tarjeta Débito</option>                   -->
                       </select>    
 
                     </div>
@@ -347,7 +369,7 @@ if($_SESSION["perfil"] == "Especial"){
                  <tr>
                   <th style="width: 10px">#</th>
                   <th>Imagen</th>
-                  <th>Código</th>
+                  <th>Imei</th>
                   <th>Descripcion</th>
                   <th>Stock</th>
                   <th>Acciones</th>
@@ -373,158 +395,161 @@ if($_SESSION["perfil"] == "Especial"){
 <!--=====================================
 MODAL AGREGAR CLIENTE
 ======================================-->
-
-<div id="modalAgregarCliente" class="modal fade" role="dialog">
-  
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-
-      <form role="form" method="post">
-
-        <!--=====================================
-        CABEZA DEL MODAL
-        ======================================-->
-
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Agregar cliente</h4>
-
-        </div>
-
-        <!--=====================================
-        CUERPO DEL MODAL
-        ======================================-->
-
-        <div class="modal-body">
-
-          <div class="box-body">
-
-            <!-- ENTRADA PARA EL NOMBRE -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar nombre" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL DOCUMENTO ID -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
-
-                <input type="number" min="0" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar documento" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL EMAIL -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
-
-                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA LA DIRECCIÓN -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" required>
-
-              </div>
-
-            </div>
-
-             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento" placeholder="Ingresar fecha nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
-
-              </div>
-
-            </div>
-  
-          </div>
-
-        </div>
-
-        <!--=====================================
-        PIE DEL MODAL
-        ======================================-->
-
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-          <button type="submit" class="btn btn-primary">Guardar cliente</button>
-
-        </div>
-
-      </form>
-
-      <?php
-
-        $crearCliente = new ControladorClientes();
-        $crearCliente -> ctrCrearCliente();
-
-      ?>
-
-    </div>
-
-  </div>
-
-</div>
+<!---->
+<!--<div id="modalAgregarCliente" class="modal fade" role="dialog">-->
+<!--  -->
+<!--  <div class="modal-dialog">-->
+<!---->
+<!--    <div class="modal-content">-->
+<!---->
+<!--      <form role="form" method="post">-->
+<!---->
+<!--        <!--=====================================-->
+<!--        CABEZA DEL MODAL-->
+<!--        ======================================-->-->
+<!---->
+<!--        <div class="modal-header" style="background:#3c8dbc; color:white">-->
+<!---->
+<!--          <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!---->
+<!--          <h4 class="modal-title">Agregar cliente</h4>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--        <!--=====================================-->
+<!--        CUERPO DEL MODAL-->
+<!--        ======================================-->-->
+<!---->
+<!--        <div class="modal-body">-->
+<!---->
+<!--          <div class="box-body">-->
+<!---->
+<!--            <!-- ENTRADA PARA EL NOMBRE -->-->
+<!--            -->
+<!--            <div class="form-group">-->
+<!--              -->
+<!--              <div class="input-group">-->
+<!--              -->
+<!--                <span class="input-group-addon"><i class="fa fa-user"></i></span> -->
+<!---->
+<!--                <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar nombre" required>-->
+<!---->
+<!--              </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <!-- ENTRADA PARA EL DOCUMENTO ID -->-->
+<!--            -->
+<!--            <div class="form-group">-->
+<!--              -->
+<!--              <div class="input-group">-->
+<!--              -->
+<!--                <span class="input-group-addon"><i class="fa fa-key"></i></span> -->
+<!---->
+<!--                <input type="number" min="0" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar documento" required>-->
+<!---->
+<!--              </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <!-- ENTRADA PARA EL EMAIL -->-->
+<!--            -->
+<!--            <div class="form-group">-->
+<!--              -->
+<!--              <div class="input-group">-->
+<!--              -->
+<!--                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> -->
+<!---->
+<!--                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>-->
+<!---->
+<!--              </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <!-- ENTRADA PARA EL TELÉFONO -->-->
+<!--            -->
+<!--            <div class="form-group">-->
+<!--              -->
+<!--              <div class="input-group">-->
+<!--              -->
+<!--                <span class="input-group-addon"><i class="fa fa-phone"></i></span> -->
+<!---->
+<!--                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>-->
+<!---->
+<!--              </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <!-- ENTRADA PARA LA DIRECCIÓN -->-->
+<!--            -->
+<!--            <div class="form-group">-->
+<!--              -->
+<!--              <div class="input-group">-->
+<!--              -->
+<!--                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> -->
+<!---->
+<!--                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" required>-->
+<!---->
+<!--              </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->-->
+<!--            -->
+<!--            <div class="form-group">-->
+<!--              -->
+<!--              <div class="input-group">-->
+<!--              -->
+<!--                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> -->
+<!---->
+<!--                <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento" placeholder="Ingresar fecha nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>-->
+<!---->
+<!--              </div>-->
+<!---->
+<!--            </div>-->
+<!--  -->
+<!--          </div>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--        <!--=====================================-->
+<!--        PIE DEL MODAL-->
+<!--        ======================================-->-->
+<!---->
+<!--        <div class="modal-footer">-->
+<!---->
+<!--          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>-->
+<!---->
+<!--          <button type="submit" class="btn btn-primary">Guardar cliente</button>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--      </form>-->
+<!---->
+<!--      --><?php
+//
+//        $crearCliente = new ControladorClientes();
+//        $crearCliente -> ctrCrearCliente();
+//
+//      ?>
+<!---->
+<!--    </div>-->
+<!---->
+<!--  </div>-->
+<!---->
+<!--</div>-->
 <script>
 
     function cadenaSelected() {
         $("#seleccionarCadena :selected").text(); // The text content of the selected option
         var idCadena = $("#seleccionarCadena").val(); // The value of the selected option
-
         var datos = new FormData();
+
+
+        $('#seleccionarTienda').find('option').remove().end()
+            .append('<option value="">Seleccione tienda</option>').val('whatever');
+
         datos.append("idCadena", idCadena);
-        debugger;
         $.ajax({
 
             url:"ajax/tiendas.ajax.php",
@@ -538,6 +563,16 @@ MODAL AGREGAR CLIENTE
 
                 $("#idTienda").val(respuesta["id"]);
                 console.log(respuesta);
+                // $.each(respuesta, function(key, value) {
+                //     $('#seleccionarTienda')
+                //         .append($("<option></option>")
+                //             .attr("value", key)
+                //             .text(value));
+                // });
+                var list = $("#seleccionarTienda");
+                $.each(respuesta, function(index, item) {
+                    list.append(new Option(item.nombre, item.id));
+                });
             }
         })
     }

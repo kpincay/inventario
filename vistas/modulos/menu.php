@@ -49,37 +49,36 @@
 
 				</a>
 
-			</li>';
+			</li>
+					 <li>
+
+		 		<a href="categorias">
+
+		 			<i class="fa fa-th"></i>
+		 			<span>Categorías</span>
+
+		 		</a>
+
+		 	</li>';
 
 		}
-		//categorias (administrador y especial)
-		// <li>
 
-		// 		<a href="categorias">
+		 if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
 
-		// 			<i class="fa fa-th"></i>
-		// 			<span>Categorías</span>
+		 	echo '
 
-		// 		</a>
+		 	<li>
 
-		// 	</li>
+		 		<a href="productos">
 
-		// if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
+		 			<i class="fa fa-product-hunt"></i>
+		 			<span>Productos</span>
 
-		// 	echo '
+		 		</a>
 
-		// 	<li>
+		 	</li>';
 
-		// 		<a href="productos">
-
-		// 			<i class="fa fa-product-hunt"></i>
-		// 			<span>Productos</span>
-
-		// 		</a>
-
-		// 	</li>';
-
-		// }
+		 }
 
 		// if($_SESSION["perfil"] == "Administrador"){
 

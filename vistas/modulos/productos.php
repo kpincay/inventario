@@ -57,11 +57,11 @@ if($_SESSION["perfil"] == "Vendedor"){
            
            <th style="width:10px">#</th>
            <th>Imagen</th>
-           <th>Código</th>
+           <th>Imei</th>
            <th>Descripción</th>
            <th>Categoría</th>
            <th>Stock</th>
-           <th>Precio de compra</th>
+           <th>Precio base</th>
            <th>Precio de venta</th>
            <th>Agregado</th>
            <th>Acciones</th>
@@ -147,7 +147,7 @@ MODAL AGREGAR PRODUCTO
 
             </div>
 
-            <!-- ENTRADA PARA EL CÓDIGO -->
+            <!-- ENTRADA PARA EL IMEI -->
             
             <div class="form-group">
               
@@ -155,7 +155,7 @@ MODAL AGREGAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoCodigo" name="nuevoCodigo" placeholder="Ingresar código" required>
+                <input type="text" class="form-control input-lg" id="nuevoImei" name="nuevoImei" placeholder="Ingresar IMEI" maxlength="15" required>
 
               </div>
 
@@ -349,7 +349,7 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
-            <!-- ENTRADA PARA EL CÓDIGO -->
+            <!-- ENTRADA PARA EL IMEI -->
             
             <div class="form-group">
               
@@ -357,7 +357,7 @@ MODAL EDITAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarCodigo" name="editarCodigo" readonly required>
+                <input type="text" class="form-control input-lg" id="editarImei" name="editarImei" readonly required>
 
               </div>
 

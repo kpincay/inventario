@@ -263,7 +263,7 @@
                         
                     <div class="input-group">
                          
-                      <input type="text" class="form-control" id="nuevoCodigoTransaccion" name="nuevoCodigoTransaccion" placeholder="Código transacción"  required>
+                      <input type="text" class="form-control" id="nuevoCodigoTransaccion" name="nuevoCodigoTransaccion" placeholder="Número de cuotas"  required>
                            
                       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                       
@@ -310,7 +310,7 @@
                  <tr>
                   <th style="width: 10px">#</th>
                   <th>Imagen</th>
-                  <th>Código</th>
+                  <th>Imei</th>
                   <th>Descripcion</th>
                   <th>Stock</th>
                   <th>Acciones</th>

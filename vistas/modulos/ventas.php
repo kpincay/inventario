@@ -95,8 +95,8 @@ if($xml){
            
            <th style="width:10px">#</th>
            <th>Código factura</th>
-           <th>Cliente</th>
-           <th>Vendedor</th>
+<!--           <th>Cliente</th>-->
+           <th>Promotor</th>
            <th>Forma de pago</th>
            <th>Neto</th>
            <th>Total</th> 
@@ -133,12 +133,12 @@ if($xml){
 
                   <td>'.$value["codigo"].'</td>';
 
-                  $itemCliente = "id";
-                  $valorCliente = $value["id_cliente"];
-
-                  $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
-
-                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
+//                  $itemCliente = "id";
+//                  $valorCliente = $value["id_cliente"];
+//
+//                  $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
+//
+//                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
 
                   $itemUsuario = "id";
                   $valorUsuario = $value["id_vendedor"];
@@ -159,23 +159,25 @@ if($xml){
 
                     <div class="btn-group">
 
+                    <!--aqui va la parte de abajo (botones)-->
 
+                     
+                      ';
 
-                      <button class="btn btn-success btnImprimirTicket" codigoVenta="'.$value["codigo"].'">
-
-                        <i class="fa fa-print">Ticket</i>
-
-                      </button>
-                        
-                      <button class="btn btn-info btnImprimirFactura" codigoVenta="'.$value["codigo"].'">
-
-                        <i class="fa fa-print"></i>PDF
-
-                      </button>';
-
+//              <button class="btn btn-success btnImprimirTicket" codigoVenta="'.$value["codigo"].'">
+//
+//                        <i class="fa fa-print">Ticket</i>
+//
+//                      </button>
+//
+//                      <button class="btn btn-info btnImprimirFactura" codigoVenta="'.$value["codigo"].'">
+//
+//                        <i class="fa fa-print"></i>PDF
+//
+//                      </button>
                       if($_SESSION["perfil"] == "Administrador"){
-
-                      echo '<button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+//                          <button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                      echo '
 
                       <button class="btn btn-danger btnEliminarVenta" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 

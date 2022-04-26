@@ -135,6 +135,18 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 	             
 	          '</div>'+
 
+	          '<div class="col-xs-6 ingresoPrecio" style="padding-left:0px">'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+	                 
+	              '<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="" required>'+
+	 
+	            '</div>'+
+	             
+	          '</div>'+
+
 	        '</div>') 
 
 	        // SUMAR TOTAL DE PRECIOS
@@ -612,7 +624,7 @@ $("#nuevoMetodoPago").change(function(){
                         
                 '<div class="input-group">'+
                      
-                  '<input type="number" min="0" class="form-control" id="nuevoCodigoTransaccion" placeholder="Código transacción"  required>'+
+                  '<input type="number" min="0" class="form-control" id="nuevoCodigoTransaccion" placeholder="Número de cuotas"  required>'+
                        
                   '<span class="input-group-addon"><i class="fa fa-lock"></i></span>'+
                   
@@ -662,6 +674,10 @@ function listarProductos(){
 	var listaProductos = [];
 
 	var descripcion = $(".nuevaDescripcionProducto");
+	console.log("kpi "+ descripcion);
+
+	var imei = $(".nuevoImei");
+
 
 	var cantidad = $(".nuevaCantidadProducto");
 
@@ -670,6 +686,7 @@ function listarProductos(){
 	for(var i = 0; i < descripcion.length; i++){
 
 		listaProductos.push({ "id" : $(descripcion[i]).attr("idProducto"), 
+							  "imei" : $(imei[i]).val(),
 							  "descripcion" : $(descripcion[i]).val(),
 							  "cantidad" : $(cantidad[i]).val(),
 							  "stock" : $(cantidad[i]).attr("nuevoStock"),

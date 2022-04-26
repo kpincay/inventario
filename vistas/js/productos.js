@@ -241,7 +241,7 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 
           })
 
-           $("#editarCodigo").val(respuesta["codigo"]);
+           $("#editarImei").val(respuesta["imei"]);
 
            $("#editarDescripcion").val(respuesta["descripcion"]);
 
@@ -272,7 +272,7 @@ ELIMINAR PRODUCTO
 $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 
 	var idProducto = $(this).attr("idProducto");
-	var codigo = $(this).attr("codigo");
+	var imei = $(this).attr("imei");
 	var imagen = $(this).attr("imagen");
 	
 	swal({
@@ -288,7 +288,7 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
         }).then(function(result) {
         if (result.value) {
 
-        	window.location = "index.php?ruta=productos&idProducto="+idProducto+"&imagen="+imagen+"&codigo="+codigo;
+        	window.location = "index.php?ruta=productos&idProducto="+idProducto+"&imagen="+imagen+"&imei="+imei;
 
         }
 

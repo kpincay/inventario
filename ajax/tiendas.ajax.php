@@ -26,12 +26,21 @@ class AjaxTiendas{
     public function ajaxConsultarTiendas(){
 
 		$item = "id_cadena";
-		$valor = $this->idTienda;
+        $valor = null;
+        $respuesta = null;
+        if (isset($this->idTienda)){
+            $valor = $this->idTienda;
+            $respuesta = ControladorTiendas::ctrMostrarTiendas($item, $valor);
+
+            echo json_encode($respuesta);
+        }else{
+            $valor = $this->cadena;
+            $respuesta = ControladorTiendas::ctrMostrarTiendasPorCadenas($item, $valor);
+
+            echo json_encode($respuesta);
+        }
 
 
-		$respuesta = ControladorTiendas::ctrMostrarTiendas($item, $valor);
-
-		echo json_encode($respuesta);
 
 
 	}
