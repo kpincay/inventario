@@ -60,8 +60,8 @@ if($_SESSION["perfil"] == "Especial"){
            <th>RUC</th>
            <th>Nombre</th>
            <th>Ciudad</th>
-           <th>email</th>
-           <th>Teléfono</th>
+<!--           <th>email</th>-->
+<!--           <th>Teléfono</th>-->
            <th>Dirección</th>
            <th>Fecha registro</th>
            <th>Acciones</th>
@@ -91,10 +91,6 @@ if($_SESSION["perfil"] == "Especial"){
                     <td>'.$value["nombre"].'</td>
 
                     <td>'.$value["ciudad"].'</td>
-
-                    <td>'.$value["email"].'</td>
-
-                    <td>'.$value["telefono"].'</td>
 
                     <td>'.$value["direccion"].'</td>
 
@@ -211,13 +207,13 @@ MODAL AGREGAR cadena
 
             <!-- ENTRADA PARA EL EMAIL -->
             
-            <div class="form-group">
+            <div class="form-group"  style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
-                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
+                <input type="email" class="form-control input-lg" name="nuevoEmail" value="" placeholder="Ingresar email">
 
               </div>
 
@@ -225,13 +221,13 @@ MODAL AGREGAR cadena
 
             <!-- ENTRADA PARA EL TELÉFONO -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" value="" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask>
 
               </div>
 
@@ -374,13 +370,13 @@ MODAL EDITAR cadena
 
             <!-- ENTRADA PARA EL EMAIL -->
 
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
 
               <div class="input-group">
 
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 
-                <input type="email" class="form-control input-lg" name="editarEmail" id="editarEmail" required>
+                <input type="email" class="form-control input-lg" name="editarEmail" value="" id="editarEmail">
 
               </div>
 
@@ -388,13 +384,13 @@ MODAL EDITAR cadena
 
             <!-- ENTRADA PARA EL TELÉFONO -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="tel" class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                <input type="tel" class="form-control input-lg" name="editarTelefono" value="" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
 
               </div>
 

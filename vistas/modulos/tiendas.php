@@ -60,8 +60,8 @@ if($_SESSION["perfil"] == "Especial"){
            <th>Nombre</th>
            <th>Cadena</th>
            <th>Ciudad</th>
-           <th>Email</th>
-           <th>Teléfono</th>
+<!--           <th>Email</th>-->
+<!--           <th>Teléfono</th>-->
            <th>Dirección</th>
            <th>Fecha registro</th>
            <th>Acciones</th>
@@ -95,10 +95,6 @@ if($_SESSION["perfil"] == "Especial"){
                     <td>'.$respuestaCadena["nombre"].'</td>
 
                     <td>'.$value["ciudad"].'</td>
-                    
-                    <td>'.$value["email"].'</td>
-
-                    <td>'.$value["telefono"].'</td>
 
                     <td>'.$value["direccion"].'</td>
 
@@ -227,7 +223,7 @@ MODAL AGREGAR Tienda
 
                       <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 
-                      <input type="text" class="form-control input-lg" name="nuevoCiudad" placeholder="Ingresar ciudad" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                      <input type="text" class="form-control input-lg" name="nuevoCiudad" placeholder="Ingresar ciudad" required>
 
                   </div>
 
@@ -235,13 +231,13 @@ MODAL AGREGAR Tienda
 
             <!-- ENTRADA PARA EL EMAIL -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
-                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
+                <input type="email" class="form-control input-lg" name="nuevoEmail" value="" placeholder="Ingresar email">
 
               </div>
 
@@ -249,13 +245,13 @@ MODAL AGREGAR Tienda
 
             <!-- ENTRADA PARA EL TELEFONO -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span>
 
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar telefono" required>
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" value="" placeholder="Ingresar telefono">
 
               </div>
 
@@ -352,6 +348,24 @@ MODAL EDITAR Tienda
 
           <div class="box-body">
 
+              <input type="hidden" class="form-control input-lg" name="editarid_cadena" id="editarid_cadena">
+<!--              ENTRADA PARA LA CADENA-->
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                      <select class="form-control input-lg"  name="editarCadena" readonly required>
+
+                          <option id="editarCadena"></option>
+
+                      </select>
+
+                  </div>
+
+              </div>
+
             <!-- ENTRADA PARA EL NOMBRE -->
             
             <div class="form-group">
@@ -366,47 +380,20 @@ MODAL EDITAR Tienda
 
             </div>
 
-            <!-- ENTRADA PARA EL DOCUMENTO ID -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+            <!-- ENTRADA PARA LA CIUDAD -->
 
-                <input type="number" min="0" class="form-control input-lg" name="editarDocumentoId" id="editarDocumentoId" required>
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+
+                <input type="email" class="form-control input-lg" PLACEHOLDER="Ingrese la ciudad" name="editarCiudad" id="editarCiudad">
 
               </div>
 
             </div>
 
-            <!-- ENTRADA PARA EL EMAIL -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
-
-                <input type="email" class="form-control input-lg" name="editarEmail" id="editarEmail" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
-
-              </div>
-
-            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             
@@ -416,7 +403,7 @@ MODAL EDITAR Tienda
               
                 <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarDireccion" id="editarDireccion"  required>
+                <input type="text" class="form-control input-lg" name="editarDireccion" id="editarDireccion" required>
 
               </div>
 
@@ -430,7 +417,7 @@ MODAL EDITAR Tienda
               
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarFechaNacimiento" id="editarFechaNacimiento"  data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
+                <input type="text" class="form-control input-lg" name="editarFechaRegistro" id="editarFechaRegistro"  data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
 
               </div>
 

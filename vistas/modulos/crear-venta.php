@@ -369,9 +369,9 @@ if($_SESSION["perfil"] == "Especial"){
                  <tr>
                   <th style="width: 10px">#</th>
                   <th>Imagen</th>
-                  <th>Imei</th>
+<!--                  <th>Costo</th>-->
                   <th>Descripcion</th>
-                  <th>Stock</th>
+<!--                  <th>Stock</th>-->
                   <th>Acciones</th>
                 </tr>
 

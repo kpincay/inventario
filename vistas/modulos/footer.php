@@ -2,7 +2,5 @@
 	
 	<strong>Copyright &copy;</strong>
 
-	Todos los derechos reservados.
-
 
 </footer>

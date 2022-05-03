@@ -40,9 +40,6 @@ class AjaxTiendas{
             echo json_encode($respuesta);
         }
 
-
-
-
 	}
 
 }
@@ -54,7 +51,7 @@ EDITAR TIENDA
 if(isset($_POST["idTienda"])){
 
 	$cadena = new AjaxTiendas();
-	$cadena -> cadena = $_POST["idTienda"];
+	$cadena -> idTienda = $_POST["idTienda"];
 	$cadena -> ajaxEditarTienda();
 
 }else {
