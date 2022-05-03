@@ -87,13 +87,13 @@ class ControladorVentas{
 			$tablaClientes = "clientes";
 
 			$item = "id";
-			$valor = $_POST["seleccionarCliente"];
+//			$valor = $_POST["seleccionarCliente"];
 
 			$traerCliente = ModeloClientes::mdlMostrarClientes($tablaClientes, $item, $valor);
 
 			$item1a = "compras";
 				
-			$valor1a = array_sum($totalProductosComprados) + $traerCliente["compras"];
+//			$valor1a = array_sum($totalProductosComprados) + $traerCliente["compras"];
 
 			$comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1a, $valor1a, $valor);
 
@@ -114,7 +114,7 @@ class ControladorVentas{
 			$tabla = "ventas";
 
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
-						   "id_cliente"=>$_POST["seleccionarCliente"],
+//						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],

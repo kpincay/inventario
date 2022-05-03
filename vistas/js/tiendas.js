@@ -3,7 +3,7 @@ EDITAR Tienda
 =============================================*/
 $(".tablas").on("click", ".btnEditarTienda", function(){
 
-	var idTienda = $(this).attr("idTienda");
+	var idTienda = $(this).attr("idtienda");
 
 	var datos = new FormData();
     datos.append("idTienda", idTienda);
@@ -20,18 +20,44 @@ $(".tablas").on("click", ".btnEditarTienda", function(){
       success:function(respuesta){
       
       	   $("#idTienda").val(respuesta["id"]);
-           $("#editarid_cadena").val(respuesta["id_cadena"]);
+           $("#editarCadena").val(respuesta["id_cadena"]);
            $("#editarTienda").val(respuesta["nombre"]);
 	       $("#editarCiudad").val(respuesta["ciudad"]);
-	       $("#editarEmail").val(respuesta["email"]);
-	       $("#editarTelefono").val(respuesta["telefono"]);
 	       $("#editarDireccion").val(respuesta["direccion"]);
            $("#editarFechaRegistro").val(respuesta["fecha_registro"]);
+           consultarCadena();
 	  }
 
-  	})
-
+  	});
 })
+
+
+
+function consultarCadena() {
+
+    var idCadena_ = $("#editarCadena").val();
+    var datos_cadena = new FormData();
+    datos_cadena.append("idCadena", idCadena_);
+    console.log(datos_cadena);
+
+    $.ajax({
+        url:"ajax/cadenas.ajax.php",
+        method: "POST",
+        data: datos_cadena,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+            $('#editarCadena').append($('<option>', {
+                value: respuesta["id"],
+                text: respuesta["nombre"]
+            }));
+        }
+
+    })
+
+}
 
 /*=============================================
 ELIMINAR Tienda
@@ -39,7 +65,6 @@ ELIMINAR Tienda
 $(".tablas").on("click", ".btnEliminarTienda", function(){
 
 	var idTienda = $(this).attr("idTienda");
-    alert(idTienda);
     swal({
         title: '¿Está seguro de borrar la Tienda?',
         text: "¡Si no lo está puede cancelar la acción!",

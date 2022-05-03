@@ -349,6 +349,20 @@ $(".btnAgregarProducto").click(function(){
 	             
 	          '</div>'+
 
+					'<!-- imei del producto -->'+
+
+					'<div class="col-xs-6 ingresoPrecio" style="padding-left:0px">'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="" required>'+
+
+					'</div>'+
+
+					'</div>'+
+
 	        '</div>');
 
 
@@ -449,44 +463,44 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 
 	$(this).attr("nuevoStock", nuevoStock);
 
-	if(Number($(this).val()) > Number($(this).attr("stock"))){
+	// if(Number($(this).val()) > Number($(this).attr("stock"))){
 
-		/*=============================================
-		SI LA CANTIDAD ES SUPERIOR AL STOCK REGRESAR VALORES INICIALES
-		=============================================*/
+	// 	/*=============================================
+	// 	SI LA CANTIDAD ES SUPERIOR AL STOCK REGRESAR VALORES INICIALES
+	// 	=============================================*/
 
-		$(this).val(0);
+	// 	$(this).val(0);
 
-		$(this).attr("nuevoStock", $(this).attr("stock"));
+	// 	$(this).attr("nuevoStock", $(this).attr("stock"));
 
-		var precioFinal = $(this).val() * precio.attr("precioReal");
+	// 	var precioFinal = $(this).val() * precio.attr("precioReal");
 
-		precio.val(precioFinal);
+	// 	precio.val(precioFinal);
 
-		sumarTotalPrecios();
+	// 	sumarTotalPrecios();
 
-		swal({
-	      title: "La cantidad supera el Stock",
-	      text: "¡Sólo hay "+$(this).attr("stock")+" unidades!",
-	      type: "error",
-	      confirmButtonText: "¡Cerrar!"
-	    });
+	// 	swal({
+	//       title: "La cantidad supera el Stock",
+	//       text: "¡Sólo hay "+$(this).attr("stock")+" unidades!",
+	//       type: "error",
+	//       confirmButtonText: "¡Cerrar!"
+	//     });
 
-	    return;
+	//     return;
 
-	}
+	// }
 
 	// SUMAR TOTAL DE PRECIOS
 
-	sumarTotalPrecios()
+	// sumarTotalPrecios()
 
-	// AGREGAR IMPUESTO
+	// // AGREGAR IMPUESTO
 	        
-    agregarImpuesto()
+    // agregarImpuesto()
 
-    // AGRUPAR PRODUCTOS EN FORMATO JSON
+    // // AGRUPAR PRODUCTOS EN FORMATO JSON
 
-    listarProductos()
+    // listarProductos()
 
 })
 
@@ -620,17 +634,42 @@ $("#nuevoMetodoPago").change(function(){
 
 		 $(this).parent().parent().parent().children('.cajasMetodoPago').html(
 
-		 	'<div class="col-xs-6" style="padding-left:0px">'+
+			'<div class="col-xs-6" style="padding-left:0px">'+
+					   
+			   '<div class="input-group">'+
+					
+				 '<input type="number" min="0" class="form-control" id="nuevoCodigoTransaccion" placeholder="Entrada"  required>'+
+					  
+				 '<span class="input-group-addon"><i class="fa fa-money"></i></span>'+
+				 
+			   '</div>'+
+
+			   '</div>'+
+
+		 	'<div class="col-xs-6" style="padding-left:15px">'+
                         
                 '<div class="input-group">'+
                      
-                  '<input type="number" min="0" class="form-control" id="nuevoCodigoTransaccion" placeholder="Número de cuotas"  required>'+
-                       
-                  '<span class="input-group-addon"><i class="fa fa-lock"></i></span>'+
+                  '<input type="number" min="0" step="any" class="form-control" id="nuevoNumeroCuotas" placeholder="Número de cuotas"  required>'+
                   
                 '</div>'+
 
-              '</div>')
+              '</div>' +
+
+			  '<div class="col-xs-6" style="padding-left:0px">'+
+						 
+				 '<div class="input-group">'+
+					  
+				   '<input type="number" min="0" class="form-control" id="nuevoValorCuota" placeholder="Valor de Cuota"  required>'+
+						
+				   '<span class="input-group-addon"><i class="fa fa-lock"></i></span>'+
+				   
+				 '</div>'+
+ 
+			   '</div>'
+			  
+			 
+			  )
 
 	}
 

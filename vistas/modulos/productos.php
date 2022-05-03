@@ -57,12 +57,12 @@ if($_SESSION["perfil"] == "Vendedor"){
            
            <th style="width:10px">#</th>
            <th>Imagen</th>
-           <th>Imei</th>
+<!--           <th>Imei</th>-->
            <th>Descripción</th>
            <th>Categoría</th>
-           <th>Stock</th>
-           <th>Precio base</th>
-           <th>Precio de venta</th>
+<!--           <th>Stock</th>-->
+<!--           <th>Precio base</th>-->
+<!--           <th>Precio de venta</th>-->
            <th>Agregado</th>
            <th>Acciones</th>
            
@@ -149,13 +149,13 @@ MODAL AGREGAR PRODUCTO
 
             <!-- ENTRADA PARA EL IMEI -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoImei" name="nuevoImei" placeholder="Ingresar IMEI" maxlength="15" required>
+                <input type="text" class="form-control input-lg" id="nuevoImei" name="nuevoImei" placeholder="Ingresar IMEI" maxlength="15" value="">
 
               </div>
 
@@ -177,13 +177,13 @@ MODAL AGREGAR PRODUCTO
 
              <!-- ENTRADA PARA STOCK -->
 
-             <div class="form-group">
+             <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" required>
+                <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" value="">
 
               </div>
 
@@ -191,7 +191,7 @@ MODAL AGREGAR PRODUCTO
 
              <!-- ENTRADA PARA PRECIO COMPRA -->
 
-             <div class="form-group row">
+             <div class="form-group row"  style="display: none;">
 
                 <div class="col-xs-6">
                 
@@ -199,7 +199,7 @@ MODAL AGREGAR PRODUCTO
                   
                     <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
 
-                    <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" step="any" min="0" placeholder="Precio de compra" required>
+                    <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" step="any" min="0" placeholder="Precio de compra" value="">
 
                   </div>
 
@@ -207,13 +207,13 @@ MODAL AGREGAR PRODUCTO
 
                 <!-- ENTRADA PARA PRECIO VENTA -->
 
-                <div class="col-xs-6">
+                <div class="col-xs-6" style="display: none;">
                 
                   <div class="input-group">
                   
                     <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
 
-                    <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" step="any" min="0" placeholder="Precio de venta" required>
+                    <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" step="any" min="0" placeholder="Precio de venta" value="">
 
                   </div>
                 
@@ -351,13 +351,13 @@ MODAL EDITAR PRODUCTO
 
             <!-- ENTRADA PARA EL IMEI -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarImei" name="editarImei" readonly required>
+                <input type="text" class="form-control input-lg" id="editarImei" value="" name="editarImei" readonly>
 
               </div>
 
@@ -379,13 +379,13 @@ MODAL EDITAR PRODUCTO
 
              <!-- ENTRADA PARA STOCK -->
 
-             <div class="form-group">
+             <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" required>
+                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" value="">
 
               </div>
 
@@ -393,7 +393,7 @@ MODAL EDITAR PRODUCTO
 
              <!-- ENTRADA PARA PRECIO COMPRA -->
 
-             <div class="form-group row">
+             <div class="form-group row" style="display: none;">
 
                 <div class="col-xs-6">
                 
@@ -401,7 +401,7 @@ MODAL EDITAR PRODUCTO
                   
                     <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
 
-                    <input type="number" class="form-control input-lg" id="editarPrecioCompra" name="editarPrecioCompra" step="any" min="0" required>
+                    <input type="number" class="form-control input-lg" id="editarPrecioCompra" name="editarPrecioCompra" step="any" min="0" value="">
 
                   </div>
 
@@ -409,13 +409,13 @@ MODAL EDITAR PRODUCTO
 
                 <!-- ENTRADA PARA PRECIO VENTA -->
 
-                <div class="col-xs-6">
+                <div class="col-xs-6" style="display: none;">
                 
                   <div class="input-group">
                   
                     <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
 
-                    <input type="number" class="form-control input-lg" id="editarPrecioVenta" name="editarPrecioVenta" step="any" min="0" readonly required>
+                    <input type="number" class="form-control input-lg" id="editarPrecioVenta" name="editarPrecioVenta" step="any" min="0" readonly value="">
 
                   </div>
                 
