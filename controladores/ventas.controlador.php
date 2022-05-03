@@ -75,12 +75,12 @@ class ControladorVentas{
 				$item1a = "ventas";
 				$valor1a = $value["cantidad"] + $traerProducto["ventas"];
 
-			    $nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
+			    //$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
 				$item1b = "stock";
 				$valor1b = $value["stock"];
 
-				$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
+				//$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
 
 			}
 
@@ -114,7 +114,7 @@ class ControladorVentas{
 			$tabla = "ventas";
 
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
-//						   "id_cliente"=>$_POST["seleccionarCliente"],
+						   "id_cliente"=>1,
 						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],

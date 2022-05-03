@@ -81,19 +81,19 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
 
-          	if(stock == 0){
+          	// if(stock == 0){
 
-      			swal({
-			      title: "No hay stock disponible",
-			      type: "error",
-			      confirmButtonText: "¡Cerrar!"
-			    });
+      		// 	swal({
+			//       title: "No hay stock disponible",
+			//       type: "error",
+			//       confirmButtonText: "¡Cerrar!"
+			//     });
 
-			    $("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
+			//     $("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
 
-			    return;
+			//     return;
 
-          	}
+          	// }
 
           	$(".nuevoProducto").append(
 
@@ -155,7 +155,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	        // AGREGAR IMPUESTO
 
-	        agregarImpuesto()
+	        //agregarImpuesto()
 
 	        // AGRUPAR PRODUCTOS EN FORMATO JSON
 
@@ -565,7 +565,7 @@ CUANDO CAMBIA EL IMPUESTO
 
 $("#nuevoImpuestoVenta").change(function(){
 
-	agregarImpuesto();
+	//agregarImpuesto();
 
 });
 
