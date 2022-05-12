@@ -17,7 +17,7 @@ class ControladorTiendas{
 //			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"])){
                 if (true){
 
-			   	$tabla = "Tiendas";
+			   	$tabla = "tiendas";
 
 			   	$datos = array("id_cadena"=>$_POST["seleccionarCadena"],
                                 "nombre"=>$_POST["nuevoNombre"],
@@ -83,7 +83,7 @@ class ControladorTiendas{
 
 	static public function ctrMostrarTiendas($item, $valor){
 
-		$tabla = "Tiendas";
+		$tabla = "tiendas";
 		$respuesta = ModeloTiendas::mdlMostrarTiendas($tabla, $item, $valor);
 
 		return $respuesta;
@@ -96,7 +96,7 @@ class ControladorTiendas{
 
 	static public function ctrMostrarTiendasPorCadenas($item, $valor){
 
-		$tabla = "Tiendas";
+		$tabla = "tiendas";
         $item = "id_cadena";
 
 		$respuesta = ModeloTiendas::mdlMostrarTiendasPorCadenas($tabla, $item, $valor);
@@ -113,20 +113,21 @@ class ControladorTiendas{
 
 		if(isset($_POST["editarTienda"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarTienda"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["editarDocumentoId"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["editarEmail"]) && 
-			   preg_match('/^[()\-0-9 ]+$/', $_POST["editarTelefono"]) && 
-			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarDireccion"])){
+//			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre"]))
+//			   preg_match('/^[0-9]+$/', $_POST["nuevoDocumentoId"]) &&
+//			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) &&
+//			   preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"]) &&
+//			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"])){
+            if (true){
 
-			   	$tabla = "Tiendas";
+			   	$tabla = "tiendas";
 
 			   	$datos = array("id"=>$_POST["idTienda"],
 			   				   "id_cadena"=>$_POST["editarIdCadena"],
-			   				   "nombre"=>$_POST["editarNombre"],
+			   				   "nombre"=>$_POST["editarTienda"],
 					           "ciudad"=>$_POST["editarCiudad"],
-					           "email"=>$_POST["editarEmail"],
-					           "telefono"=>$_POST["editarTelefono"],
+					           "email"=> "",
+					           "telefono"=>"",
 					           "direccion"=>$_POST["editarDireccion"],
 					           "fecha_registro"=>$_POST["editarFechaRegistro"]);
 
@@ -188,7 +189,7 @@ class ControladorTiendas{
 
 		if(isset($_GET["idTienda"])){
 
-			$tabla ="Tiendas";
+			$tabla ="tiendas";
 			$datos = $_GET["idTienda"];
 
 			$respuesta = ModeloTiendas::mdlEliminarTienda($tabla, $datos);

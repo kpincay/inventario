@@ -102,15 +102,15 @@ class ControladorCadenas{
             if (true){
 
 			   	$tabla = "cadenas";
+			   	$datos = array("id"=>$_POST["id"],
+				   				"nombre"=>$_POST["editarNombre"],
+								"ruc"=>$_POST["editarRuc"],
+								"ciudad"=>$_POST["editarCiudad"],
+								"email"=>$_POST["editarEmail"],
+								"telefono"=>$_POST["editarTelefono"],
+								"direccion"=>$_POST["editarDireccion"],
+								"fecha_registro"=>$_POST["editarFechaRegistro"]);
 
-			   	$datos = array("id"=>$_POST["idcadena"],
-				   				"nombre"=>$_POST["nuevoNombre"],
-								"ruc"=>$_POST["nuevoRuc"],
-								"ciudad"=>$_POST["nuevoCiudad"],
-								"email"=>$_POST["nuevoEmail"],
-								"telefono"=>$_POST["nuevoTelefono"],
-								"direccion"=>$_POST["nuevaDireccion"],
-								"fecha_registro"=>$_POST["nuevaFechaRegistro"]);
 
 			   	$respuesta = ModeloCadenas::mdlEditarCadena($tabla, $datos);
 

@@ -72,10 +72,9 @@ class ModeloCadenas{
 
 	static public function mdlEditarCadena($tabla, $datos){
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET ruc = :ruc, nombre = :nombre, ciudad = :ciudad, email = :email, telefono = :telefono, direccion = :direccion, fecha_registro = :fecha_registro WHERE id = :id");
-
 		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
-        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruc", $datos["ruc"], PDO::PARAM_INT);
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":ciudad", $datos["ciudad"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);

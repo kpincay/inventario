@@ -2,9 +2,11 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/extensiones/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/extensiones/vendor/mike42/escpos-php" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/extensiones/vendor/mike42/gfx-php" />
+      <excludeFolder url="file://$MODULE_DIR$/extensiones/vendor/mike42/escpos-php" />
+      <excludeFolder url="file://$MODULE_DIR$/extensiones/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

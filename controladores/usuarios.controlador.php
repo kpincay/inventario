@@ -168,7 +168,6 @@ class ControladorUsuarios{
 					           "foto"=>$ruta);
 
 				$respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
-			
 				if($respuesta == "ok"){
 
 					echo '<script>

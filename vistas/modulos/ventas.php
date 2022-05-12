@@ -145,6 +145,7 @@ if($xml){
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
+
                   echo '<td>'.$respuestaUsuario["nombre"].'</td>
 
                   <td>'.$value["metodo_pago"].'</td>
@@ -175,10 +176,10 @@ if($xml){
 //                        <i class="fa fa-print"></i>PDF
 //
 //                      </button>
-                      if($_SESSION["perfil"] == "Administrador"){
+                      if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
 //                          <button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
                       echo '
-
+                      <button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
                       <button class="btn btn-danger btnEliminarVenta" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 
                     }

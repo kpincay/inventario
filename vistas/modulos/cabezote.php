@@ -59,6 +59,12 @@
 						
 						<li class="user-body">
 							
+							<div>
+								
+								<a href="perfil" class="btn btn-success">Perfil</a>
+
+							</div>
+							
 							<div class="pull-right">
 								
 								<a href="salir" class="btn btn-default btn-flat">Salir</a>

@@ -163,7 +163,7 @@
 
                       <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
                          
-                      <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+                      <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" required>
          
                     </div>
                      

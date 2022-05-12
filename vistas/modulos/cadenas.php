@@ -57,7 +57,7 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>RUC</th>
+           <!-- <th>RUC</th> -->
            <th>Nombre</th>
            <th>Ciudad</th>
 <!--           <th>email</th>-->
@@ -85,8 +85,6 @@ if($_SESSION["perfil"] == "Especial"){
             echo '<tr>
 
                     <td>'.($key+1).'</td>
-
-                    <td>'.$value["ruc"].'</td>
 
                     <td>'.$value["nombre"].'</td>
 
@@ -164,13 +162,13 @@ MODAL AGREGAR cadena
 
             <!-- ENTRADA PARA EL DOCUMENTO ID -->
 
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="phone" maxlength="13" class="form-control input-lg" name="nuevoRuc" placeholder="Ingresar Ruc" required>
+                <input type="phone" maxlength="13" class="form-control input-lg" name="nuevoRuc" placeholder="Ingresar Ruc" value="0">
 
               </div>
 
@@ -328,13 +326,13 @@ MODAL EDITAR cadena
 
             <!-- ENTRADA PARA EL DOCUMENTO ID -->
             
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="number" min="0" class="form-control input-lg" name="editarRuc" id="editarRuc" required>
+                <input type="number" min="0" value="0" class="form-control input-lg" name="editarRuc" id="editarRuc" readonly>
 
               </div>
 
@@ -346,7 +344,7 @@ MODAL EDITAR cadena
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-map"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" required>
 
@@ -390,7 +388,7 @@ MODAL EDITAR cadena
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="tel" class="form-control input-lg" name="editarTelefono" value="" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                <input type="tel" class="form-control input-lg" name="editarTelefono" value="" id="editarTelefono">
 
               </div>
 

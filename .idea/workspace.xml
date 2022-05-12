@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="20dd42b7-b1cb-4e22-a545-b0b5af6e7b69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vistas/modulos/perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inventario.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/cadenas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/cadenas.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/tiendas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/tiendas.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/usuarios.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/usuarios.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/ventas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/ventas.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/cadenas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/cadenas.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/categorias.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/categorias.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/conexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/tiendas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/tiendas.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/usuarios.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/usuarios.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/ventas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ventas.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/js/ventas.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/ventas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/cabezote.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/cabezote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/cadenas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/cadenas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/crear-venta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/crear-venta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/crear-venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/crear-venta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/editar-venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/editar-venta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/tiendas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/tiendas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/ventas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/plantilla.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/plantilla.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/extensiones/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="99cccaec-a265-4cd8-ac7a-ea2adc506307" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\xampp\htdocs\promotores" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost:80/promotores" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/extensiones/vendor/mike42/gfx-php" />
+      <path value="$PROJECT_DIR$/extensiones/vendor/mike42/escpos-php" />
+      <path value="$PROJECT_DIR$/extensiones/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="292GRD77xQPmDdojnM2GnwoZcRz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="PROMOTORES WEB" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="37cae5b9-e8b2-4949-9172-aafa37fbc09c" server_name="localhost" start_url="/promotores">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20dd42b7-b1cb-4e22-a545-b0b5af6e7b69" name="Changes" comment="" />
+      <created>1652303765610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652303765610</updated>
+      <workItem from="1652303770979" duration="853000" />
+      <workItem from="1652361711129" duration="8120000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

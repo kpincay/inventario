@@ -10,7 +10,7 @@ class ModeloCategorias{
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria) VALUES (:categoria)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria, fecha) VALUES (:categoria, CURRENT_TIMESTAMP)");
 
 		$stmt->bindParam(":categoria", $datos, PDO::PARAM_STR);
 

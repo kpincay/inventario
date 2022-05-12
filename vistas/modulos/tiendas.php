@@ -388,7 +388,7 @@ MODAL EDITAR Tienda
 
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 
-                <input type="email" class="form-control input-lg" PLACEHOLDER="Ingrese la ciudad" name="editarCiudad" id="editarCiudad">
+                <input type="text" class="form-control input-lg" PLACEHOLDER="Ingrese la ciudad" name="editarCiudad" id="editarCiudad">
 
               </div>
 

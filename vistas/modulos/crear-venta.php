@@ -55,7 +55,7 @@ if($_SESSION["perfil"] == "Especial"){
               <div class="box">
 
                 <!--=====================================
-                ENTRADA DEL VENDEDOR
+                ENTRADA DEL LA FECHA DE REGISTRO
                 ======================================-->
             
                 <div class="form-group">
@@ -64,13 +64,29 @@ if($_SESSION["perfil"] == "Especial"){
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
+                    <input type="date" class="form-control" id="fecha_registro" name="fecha_registro" value="<?php echo date('Y-m-d'); ?>" required>
+
+                  </div>
+
+                </div>
+
+                <!--=====================================
+                ENTRADA DEL VENDEDOR
+                ======================================-->
+
+                <div class="form-group">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
                     <input type="text" class="form-control" id="nuevoVendedor" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
 
                     <input type="hidden" name="idVendedor" value="<?php echo $_SESSION["id"]; ?>">
 
                   </div>
 
-                </div> 
+                </div>
 
                 <!--=====================================
                 ENTRADA DEL CÓDIGO
@@ -127,6 +143,7 @@ if($_SESSION["perfil"] == "Especial"){
                       <div class="input-group">
 
                           <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                          <input type="hidden" name="nombreCadena" id="nombreCadena"> 
 
                           <select class="form-control seleccionarCadena" id="seleccionarCadena" name="seleccionarCadena" onchange="cadenaSelected()" required>
 
@@ -160,14 +177,13 @@ if($_SESSION["perfil"] == "Especial"){
                   <div class="form-group">
 
                       <div class="input-group">
+                      <input type="hidden" name="nombreTienda" id="nombreTienda">
 
                           <span class="input-group-addon"><i class="fa fa-building"></i></span>
 
-                          <select class="form-control seleccionarTienda" id="seleccionarTienda" name="seleccionarTienda" required>
+                          <select class="form-control seleccionarTienda" id="seleccionarTienda" name="seleccionarTienda" onchange="tiendaSelected()" required>
 
                               <option value="">Seleccionar tienda</option>
-
-
 
                           </select>
 
@@ -540,8 +556,11 @@ MODAL AGREGAR CLIENTE
 <script>
 
     function cadenaSelected() {
-        $("#seleccionarCadena :selected").text(); // The text content of the selected option
+        var nombreCadena = $("#seleccionarCadena :selected").text(); // The text content of the selected option
         var idCadena = $("#seleccionarCadena").val(); // The value of the selected option
+
+        $("#nombreCadena").val("");
+        $("#nombreCadena").val(nombreCadena);
         var datos = new FormData();
 
 
@@ -576,5 +595,13 @@ MODAL AGREGAR CLIENTE
         })
     }
 
+    function tiendaSelected(params) {
+        var nombreTienda = $("#seleccionarTienda :selected").text(); // The text content of the selected option
+        var idCadena = $("#seleccionarTienda").val(); // The value of the selected option
+
+        $("#nombreTienda").val("");
+        $("#nombreTienda").val(nombreTienda);
+
+    }
 
 </script>

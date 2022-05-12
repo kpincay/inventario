@@ -117,7 +117,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	          '<div class="col-xs-3">'+
 	            
-	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" stock="'+stock+'" nuevoStock="'+Number(stock-1)+'" required>'+
+	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" stock="'+stock+'" nuevoStock="'+Number(stock-1)+'" >'+
 
 	          '</div>' +
 
@@ -129,7 +129,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoPrecioProducto" onchange="cambios()" precioReal="'+precio+'" name="nuevoPrecioProducto" value="'+precio+'" required>'+
+	              '<input type="text" class="form-control nuevoPrecioProducto" onchange="cambios()" precioReal="'+precio+'" name="nuevoPrecioProducto" value="0" required>'+
 	 
 	            '</div>'+
 	             
@@ -141,7 +141,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="" required>'+
+	              '<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="">'+
 	 
 	            '</div>'+
 	             
@@ -343,7 +343,7 @@ $(".btnAgregarProducto").click(function(){
 
 	              '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoPrecioProducto" precioReal="" name="nuevoPrecioProducto" readonly required>'+
+	              '<input type="text" class="form-control nuevoPrecioProducto" precioReal="" name="nuevoPrecioProducto" required>'+
 	 
 	            '</div>'+
 	             
@@ -357,7 +357,7 @@ $(".btnAgregarProducto").click(function(){
 
 					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-					'<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="" required>'+
+					'<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="">'+
 
 					'</div>'+
 
@@ -713,7 +713,6 @@ function listarProductos(){
 	var listaProductos = [];
 
 	var descripcion = $(".nuevaDescripcionProducto");
-	console.log("kpi "+ descripcion);
 
 	var imei = $(".nuevoImei");
 
@@ -724,13 +723,13 @@ function listarProductos(){
 
 	for(var i = 0; i < descripcion.length; i++){
 
-		listaProductos.push({ "id" : $(descripcion[i]).attr("idProducto"), 
-							  "imei" : $(imei[i]).val(),
-							  "descripcion" : $(descripcion[i]).val(),
-							  "cantidad" : $(cantidad[i]).val(),
-							  "stock" : $(cantidad[i]).attr("nuevoStock"),
-							  "precio" : $(precio[i]).attr("precioReal"),
-							  "total" : $(precio[i]).val()})
+		listaProductos.push({ 'id' : $(descripcion[i]).attr("idProducto"), 
+							  'imei' : $(imei[i]).val(),
+							  'descripcion' : $(descripcion[i]).val(),
+							  'cantidad' : $(cantidad[i]).val(),
+							  'stock' : $(cantidad[i]).attr("nuevoStock"),
+							  'precio' : $(precio[i]).attr("precioReal"),
+							  'total' : $(precio[i]).val()})
 
 	}
 

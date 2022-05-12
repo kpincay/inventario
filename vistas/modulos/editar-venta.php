@@ -60,23 +60,40 @@
 
                 ?>
 
-                <!--=====================================
-                ENTRADA DEL VENDEDOR
-                ======================================-->
-            
-                <div class="form-group">
-                
-                  <div class="input-group">
-                    
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                  <!--=====================================
+                  ENTRADA DEL LA FECHA DE REGISTRO
+                  ======================================-->
 
-                    <input type="text" class="form-control" id="nuevoVendedor" value="<?php echo $vendedor["nombre"]; ?>" readonly>
+                  <div class="form-group">
 
-                    <input type="hidden" name="idVendedor" value="<?php echo $vendedor["id"]; ?>">
+                      <div class="input-group">
+
+                          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                          <input type="date" class="form-control" id="fecha_registro" name="fecha_registro" value="<?php echo $venta["fecha_registro"]; ?>" >
+
+                      </div>
 
                   </div>
 
-                </div> 
+
+                  <!--=====================================
+                  ENTRADA DEL VENDEDOR
+                  ======================================-->
+
+                  <div class="form-group">
+
+                      <div class="input-group">
+
+                          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                          <input type="text" class="form-control" id="nuevoVendedor" value="<?php echo $vendedor["usuario"]; ?>" readonly>
+
+                          <input type="hidden" name="idVendedor" value="<?php echo $_SESSION["id"]; ?>">
+
+                      </div>
+
+                  </div>
 
                 <!--=====================================
                 ENTRADA DEL CÓDIGO
@@ -94,42 +111,48 @@
                 
                 </div>
 
-                <!--=====================================
-                ENTRADA DEL CLIENTE
-                ======================================--> 
 
-                <div class="form-group">
-                  
-                  <div class="input-group">
-                    
-                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                    
-                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
+                  <!--=====================================
+                  ENTRADA DE LA CADENA
+                  ======================================-->
 
-                    <option value="<?php echo $cliente["id"]; ?>"><?php echo $cliente["nombre"]; ?></option>
+                  <div class="form-group">
 
-                    <?php
+                      <div class="input-group">
 
-                      $item = null;
-                      $valor = null;
+                          <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                          <input type="hidden" name="nombreCadena" id="nombreCadena">
 
-                      $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
+                          <select class="form-control seleccionarCadena" id="seleccionarCadena" name="seleccionarCadena"  disabled>
 
-                       foreach ($categorias as $key => $value) {
+                              <option value="<?php echo $venta["cadena"]; ?>"><?php echo $venta["cadena"]; ?></option>
 
-                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                          </select>
 
-                       }
+                      </div>
 
-                    ?>
-
-                    </select>
-                    
-                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>
-                  
                   </div>
-                
-                </div>
+
+                  <!--=====================================
+                   ENTRADA DE LA TIENDA
+                   ======================================-->
+
+                  <div class="form-group">
+
+                      <div class="input-group">
+                          <input type="hidden" name="nombreTienda" id="nombreTienda">
+
+                          <span class="input-group-addon"><i class="fa fa-building"></i></span>
+
+                          <select class="form-control seleccionarTienda" id="seleccionarTienda" name="seleccionarTienda"  disabled>
+
+                              <option value="<?php echo $venta["tienda"]; ?>"><?php echo $venta["tienda"]; ?></option>
+
+                          </select>
+
+                      </div>
+
+                  </div>
 
                 <!--=====================================
                 ENTRADA PARA AGREGAR PRODUCTO
@@ -177,7 +200,7 @@
 
                             <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
                    
-                            <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" readonly required>
+                            <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" required>
    
                           </div>
                
@@ -338,9 +361,7 @@
                  <tr>
                   <th style="width: 10px">#</th>
                   <th>Imagen</th>
-                  <th>Código</th>
                   <th>Descripcion</th>
-                  <th>Stock</th>
                   <th>Acciones</th>
                 </tr>
 
