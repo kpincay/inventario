@@ -29,7 +29,7 @@
                 $item = null;
                 $valor = $presupuesto["cadena"];
                 $ventas = ControladorVentas::ctrMostrarVentas($item, $valor);
-                $cumpliento = ($ventas[0] / $presupuesto["presupuesto"]) * 100;
+                $cumpliento = $presupuesto["presupuesto"] != 0 ?  ($ventas[0] / $presupuesto["presupuesto"]) * 100 : 0;
                 echo '<tr>
 
                     <td>'.$presupuesto["cadena"].'</td>
