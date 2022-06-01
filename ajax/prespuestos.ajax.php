@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controladores/Presupuestos.controlador.php";
-require_once "../modelos/Presupuestos.modelo.php";
+require_once "../controladores/presupuestos.controlador.php";
+require_once "../modelos/presupuestos.modelo.php";
 
 class AjaxPresupuestos{
 
