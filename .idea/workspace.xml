@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20dd42b7-b1cb-4e22-a545-b0b5af6e7b69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vistas/modulos/inicio/resumen-presupuesto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/js/presupuesto.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/presupuesto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/presupuestos.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/presupuestos.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/ventas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ventas.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio/cajas-superiores.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio/cajas-superiores.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +102,7 @@
       <workItem from="1653945589598" duration="3009000" />
       <workItem from="1654016890469" duration="8702000" />
       <workItem from="1654032703622" duration="13880000" />
-      <workItem from="1654093926718" duration="7954000" />
+      <workItem from="1654093926718" duration="22934000" />
     </task>
     <servers />
   </component>
@@ -137,11 +141,6 @@
           <url>file://$PROJECT_DIR$/ajax/prespuestos.ajax.php</url>
           <line>36</line>
           <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controladores/presupuestos.controlador.php</url>
-          <line>13</line>
-          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/ajax/prespuestos.ajax.php</url>

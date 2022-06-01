@@ -20,13 +20,21 @@ class ModeloVentas{
 
 			return $stmt -> fetch();
 
+		}else if ($valor != null){
+
+			$stmt = Conexion::conectar()->prepare("select  count(*)  from ventas where cadena = '$valor' group by cadena order by cadena");
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
 		}else{
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id ASC");
 
 			$stmt -> execute();
 
-			return $stmt -> fetchAll(); 
+			return $stmt -> fetchAll();
 
 		}
 		

@@ -82,7 +82,7 @@ class ModeloPresupuestos{
 
 		}else{
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+			$stmt = Conexion::conectar()->prepare("select cadena , sum(valor) as presupuesto  from presupuestos p group by cadena order by cadena");
 
 			$stmt -> execute();
 

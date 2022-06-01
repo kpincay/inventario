@@ -22,30 +22,50 @@
 
   <section class="content">
 
-    <div class="row">
-      
-    <?php
-
-    if($_SESSION["perfil"] =="Administrador"){
-      //comment
-      // include "inicio/cajas-superiores.php";
-      echo " ";
-
-    }
-
-    ?>
-
-    </div> 
 
      <div class="row">
-       
+
+         <div class="col-lg-12">
+
+             <?php
+
+             if($_SESSION["perfil"] =="Especial" || $_SESSION["perfil"] =="Vendedor" || $_SESSION["perfil"] =="Administrador"){
+
+                 echo '<div class="box box-success">
+
+             <div class="box-header">
+
+             <h2>Bienvenid@ ' .$_SESSION["nombre"].'</h2>
+
+             </div>
+
+             </div>';
+
+             }
+
+             ?>
+
+         </div>
+
+         <?php
+
+         if($_SESSION["perfil"] =="Administrador"){
+             //comment
+             include "inicio/cajas-superiores.php";
+             echo " ";
+
+         }
+
+         ?>
+
         <div class="col-lg-12">
 
           <?php
 
           if($_SESSION["perfil"] =="Administrador"){
           //comment
-          //  include "reportes/grafico-ventas.php";
+          include "inicio/resumen-presupuesto.php";
+          //include "reportes/grafico-ventas.php";
           echo " ";
 
           }
@@ -76,7 +96,7 @@
 
           if($_SESSION["perfil"] =="Administrador"){
           //comment
-          //  include "inicio/productos-recientes.php";
+          //include "inicio/productos-recientes.php";
           echo " ";
 
          }
@@ -85,27 +105,6 @@
 
         </div>
 
-         <div class="col-lg-12">
-           
-          <?php
-
-          if($_SESSION["perfil"] =="Especial" || $_SESSION["perfil"] =="Vendedor" || $_SESSION["perfil"] =="Administrador"){
-
-             echo '<div class="box box-success">
-
-             <div class="box-header">
-
-             <h1>Bienvenid@ ' .$_SESSION["nombre"].'</h1>
-
-             </div>
-
-             </div>';
-
-          }
-
-          ?>
-
-         </div>
 
      </div>
 
