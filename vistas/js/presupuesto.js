@@ -36,19 +36,6 @@ $("#btnConsultarPlantilla").click(function () {
         $(".loader").hide();
         return;
     }
-    // Getting the table
-    var tble = document.getElementById('tablaPresupuesto');
-    // Getting the rows in table.
-    var row = tble.rows;
-    if (row > 2){
-
-        for (var j = 2; j < row.length; j++) {
-
-            // Deleting the ith cell of each row.
-            row[j].deleteCell(i);
-        }
-    }
-
 
     var diferencia = restaMeses(new Date(fechaDesde) , new Date(fechaHasta));
     if (diferencia > 12){
@@ -61,6 +48,8 @@ $("#btnConsultarPlantilla").click(function () {
         return;
     }
 
+    limpiarTabla();
+
     /*CONSULTA DE TIENDAS SEGUN CADENA SELECCIONADA*/
 
     // $('#tablaPresupuesto').DataTable();
@@ -70,7 +59,6 @@ $("#btnConsultarPlantilla").click(function () {
     datos2.append("cadena", idCadena);
     datos2.append("fechaDesde", fechaDesde);
     datos2.append("fechaHasta", fechaHasta);
-    localStorage.clear();
     $.ajax({
 
         url:"ajax/prespuestos.ajax.php",
@@ -91,15 +79,15 @@ $("#btnConsultarPlantilla").click(function () {
             var reg2 = new RegExp("(((([1][9][0-9][0-9])|([2][0-9][0-9][0-9]))-(0[123456789]|10|11|12)))");
             var cabecera = "";
             var cabecerah = "";
-            $("tr:first").append('<td><strong>Tienda</strong></td><td><strong>Promotor</strong></td>');
+            $("#tablaPresupuesto tbody").append('<th><strong>Tienda</strong></th><th><strong>Promotor</strong></th>');
             for (var key1 in respuesta[0]) {
 
                 if (reg.test(key1)){
                     cabecerah = key1.valueOf();
-                    $("tr:first").append('<td style="display: none;"><strong>' + cabecerah+ '</strong></td>');
+                    $("#tablaPresupuesto tbody").append('<th style="display: none;"><strong>' + cabecerah+ '</strong></th>');
                 }else if (reg2.test(key1)){
                     cabecera = key1.valueOf();
-                    $("tr:first").append('<td><strong>' + cabecera+ '</strong></td>');
+                    $("#tablaPresupuesto tbody").append('<th class="text-center"><strong>' + cabecera+ '</strong></th>');
                 }
             }
 
@@ -145,6 +133,7 @@ GENERACION DE DATOS
 =============================================*/
 $("#btnGenerarPlantilla").click(async function () {
     $(".loader").show();
+    limpiarTabla();
     var idCadena = $("#seleccionarCadena").val();
     var nombreCadena = $('#seleccionarCadena').find(":selected").text();
     var fechaDesde = $("#mesDesde").val();
@@ -226,7 +215,7 @@ $("#btnGenerarPlantilla").click(async function () {
 
     var nuevaFechaDesde = new Date(fechaDesde);
     var nuevaFechaHasta = new Date(fechaHasta);
-    nuevaFechaDesde.setMonth(nuevaFechaDesde.getMonth() - 1);
+     nuevaFechaDesde.setMonth(nuevaFechaDesde.getMonth() - 1);
 
     while(nuevaFechaHasta.getTime() >= nuevaFechaDesde.getTime()){
         nuevaFechaDesde.setMonth(nuevaFechaDesde.getMonth() + 1);
@@ -250,12 +239,21 @@ $("#btnGenerarPlantilla").click(async function () {
             processData: false,
             dataType: "json",
             success:function(respuesta){
-                $(".loader").hide();
-                swal({
-                    title: 'Generación exitosa',
-                    text: "Se generó correctamente",
-                    type: 'success'
-                })
+                if (respuesta != "ok"){
+                    $(".loader").hide();
+                    swal({
+                        title: 'Error',
+                        text: respuesta,
+                        type: 'error'
+                    })
+                }else {
+                    $(".loader").hide();
+                    swal({
+                        title: 'Generación exitosa',
+                        text: "Se generó correctamente",
+                        type: 'success'
+                    })
+                }
             }
         });
     }
@@ -384,4 +382,12 @@ function fechaCompletaQuery($fecha) {
     var mes  = ("0" + ($fecha.getMonth() + 1)).slice(-2);
     var fechaFinal = anio + "-" + mes;
     return fechaFinal;
+}
+
+
+function limpiarTabla() {
+    if ($("#tablaPresupuesto tr").length > 2){
+    $("#tablaPresupuesto tr").remove();
+    $("#tablaPresupuesto th").remove();
+    }
 }

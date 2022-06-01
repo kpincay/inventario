@@ -47,7 +47,8 @@ class ModeloPresupuestos{
             } catch ( PDOException $e ) {
                 die ( $e->getMessage() );
             }
-            $sql = "SELECT DISTINCT(fecha) FROM $tabla where fecha between '$fechaDesde' and '$fechaHasta';";
+
+            $sql = "SELECT DISTINCT(fecha) FROM $tabla where fecha between '$fechaDesde' and '$fechaHasta' order  by fecha;";
             $endPoints = $pdo->query($sql, PDO::FETCH_COLUMN,0)->fetchAll();
 
 
@@ -199,8 +200,20 @@ class ModeloPresupuestos{
 
 	static public function mdlGenerarPresupuesto($idCadena, $fecha){
 
+        try {
+            $pdo = new PDO("mysql:dbname=duobalsacom_promotores;host=localhost", "root", "");
+        } catch ( PDOException $e ) {
+            die ( $e->getMessage() );
+        }
 
-		$stmt = Conexion::conectar()->prepare("CALL obtenerTiendasPorCadena($idCadena, '$fecha');");
+        $sql = "SELECT * FROM presupuestos p   where cadena = (select nombre from cadenas c where id = $idCadena)  and fecha = '$fecha';";
+        $respuesta = $pdo->query($sql)->fetchAll();
+
+        if ($respuesta != []){
+            return "Registros ya generados previamente para la fecha  $fecha";
+        }
+
+        $stmt = Conexion::conectar()->prepare("CALL obtenerTiendasPorCadena($idCadena, '$fecha');");
 
 
 		if($stmt -> execute()){

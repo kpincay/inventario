@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20dd42b7-b1cb-4e22-a545-b0b5af6e7b69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ajax/prespuestos.ajax.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controladores/presupuestos.controlador.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/presupuestos.modelo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vistas/js/presupuesto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vistas/modulos/presupuesto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/datatable-productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/datatable-productos.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/usuarios.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/usuarios.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/conexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/presupuestos.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/presupuestos.modelo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/promotores/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/promotores/.idea/php.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/promotores/.idea/promotores.iml" beforeDir="false" />
@@ -8109,9 +8101,8 @@
       <change beforePath="$PROJECT_DIR$/promotores/xml/10002.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/promotores/xml/10003.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/promotores/xml/10004.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/plantilla.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/plantilla.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/js/presupuesto.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/presupuesto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/presupuesto.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/presupuesto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -8205,7 +8196,8 @@
       <workItem from="1653940967345" duration="3416000" />
       <workItem from="1653945589598" duration="3009000" />
       <workItem from="1654016890469" duration="8702000" />
-      <workItem from="1654032703622" duration="12781000" />
+      <workItem from="1654032703622" duration="13880000" />
+      <workItem from="1654093926718" duration="5795000" />
     </task>
     <servers />
   </component>
@@ -8246,19 +8238,24 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/ajax/prespuestos.ajax.php</url>
-          <line>84</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controladores/presupuestos.controlador.php</url>
           <line>13</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/ajax/prespuestos.ajax.php</url>
+          <line>72</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/modelos/presupuestos.modelo.php</url>
-          <line>78</line>
-          <option name="timeStamp" value="36" />
+          <line>72</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modelos/presupuestos.modelo.php</url>
+          <line>208</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/ajax/usuarios.ajax.php</url>

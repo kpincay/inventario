@@ -87,7 +87,7 @@ if($_SESSION["perfil"] == "Especial"){
 
           <div class="col-md-2">
               <h5><strong>Mes hasta</strong></h5>
-              <input type="month" id="mesHasta" max="<?php echo date("Y"). "-" . date("m")?>"/>
+              <input type="month" id="mesHasta" max="<?php echo  date("Y", strtotime('+1 year')). "-" . date("m")?>"/>
           </div>
 
           <br>
