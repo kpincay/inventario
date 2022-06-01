@@ -70,7 +70,15 @@ $("#btnConsultarPlantilla").click(function () {
         dataType:"json",
         success:function(respuesta){
             $(".loader").hide();
-
+            console.log(respuesta.valueOf().length);
+            if (respuesta.valueOf().length == 0){
+                    swal({
+                    title: 'Error',
+                    text: "No hay datos, por favor generarlos",
+                    type: 'error'
+                });
+                    return;
+            }
             $('.dataTables_filter').remove();
             $('.dataTables_length').remove();
             $("#btnActualizarPlantilla").css('display', 'block');
