@@ -60,6 +60,19 @@ class AjaxUsuarios{
 		echo json_encode($respuesta);
 
 	}
+
+    public function ajaxConsultarUsuarios(){
+
+        $item = "id_cadena";
+        $valor = null;
+        $respuesta = null;
+
+        $respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+        echo json_encode($respuesta);
+
+    }
+
 }
 
 /*=============================================
@@ -97,3 +110,16 @@ if(isset( $_POST["validarUsuario"])){
 	$valUsuario -> ajaxValidarUsuario();
 
 }
+
+/*=============================================
+RECUPERAR TODOS LOS USUARIOS
+=============================================*/
+
+if(isset( $_POST["consultarUsuarios"])){
+
+	$valUsuario = new AjaxUsuarios();
+	$valUsuario -> validarUsuario = $_POST["consultarUsuarios"];
+	$valUsuario -> ajaxConsultarUsuarios();
+
+}
+

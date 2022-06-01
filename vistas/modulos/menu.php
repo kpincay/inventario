@@ -161,6 +161,24 @@
 
 		}
 
+
+        if($_SESSION["perfil"] == "Administrador"){
+
+            echo '
+
+		 	<li>
+
+		 		<a href="presupuesto">
+
+		 			<i class="fa fa-money"></i>
+		 			<span>Presupuesto</span>
+
+		 		</a>
+
+		 	</li>';
+
+        }
+
 		?>
 
 		</ul>

@@ -87,7 +87,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                <select class="form-control input-lg" name="editarPerfil">
+                <select class="form-control input-lg" name="editarPerfil" readonly>
 
                   <option value="<?php echo $usuario["perfil"]; ?>"><?php echo $usuario["perfil"]; ?></option>
 

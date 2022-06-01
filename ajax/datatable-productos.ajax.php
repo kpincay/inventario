@@ -27,6 +27,7 @@ class TablaProductos{
 
 		  	return;
   		}
+
 		
   		$datosJson = '{
 		  "data": [';
@@ -80,16 +81,19 @@ class TablaProductos{
 
   			}
 
-		 
+			$descr = str_replace(
+                    			array("'", "¨", '"', 'Ã‘', '°', 'ñ', 'Ñ', 'Â°', 'Â'),
+                    			array(" ", " ", " ", 'N', ' ', 'ni', 'NI', ' ', ' '),
+                   			 $productos[$i]["descripcion"]);
+
 		  	$datosJson .='[
 			      "'.($i+1).'",
 			      "'.$imagen.'",
-			      "'.$productos[$i]["descripcion"].'",
+			      "'.$descr.'",
 			      "'.$categorias["categoria"].'",
 			      "'.$productos[$i]["fecha"].'",
 			      "'.$botones.'"
 			    ],';
-
 		  }
 
 		  $datosJson = substr($datosJson, 0, -1);
@@ -99,7 +103,6 @@ class TablaProductos{
 		 }';
 		
 		echo $datosJson;
-
 
 	}
 
