@@ -71,7 +71,14 @@
 
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
+                <input type="password" id="editarPassword" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
+
+
+                  <span class="input-group-addon">
+
+                      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </span>
+
 
                 <input type="hidden" id="passwordActual" name="passwordActual">
 
@@ -143,3 +150,15 @@
   </div>
 
 </div>
+<script>
+    $(".toggle-password").click(function() {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#editarPassword");
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>
