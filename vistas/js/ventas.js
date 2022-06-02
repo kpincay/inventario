@@ -317,8 +317,8 @@ $(".btnAgregarProducto").click(function(){
 	              
 	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto><i class="fa fa-times"></i></button></span>'+
 
-	              '<select class="form-control nuevaDescripcionProducto" id="producto'+numProducto+'" idProducto name="nuevaDescripcionProducto" required>'+
-
+	              '<select class="form-control nuevaDescripcionProducto" id="producto'+numProducto+'" idProducto name="nuevaDescripcionProducto" onBlur=\'activaTeclado()\' required>'+
+					'<input id="inputMovil" type="tel">'+
 	              '<option>Seleccione el producto</option>'+
 
 	              '</select>'+  
@@ -402,6 +402,13 @@ $(".btnAgregarProducto").click(function(){
 	})
 
 })
+
+
+
+
+function activaTeclado() {
+	$("#inputMovil").focus();
+}
 
 /*=============================================
 SELECCIONAR PRODUCTO
