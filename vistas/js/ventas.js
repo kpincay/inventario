@@ -317,8 +317,8 @@ $(".btnAgregarProducto").click(function(){
 	              
 	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto><i class="fa fa-times"></i></button></span>'+
 
-	              '<select class="form-control nuevaDescripcionProducto" id="producto'+numProducto+'" idProducto name="nuevaDescripcionProducto" onBlur=\'activaTeclado()\' required>'+
-					'<input id="inputMovil" type="tel">'+
+	              '<select class="form-control nuevaDescripcionProducto" id="producto'+numProducto+'" idProducto name="nuevaDescripcionProducto"  required>'+
+
 	              '<option>Seleccione el producto</option>'+
 
 	              '</select>'+  
@@ -396,6 +396,7 @@ $(".btnAgregarProducto").click(function(){
 
 	        $(".nuevoPrecioProducto").number(true, 2);
 
+			$('.nuevaDescripcionProducto').select2();
 
       	}
 
@@ -407,7 +408,7 @@ $(".btnAgregarProducto").click(function(){
 
 
 function activaTeclado() {
-	$("#inputMovil").focus();
+	$("#inputMovi").focus();
 }
 
 /*=============================================
@@ -978,5 +979,4 @@ $(".abrirXML").click(function(){
 
 
 })
-
 

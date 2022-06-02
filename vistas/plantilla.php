@@ -101,6 +101,8 @@ session_start();
   <!-- ChartJS http://www.chartjs.org/-->
   <script src="vistas/bower_components/Chart.js/Chart.js"></script>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 
 
@@ -192,6 +194,10 @@ CUERPO DOCUMENTO
 <script src="vistas/js/tiendas.js"></script>
 <script src="vistas/js/ventas.js"></script>
 <script src="vistas/js/reportes.js"></script>
+
+  <!--    Select2-->
+
+
 
 </body>
 </html>
