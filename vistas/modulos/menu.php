@@ -179,6 +179,24 @@
 
         }
 
+
+        if($_SESSION["perfil"] == "Administrador"){
+
+            echo '
+
+		 	<li>
+
+		 		<a href="sell-out">
+
+		 			<i class="fa fa-check-circle"></i>
+		 			<span>Sell Out</span>
+
+		 		</a>
+
+		 	</li>';
+
+        }
+
 		?>
 
 		</ul>

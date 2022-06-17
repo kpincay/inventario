@@ -17,6 +17,20 @@ class ControladorProductos{
 	}
 
 	/*=============================================
+	MOSTRAR PRODUCTOS
+	=============================================*/
+
+	static public function ctrMostrarCodigoProductoPorCadena($item, $opCadena,  $valor){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlMostrarCodigoProducto($tabla, $item, $opCadena,  $valor);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
 	CREAR PRODUCTO 
 	=============================================*/
 

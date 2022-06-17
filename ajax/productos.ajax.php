@@ -59,6 +59,16 @@ class AjaxProductos{
 
       echo json_encode($respuesta);
 
+    }else if($this->opCadena != ""){
+
+      $item = "imei";
+      $opCadena = $this->opCadena;
+      $valor = $this->codCadena;
+
+      $respuesta = ControladorProductos::ctrMostrarCodigoProductoPorCadena($item, $opCadena,  $valor);
+
+      echo json_encode($respuesta);
+
     }else{
 
       $item = "id";
@@ -120,6 +130,20 @@ if(isset($_POST["nombreProducto"])){
 
   $traerProductos = new AjaxProductos();
   $traerProductos -> nombreProducto = $_POST["nombreProducto"];
+  $traerProductos -> ajaxEditarProducto();
+
+}
+
+
+/*=============================================
+TRAER CODIGO DUOCELL PRODUCTO
+=============================================*/
+
+if(isset($_POST["opCadena"])){
+
+  $traerProductos = new AjaxProductos();
+  $traerProductos -> opCadena = $_POST["opCadena"];
+  $traerProductos -> codCadena = $_POST["codCadena"];
   $traerProductos -> ajaxEditarProducto();
 
 }

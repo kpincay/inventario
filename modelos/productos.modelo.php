@@ -37,6 +37,50 @@ class ModeloProductos{
 	}
 
 	/*=============================================
+	MOSTRAR CODIGO PRODUCTO
+	=============================================*/
+
+	static public function mdlMostrarCodigoProducto($tabla, $item, $opCadena,  $valor){
+        $cadena = "";
+        if ($opCadena == 1){
+            $cadena = "cod_artefacta";
+        }elseif ($opCadena == 2){
+            $cadena = "cod_crecos";
+        }elseif ($opCadena == 3){
+            $cadena = "cod_de_pratti";
+        }elseif ($opCadena == 4){
+            $cadena = "cod_la_ganga";
+        }elseif ($opCadena == 5){
+            $cadena = "cod_marcimex";
+        }elseif ($opCadena == 6){
+            $cadena = "cod_pycca";
+        }else  {
+            return 0;
+        }
+
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $cadena = '$valor'");
+
+//			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}else{
+
+			return 0;
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
 	REGISTRO DE PRODUCTO
 	=============================================*/
 	static public function mdlIngresarProducto($tabla, $datos){

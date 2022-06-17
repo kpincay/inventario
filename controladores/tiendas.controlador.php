@@ -106,6 +106,21 @@ class ControladorTiendas{
 	}
 
 	/*=============================================
+	MOSTRAR TIENDAS POR CADENAS
+	=============================================*/
+
+	static public function ctrValidarTiendasPorCadenas($item, $valorTienda, $idCadena){
+
+		$tabla = "tiendas";
+        $item = "id_cadena";
+
+		$respuesta = ModeloTiendas::mdlValidarTiendasPorCadenas($tabla, $item, $valorTienda, $idCadena);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
 	EDITAR Tienda
 	=============================================*/
 

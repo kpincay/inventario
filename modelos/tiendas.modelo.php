@@ -78,10 +78,33 @@ class ModeloTiendas{
         $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
         $stmt -> execute();
-
         return $stmt -> fetchAll();
 
 
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	VALIDAR TIENDAS POR CADENAS
+	=============================================*/
+
+	static public function mdlValidarTiendasPorCadenas($tabla, $item, $valorTienda, $idCadena){
+
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_cadena = $idCadena and nombre = '$valorTienda'");
+
+        $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+        $stmt -> execute();
+
+        if ($stmt -> fetch() > 0){
+            return 1;
+        }else{
+            return 0;
+        }
 		$stmt -> close();
 
 		$stmt = null;

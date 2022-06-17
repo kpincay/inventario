@@ -100,9 +100,14 @@ session_start();
 
   <!-- ChartJS http://www.chartjs.org/-->
   <script src="vistas/bower_components/Chart.js/Chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<link rel="stylesheet" href="vistas/paramquery-pro/pqgrid.min.css" />
+<link rel="stylesheet" href="vistas/paramquery-pro/themes/office/pqgrid.css" />
+
+<link rel="stylesheet" href="vistas/alertifyjs/css/alertify.min.css">
+<link rel="stylesheet" href="vistas/alertifyjs/css/themes/default.css">
 
 
 
@@ -151,6 +156,7 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "perfil" ||
          $_GET["ruta"] == "presupuesto" ||
+         $_GET["ruta"] == "sell-out" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
