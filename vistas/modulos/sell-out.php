@@ -39,7 +39,7 @@ if($_SESSION["perfil"] == "Especial"){
 
         <h1>
 
-            Administración de Presupuestos
+            Administración de Sell Out
 
         </h1>
 
