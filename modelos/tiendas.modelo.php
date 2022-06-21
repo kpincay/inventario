@@ -92,22 +92,44 @@ class ModeloTiendas{
 	VALIDAR TIENDAS POR CADENAS
 	=============================================*/
 
-	static public function mdlValidarTiendasPorCadenas($tabla, $item, $valorTienda, $idCadena){
+	static public function mdlValidarTiendasPorCadenas($tabla, $item, $valorTienda, $valorCiudad, $idCadena){
 
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_cadena = $idCadena and nombre = '$valorTienda'");
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_cadena = $idCadena and nombre = '$valorTienda' ");
 
         $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
         $stmt -> execute();
 
-        if ($stmt -> fetch() > 0){
-            return 1;
-        }else{
-            return 0;
-        }
-		$stmt -> close();
 
-		$stmt = null;
+
+        $stmt2 = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_cadena = $idCadena and ciudad like '%$valorCiudad%' ");
+
+        $stmt2 -> execute();
+
+        $f1 = $stmt ->fetch();
+        $f2 = $stmt2 ->fetch();
+
+        if ($f1 && $f2){
+            $result['ciudad'] = 1;
+            $result['tienda'] = 1;
+            $result['result'] = 1;
+        }elseif (!$f1  && $f2){
+            $result['ciudad'] = 1;
+            $result['tienda'] = 0;
+            $result['result'] = 0;
+        }elseif (!$f2  && $f1){
+            $result['ciudad'] = 0;
+            $result['tienda'] = 1;
+            $result['result'] = 0;
+        }else{
+            $result['ciudad'] = 0;
+            $result['tienda'] = 0;
+            $result['result'] = 0;
+        }
+
+        return $result;
+		$stmt2 = null;
+        $stmt = null;
 
 	}
 

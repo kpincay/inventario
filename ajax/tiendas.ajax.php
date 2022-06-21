@@ -53,8 +53,9 @@ class AjaxTiendas
         $valor = null;
         $respuesta = null;
         $valorTienda = $this->tienda;
+        $valorCiudad = $this->ciudad;
         $idCadena = $this->cadena;
-        $respuesta = ControladorTiendas::ctrValidarTiendasPorCadenas($item, $valorTienda, $idCadena);
+        $respuesta = ControladorTiendas::ctrValidarTiendasPorCadenas($item, $valorTienda, $valorCiudad, $idCadena);
 
         echo json_encode($respuesta);
 
@@ -76,6 +77,7 @@ if (isset($_POST["idTienda"])) {
 } else if (isset($_POST["nombreTienda"])) {
     $cadena = new AjaxTiendas();
     $cadena->tienda = $_POST["nombreTienda"];
+    $cadena->ciudad = $_POST["ciudadTienda"];
     $cadena->cadena = $_POST["idCadena"];
     $cadena->ajaxValidarTiendas();
 } else {

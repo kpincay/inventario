@@ -109,12 +109,12 @@ class ControladorTiendas{
 	MOSTRAR TIENDAS POR CADENAS
 	=============================================*/
 
-	static public function ctrValidarTiendasPorCadenas($item, $valorTienda, $idCadena){
+	static public function ctrValidarTiendasPorCadenas($item, $valorTienda, $valorCiudad, $idCadena){
 
-		$tabla = "tiendas";
+		$tabla = "tiendas_sell_out";
         $item = "id_cadena";
 
-		$respuesta = ModeloTiendas::mdlValidarTiendasPorCadenas($tabla, $item, $valorTienda, $idCadena);
+		$respuesta = ModeloTiendas::mdlValidarTiendasPorCadenas($tabla, $item, $valorTienda,$valorCiudad, $idCadena);
 
 		return $respuesta;
 

@@ -260,6 +260,7 @@ $(function() {
 
             var datos3 = new FormData();
             datos3.append("nombreTienda", row1Data.tienda.toUpperCase());
+            datos3.append("ciudadTienda", row1Data.ciudad.toUpperCase());
             datos3.append("idCadena", idCadena_);
             $.ajax({
 
@@ -271,10 +272,17 @@ $(function() {
                 processData: false,
                 dataType: "json",
                 success:function(respuesta){
-
-
-                    if (respuesta == 0){
-                         $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'tienda' : 'CORREGIR TIENDA '} });
+                var tiendaC = '';
+                var ciudadC = '';
+                    if (respuesta.result == 0){
+                        if (respuesta.tienda == 0){
+                            tiendaC = 'CORREGIR TIENDA ' + row1Data.tienda.toUpperCase();
+                            $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'tienda' : tiendaC} });
+                        }
+                        if (respuesta.ciudad == 0){
+                            ciudadC = 'CORREGIR CIUDAD ' + row1Data.ciudad.toUpperCase();
+                            $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'ciudad' : ciudadC} });
+                        }
                     }else{
 
                     }
@@ -300,7 +308,7 @@ $(function() {
         for (var i = 0; i < conteo.length; i++) {
             var linea = i + 1;
             var row1Data = $("#grid_json_copy").pqGrid("getRowData", { rowIndx: i });
-            if (row1Data.tienda == "CORREGIR TIENDA" || row1Data.codigo_duocell == "NO DATA"){
+            if (row1Data.tienda.includes("CORREGIR TIENDA") || row1Data.codigo_duocell == "NO DATA" || row1Data.ciudad.includes("CORREGIR CIUDAD")){
                 alert("Corrija los errores en la línea: " + linea);
                 return;
             }
