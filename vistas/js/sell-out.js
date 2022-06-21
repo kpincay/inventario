@@ -140,16 +140,18 @@ $(function() {
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Aceptar"
-            },
-            function() {
+                confirmButtonText: "Aceptar",
+                dangerMode: true
+            }).then(function(isConfirm) {
+            if (isConfirm) {
+                window.location = window.location;
+            } else {
 
-                limpiarGrid();
-
-            });
+            }
+        })
     });
     function limpiarGrid() {
-        location.reload();
+        window.location = window.location;
     }
 
     //FUNCION PARA REPRODUCIR SONIDO. CAMBIO POR: BRYAN MOREIRA
