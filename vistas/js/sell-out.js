@@ -306,7 +306,6 @@ $(function() {
             }
         }
         for (var i = 0; i < conteo.length; i++) {
-debugger;
             var row1Data = $("#grid_json_copy").pqGrid("getRowData", { rowIndx: i });
 
             var datos2 = new FormData();
@@ -330,16 +329,28 @@ debugger;
                 processData: false,
                 dataType: "json",
                 success:function(respuesta){
+                    if (respuesta == 1){
+                        swal({
+                            title: "Registros guardados correctamente!",
+                            type: "success",
+                            confirmButtonText: "¡Cerrar!"
+                        }).then(function(result) {
+                            if (result.value) {
+                                window.location = "sell-out";
+                            }
+                        });
+                    }else {
+                        swal({
+                            title: "Ocurrió un error al procesar!",
+                            type: "error",
+                            confirmButtonText: "¡Cerrar!"
+                        }).then(function(result) {
+                            return;
+                        });
+                    }
 
-                    swal({
-                        title: "Registros guardados correctamente!",
-                        type: "success",
-                        confirmButtonText: "¡Cerrar!"
-                    }).then(function(result) {
-                        if (result.value) {
-                            window.location = "sell-out";
-                        }
-                    });
+                    console.log("exito " + respuesta);
+
                 }
 
             });

@@ -33,45 +33,13 @@ class ControladorSellOut{
 
                 if($respuesta == "ok"){
 
-                    echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "Guardado correctamente!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
-
-									window.location = "sell-out";
-
-									}
-								})
-
-					</script>';
+                    return 1;
 
                 }
 
             }else{
 
-                echo'<script>
-
-					swal({
-						  type: "error",
-						  title: "¡La Tienda no puede ir vacío o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "tiendas";
-
-							}
-						})
-
-			  	</script>';
-
-
+                return 0;
 
             }
 
