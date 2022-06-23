@@ -111,7 +111,7 @@ $(function() {
         dataModel: { data: data },
         width: '100%-2',
         // width: '99%',
-        //height: '400%',
+        height: '130%',
         title: "Datos de SellOut",
         toolbar: toolbar,
         virtualX: true,
@@ -132,27 +132,8 @@ $(function() {
      *************************/
 
     $("#btnLimpiarGrid").click(function() {
-
-        swal({
-
-                title: "Desea Limpiar Los Datos?",
-                // text: "Numero Seleccionado: "+numero_cheque+"",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Aceptar",
-                dangerMode: true
-            }).then(function(isConfirm) {
-            if (isConfirm) {
-                window.location = window.location;
-            } else {
-
-            }
-        })
-    });
-    function limpiarGrid() {
         window.location = window.location;
-    }
+    });
 
     //FUNCION PARA REPRODUCIR SONIDO. CAMBIO POR: BRYAN MOREIRA
     function sonido_alerta(){
@@ -165,43 +146,69 @@ $(function() {
      ******************************/
 
     $("#btnValidarGrid").click(function(){
-        var idCadena = $('#seleccionarCadena').find(":selected").text();
+        $(".loader").show();
+        // var idCadena = $('#seleccionarCadena').find(":selected").text();
         var idCadena_ = $('#seleccionarCadena').val();
         var opCadena = 0;
         var codigos = [];
         // $('#tablaPresupuesto tr').remove();
 
-        if (idCadena == '' || idCadena == 'Seleccionar cadena'){
-            swal({
-                title: 'Alerta',
-                text: "Seleccione una Cadena",
-                type: 'warning'
-            })
-            $(".loader").hide();
-            return;
-        }
-        if (idCadena == "ARTEFACTA"){
-            opCadena = 1;
-        }else if (idCadena == "CRECOS"){
-            opCadena = 2;
-        }else if (idCadena == "DE PRATTI"){
-            opCadena = 3;
-        }else if (idCadena == "LA GANGA"){
-            opCadena = 4;
-        }else if (idCadena == "MARCIMEX"){
-            opCadena = 5;
-        }else if (idCadena == "PYCCA"){
-            opCadena = 6
-        }else  {
-            return ;
-        }
+        // if (idCadena == '' || idCadena == 'Seleccionar cadena'){
+        //     swal({
+        //         title: 'Alerta',
+        //         text: "Seleccione una Cadena",
+        //         type: 'warning'
+        //     })
+        //     $(".loader").hide();
+        //     return;
+        // }
+
         var upper = "";
 
         let conteo = $("#grid_json_copy").pqGrid("pageData");
+        if (conteo.length === 1 || conteo.length === 0){
+                swal({
+                    title: 'Alerta',
+                    text: "Ingrese registros!",
+                    type: 'warning'
+                })
+                $(".loader").hide();
+                return;
+        }
 
         for (let i = 0; i < conteo.length; i++) {
             var row1Data = $("#grid_json_copy").pqGrid("getRowData", { rowIndx: i });
-            // var row2Data = $("#grid_json_copy").pqGrid("setRowData", { rowIndx: i });
+
+            if (row1Data.cantidad  == '' || row1Data.cantidad == null){
+                $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'cantidad', cls: "celdaError"  });
+            }else  {
+                $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'cantidad', cls: "celdaError"  });
+            }
+
+            var linea = i + 1;
+
+            if (row1Data.cadena.toUpperCase() == "ARTEFACTA"){
+                opCadena = 1;
+            }else if (row1Data.cadena.toUpperCase() == "CRECOS"){
+                opCadena = 2;
+            }else if (row1Data.cadena.toUpperCase() == "DE PRATTI"){
+                opCadena = 3;
+            }else if (row1Data.cadena.toUpperCase() == "LA GANGA"){
+                opCadena = 4;
+            }else if (row1Data.cadena.toUpperCase() == "MARCIMEX"){
+                opCadena = 5;
+            }else if (row1Data.cadena.toUpperCase() == "PYCCA"){
+                opCadena = 6
+            }else  {
+                $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'cadena', cls: "celdaError"  });
+                alert("Por favor corrija el valor de la cadena en la fila: " + linea);
+                $(".loader").hide();
+                return ;
+            }
+
+            if (opCadena != 0){
+                $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'cadena', cls: "celdaError"  });
+            }
 
             var datos2 = new FormData();
             datos2.append("opCadena", opCadena);
@@ -223,9 +230,11 @@ $(function() {
                     var dato = "";
                     if (respuesta == 0){
                         $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'codigo_duocell' : 'NO DATA'} });
+                        $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'codigo_duocell', cls: "celdaError"  });
                     }else{
                         dato = codigo;
                         $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'codigo_duocell' : codigo} });
+                        $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'codigo_duocell', cls: "celdaError"  });
                     }
                 }
 
@@ -240,27 +249,29 @@ $(function() {
 
 
     function validaTiendas() {
-        var idCadena_ = $('#seleccionarCadena').val();
+        var idCadena_ = 0;
         // $('#tablaPresupuesto tr').remove();
-
-        if (idCadena_ == '' || idCadena_ == 'Seleccionar cadena'){
-            swal({
-                title: 'Alerta',
-                text: "Seleccione una Cadena",
-                type: 'warning'
-            })
-            $(".loader").hide();
-            return;
-        }
         let conteo = $("#grid_json_copy").pqGrid("pageData");
 
         for (let i = 0; i < conteo.length; i++) {
             var row1Data = $("#grid_json_copy").pqGrid("getRowData", { rowIndx: i });
-            // var row2Data = $("#grid_json_copy").pqGrid("setRowData", { rowIndx: i });
+
+            $("#seleccionarCadena option").each(function(){
+                if (row1Data.cadena.valueOf() == $(this).text()){
+                    idCadena_ = $(this).attr('value');
+                }
+            });
+            var linea = i + 1;
+
+            if (idCadena_ === 0){
+                alert("Por favor corrija el valor de la cadena en la fila: " + linea);
+                $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'cadena', cls: "celdaError"  });
+                return;
+            }
 
             var datos3 = new FormData();
             datos3.append("nombreTienda", row1Data.tienda.toUpperCase());
-            datos3.append("ciudadTienda", row1Data.ciudad.toUpperCase());
+            datos3.append("ciudadTienda", row1Data.ciudad);
             datos3.append("idCadena", idCadena_);
             $.ajax({
 
@@ -274,23 +285,30 @@ $(function() {
                 success:function(respuesta){
                 var tiendaC = '';
                 var ciudadC = '';
-                    if (respuesta.result == 0){
-                        if (respuesta.tienda == 0){
-                            tiendaC = 'CORREGIR TIENDA ' + row1Data.tienda.toUpperCase();
-                            $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'tienda' : tiendaC} });
+                    if (respuesta.result === 0){
+                        if (respuesta.tienda === 0){
+                            // tiendaC = 'CORREGIR TIENDA ' + row1Data.tienda.toUpperCase();
+                            // $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'tienda' : tiendaC} });
+                            $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'tienda', cls: "celdaError"  });
+                        }else  if (respuesta.tienda === 1){
+                            $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'tienda', cls: "celdaError"  });
                         }
                         if (respuesta.ciudad == 0){
-                            ciudadC = 'CORREGIR CIUDAD ' + row1Data.ciudad.toUpperCase();
-                            $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'ciudad' : ciudadC} });
+                            // ciudadC = 'CORREGIR CIUDAD ';
+                            // $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'ciudad' : ciudadC} });
+                            $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'ciudad', cls: "celdaError"  });
+                        }else if (respuesta.ciudad === 1){
+                            $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'ciudad', cls: "celdaError"  });
                         }
                     }else{
-
+                        $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'tienda', cls: "celdaError"  });
+                        $("#grid_json_copy").pqGrid("removeClass", { rowIndx: i, dataIndx: 'ciudad', cls: "celdaError"  });
                     }
+                    $(".loader").hide();
                 }
 
             });
         }
-
     }
 
 
@@ -306,15 +324,25 @@ $(function() {
         $("#btnValidarGrid").click();
 
         for (var i = 0; i < conteo.length; i++) {
+
             var linea = i + 1;
             var row1Data = $("#grid_json_copy").pqGrid("getRowData", { rowIndx: i });
             if (row1Data.tienda.includes("CORREGIR TIENDA") || row1Data.codigo_duocell == "NO DATA" || row1Data.ciudad.includes("CORREGIR CIUDAD")){
                 alert("Corrija los errores en la línea: " + linea);
                 return;
             }
+
+
+            if ($("#grid_json_copy").pqGrid("hasClass", { rowIndx: i, dataIndx: 'cantidad', cls: "celdaError"  })){
+                alert("Corrija los errores en la línea: " + linea);
+                return;
+            }
         }
         for (var i = 0; i < conteo.length; i++) {
             var row1Data = $("#grid_json_copy").pqGrid("getRowData", { rowIndx: i });
+
+            var cod_duocel = "";
+            cod_duocel = "1-" + row1Data.codigo_duocell;
 
             var datos2 = new FormData();
             datos2.append("fecha", row1Data.fecha);
@@ -324,7 +352,7 @@ $(function() {
             datos2.append("descripcion", row1Data.descripcion);
             datos2.append("cadena", row1Data.cadena);
             datos2.append("cantidad", row1Data.cantidad);
-            datos2.append("codigo_duocell", row1Data.codigo_duocell);
+            datos2.append("codigo_duocell", cod_duocel);
             datos2.append("proveedor", row1Data.proveedor);
 
             $.ajax({

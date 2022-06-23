@@ -349,7 +349,7 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
-            <!-- ENTRADA PARA EL IMEI -->
+            <!-- ENTRADA PARA EL CODIGO DUOCELL -->
             
             <div class="form-group" style="display: none;">
               
@@ -357,7 +357,7 @@ MODAL EDITAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarImei" value="" name="editarImei" readonly>
+                <input type="text" class="form-control input-lg" id="editarImei" value="" placeholder="Cod Duocell" name="editarImei" readonly>
 
               </div>
 
@@ -377,6 +377,96 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
+
+
+              <!-- ENTRADA PARA EL CODIGO ARTEFACTA -->
+
+              <div class="form-group" >
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                      <input type="text" class="form-control input-lg" id="editarCodArtefacta" value="" placeholder="Cod Artefacta" name="editarCodArtefacta">
+
+                  </div>
+
+              </div>
+
+
+              <!-- ENTRADA PARA EL CODIGO CRECOS -->
+
+              <div class="form-group" >
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                      <input type="text" class="form-control input-lg" id="editarCodCrecos" value="" placeholder="Cod Crecos" name="editarCodCrecos">
+
+                  </div>
+
+              </div>
+
+
+              <!-- ENTRADA PARA EL CODIGO DE PRATTI -->
+
+              <div class="form-group" >
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                      <input type="text" class="form-control input-lg" id="editarCodDePrati" value="" placeholder="Cod De Pratti" name="editarCodDePrati">
+
+                  </div>
+
+              </div>
+
+
+              <!-- ENTRADA PARA EL CODIGO LA GANGA -->
+
+              <div class="form-group" >
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                      <input type="text" class="form-control input-lg" id="editarCodGanga" value="" placeholder="Cod La Ganga" name="editarCodGanga">
+
+                  </div>
+
+              </div>
+
+
+              <!-- ENTRADA PARA EL CODIGO MARCIMEX -->
+
+              <div class="form-group" >
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                      <input type="text" class="form-control input-lg" id="editarCodMarcimex" value="" placeholder="Cod Marcimex" name="editarCodMarcimex">
+
+                  </div>
+
+              </div>
+
+              <!-- ENTRADA PARA EL CODIGO PYCCA -->
+
+              <div class="form-group" >
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                      <input type="text" class="form-control input-lg" id="editarCodPycca" value="" placeholder="Cod PYCCA" name="editarCodPycca">
+
+                  </div>
+
+              </div>
+
              <!-- ENTRADA PARA STOCK -->
 
              <div class="form-group" style="display: none;">
@@ -385,7 +475,7 @@ MODAL EDITAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" value="">
+                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" value="1">
 
               </div>
 

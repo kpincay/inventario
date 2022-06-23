@@ -59,15 +59,16 @@ class AjaxProductos{
 
       echo json_encode($respuesta);
 
-    }else if($this->opCadena != ""){
+    }else if(isset($this->opCadena)){
+        if ($this-> opCadena  != ""){
+            $item = "imei";
+            $opCadena = $this->opCadena;
+            $valor = $this->codCadena;
 
-      $item = "imei";
-      $opCadena = $this->opCadena;
-      $valor = $this->codCadena;
+            $respuesta = ControladorProductos::ctrMostrarCodigoProductoPorCadena($item, $opCadena,  $valor);
 
-      $respuesta = ControladorProductos::ctrMostrarCodigoProductoPorCadena($item, $opCadena,  $valor);
-
-      echo json_encode($respuesta);
+            echo json_encode($respuesta);
+        }
 
     }else{
 

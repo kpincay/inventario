@@ -115,7 +115,9 @@ class ModeloProductos{
 	=============================================*/
 	static public function mdlEditarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, descripcion = :descripcion, imagen = :imagen, stock = :stock, precio_compra = :precio_compra, precio_venta = :precio_venta WHERE imei = :imei");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, descripcion = :descripcion, imagen = :imagen, stock = :stock,
+                 precio_compra = :precio_compra, precio_venta = :precio_venta, cod_artefacta = :cod_artefacta, cod_crecos = :cod_crecos, cod_de_pratti = :cod_de_pratti,
+                 cod_la_ganga = :cod_la_ganga, cod_marcimex = :cod_marcimex, cod_pycca = :cod_pycca  WHERE imei = :imei");
 
 		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
 		$stmt->bindParam(":imei", $datos["imei"], PDO::PARAM_STR);
@@ -124,13 +126,19 @@ class ModeloProductos{
 		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
 		$stmt->bindParam(":precio_compra", $datos["precio_compra"], PDO::PARAM_STR);
 		$stmt->bindParam(":precio_venta", $datos["precio_venta"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_artefacta", $datos["cod_artefacta"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_crecos", $datos["cod_crecos"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_de_pratti", $datos["cod_de_pratti"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_la_ganga", $datos["cod_la_ganga"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_marcimex", $datos["cod_marcimex"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_pycca", $datos["cod_pycca"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
 			return "ok";
 
 		}else{
-
+            $res = $stmt->error;
 			return "error";
 		
 		}

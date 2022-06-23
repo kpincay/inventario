@@ -102,7 +102,7 @@ class ModeloTiendas{
 
 
 
-        $stmt2 = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_cadena = $idCadena and ciudad like '%$valorCiudad%' ");
+        $stmt2 = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_cadena = $idCadena and nombre = '$valorTienda' and ciudad = BINARY '$valorCiudad' ");
 
         $stmt2 -> execute();
 

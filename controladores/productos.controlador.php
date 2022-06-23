@@ -172,10 +172,7 @@ class ControladorProductos{
 
 		if(isset($_POST["editarDescripcion"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarDescripcion"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["editarStock"]) &&	
-			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioCompra"]) &&
-			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioVenta"])){
+			if(true){
 
 		   		/*=============================================
 				VALIDAR IMAGEN
@@ -263,7 +260,13 @@ class ControladorProductos{
 							   "descripcion" => $_POST["editarDescripcion"],
 							   "stock" => $_POST["editarStock"],
 							   "precio_compra" => $_POST["editarPrecioCompra"],
-							   "precio_venta" => $_POST["editarPrecioVenta"],
+							   "precio_venta" => $_POST["editarPrecioCompra"],
+							   "cod_artefacta" => $_POST["editarCodArtefacta"],
+							   "cod_crecos" => $_POST["editarCodCrecos"],
+							   "cod_de_pratti" => $_POST["editarCodDePrati"],
+							   "cod_la_ganga" => $_POST["editarCodGanga"],
+							   "cod_marcimex" => $_POST["editarCodMarcimex"],
+							   "cod_pycca" => $_POST["editarCodPycca"],
 							   "imagen" => $ruta);
 
 				$respuesta = ModeloProductos::mdlEditarProducto($tabla, $datos);

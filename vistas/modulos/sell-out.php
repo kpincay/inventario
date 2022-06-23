@@ -1,4 +1,10 @@
-<style>
+<style rel="stylesheet">
+
+    .celdaError{
+        background-color: red;
+        color: white;
+    }
+
     .loader {
         position: center;
         border: 10px solid #f3f3f3; /* Light grey */
@@ -12,9 +18,6 @@
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
-    }
-    .celdaError{
-        background-color: #9F0053;
     }
 </style>
 <?php
@@ -57,9 +60,9 @@ if($_SESSION["perfil"] == "Especial"){
 
         <div class="box">
 
-            <div class="box-header with-border">
+            <div class="box-header with-border" >
 
-                <div class="col-md-2">
+                <div class="col-md-2" style="display: none;">
                     <h5><strong>Cadena</strong></h5>
                     <select class="form-control" id="seleccionarCadena" name="seleccionarCadena"  required>
 

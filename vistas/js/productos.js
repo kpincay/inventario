@@ -209,6 +209,7 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 	var datos = new FormData();
     datos.append("idProducto", idProducto);
 
+
      $.ajax({
 
       url:"ajax/productos.ajax.php",
@@ -219,7 +220,35 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
       processData: false,
       dataType:"json",
       success:function(respuesta){
-          
+
+		  $("#editarImei").val(respuesta["imei"]);
+
+		  $("#editarDescripcion").val(respuesta["descripcion"]);
+
+		  $("#editarStock").val(respuesta["stock"]);
+
+		  $("#editarPrecioCompra").val(respuesta["precio_compra"]);
+
+		  $("#editarCodArtefacta").val(respuesta["cod_artefacta"]);
+
+		  $("#editarCodCrecos").val(respuesta["cod_crecos"]);
+
+		  $("#editarCodDePrati").val(respuesta["cod_de_pratti"]);
+
+		  $("#editarCodGanga").val(respuesta["cod_la_ganga"]);
+
+		  $("#editarCodMarcimex").val(respuesta["cod_marcimex"]);
+
+		  $("#editarCodPycca").val(respuesta["cod_pycca"]);
+
+		  if(respuesta["imagen"] != ""){
+
+			  $("#imagenActual").val(respuesta["imagen"]);
+
+			  $(".previsualizar").attr("src",  respuesta["imagen"]);
+
+		  }
+          console.log(respuesta);
           var datosCategoria = new FormData();
           datosCategoria.append("idCategoria",respuesta["id_categoria"]);
 
@@ -232,32 +261,14 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
               contentType: false,
               processData: false,
               dataType:"json",
-              success:function(respuesta){
+              success:function(respuesta2){
                   
-                  $("#editarCategoria").val(respuesta["id"]);
-                  $("#editarCategoria").html(respuesta["categoria"]);
+                  $("#editarCategoria").val(respuesta2["id"]);
+                  $("#editarCategoria").html(respuesta2["categoria"]);
 
               }
 
           })
-
-           $("#editarImei").val(respuesta["imei"]);
-
-           $("#editarDescripcion").val(respuesta["descripcion"]);
-
-           $("#editarStock").val(respuesta["stock"]);
-
-           $("#editarPrecioCompra").val(respuesta["precio_compra"]);
-
-           $("#editarPrecioVenta").val(respuesta["precio_venta"]);
-
-           if(respuesta["imagen"] != ""){
-
-           	$("#imagenActual").val(respuesta["imagen"]);
-
-           	$(".previsualizar").attr("src",  respuesta["imagen"]);
-
-           }
 
       }
 
