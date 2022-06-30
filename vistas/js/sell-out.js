@@ -323,7 +323,7 @@ $(function() {
         valores2 = new Array();
 
         let conteo = $("#grid_json_copy").pqGrid("pageData");
-        $("#btnValidarGrid").click();
+        //$("#btnValidarGrid").click();
 
         for (var i = 0; i < conteo.length; i++) {
 
