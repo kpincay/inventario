@@ -199,6 +199,8 @@ $(function() {
                 opCadena = 5;
             }else if (row1Data.cadena.toUpperCase() == "PYCCA"){
                 opCadena = 6
+            }else if (row1Data.cadena.toUpperCase() == "ICESA"){
+                opCadena = 7;
             }else  {
                 $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'cadena', cls: "celdaError"  });
                 alert("Por favor corrija el valor de la cadena en la fila: " + linea);
@@ -366,15 +368,7 @@ $(function() {
                 dataType: "json",
                 success:function(respuesta){
                     if (respuesta == 1){
-                        swal({
-                            title: "Registros guardados correctamente!",
-                            type: "success",
-                            confirmButtonText: "¡Cerrar!"
-                        }).then(function(result) {
-                            if (result.value) {
-                                window.location = "sell-out";
-                            }
-                        });
+
                     }else {
                         swal({
                             title: "Ocurrió un error al procesar!",
@@ -385,8 +379,19 @@ $(function() {
                         });
                     }
 
-                    console.log("exito " + respuesta);
 
+                },
+                complete : function(xhr, status) {
+
+                    swal({
+                        title: "Registros guardados correctamente!",
+                        type: "success",
+                        confirmButtonText: "¡Cerrar!"
+                    }).then(function(result) {
+                        if (result.value) {
+                            window.location = "sell-out";
+                        }
+                    });
                 }
 
             });

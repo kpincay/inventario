@@ -54,6 +54,8 @@ class ModeloProductos{
             $cadena = "cod_marcimex";
         }elseif ($opCadena == 6){
             $cadena = "cod_pycca";
+        }elseif ($opCadena == 7){
+            $cadena = "cod_icesa";
         }else  {
             return 0;
         }
