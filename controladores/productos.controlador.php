@@ -57,7 +57,7 @@ class ControladorProductos{
 					CREAMOS EL DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DEL USUARIO
 					=============================================*/
 
-					$directorio = "vistas/img/productos/".$_POST["nuevoImei"];
+					$directorio = "vistas/img/productos/".$_POST["nuevoCod_duocell"];
 
 					mkdir($directorio, 0755);
 
@@ -73,7 +73,7 @@ class ControladorProductos{
 
 						$aleatorio = mt_rand(100,999);
 
-						$ruta = "vistas/img/productos/".$_POST["nuevoImei"]."/".$aleatorio.".jpg";
+						$ruta = "vistas/img/productos/".$_POST["nuevoCod_duocell"]."/".$aleatorio.".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["nuevaImagen"]["tmp_name"]);						
 
@@ -93,7 +93,7 @@ class ControladorProductos{
 
 						$aleatorio = mt_rand(100,999);
 
-						$ruta = "vistas/img/productos/".$_POST["nuevoImei"]."/".$aleatorio.".png";
+						$ruta = "vistas/img/productos/".$_POST["nuevoCod_duocell"]."/".$aleatorio.".png";
 
 						$origen = imagecreatefrompng($_FILES["nuevaImagen"]["tmp_name"]);						
 
@@ -110,7 +110,7 @@ class ControladorProductos{
 				$tabla = "productos";
 
 				$datos = array("id_categoria" => $_POST["nuevaCategoria"],
-							   "imei" => $_POST["nuevoImei"],
+							   "cod_duocell" => $_POST["nuevoCod_duocell"],
 							   "descripcion" => $_POST["nuevaDescripcion"],
 							   "stock" => $_POST["nuevoStock"],
 							   "precio_compra" => $_POST["nuevoPrecioCompra"],
@@ -191,7 +191,7 @@ class ControladorProductos{
 					CREAMOS EL DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DEL USUARIO
 					=============================================*/
 
-					$directorio = "vistas/img/productos/".$_POST["editarImei"];
+					$directorio = "vistas/img/productos/".$_POST["editarCod_duocell"];
 
 					/*=============================================
 					PRIMERO PREGUNTAMOS SI EXISTE OTRA IMAGEN EN LA BD
@@ -219,7 +219,7 @@ class ControladorProductos{
 
 						$aleatorio = mt_rand(100,999);
 
-						$ruta = "vistas/img/productos/".$_POST["editarImei"]."/".$aleatorio.".jpg";
+						$ruta = "vistas/img/productos/".$_POST["editarCod_duocell"]."/".$aleatorio.".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["editarImagen"]["tmp_name"]);						
 
@@ -239,7 +239,7 @@ class ControladorProductos{
 
 						$aleatorio = mt_rand(100,999);
 
-						$ruta = "vistas/img/productos/".$_POST["editarImei"]."/".$aleatorio.".png";
+						$ruta = "vistas/img/productos/".$_POST["editarCod_duocell"]."/".$aleatorio.".png";
 
 						$origen = imagecreatefrompng($_FILES["editarImagen"]["tmp_name"]);						
 
@@ -256,7 +256,7 @@ class ControladorProductos{
 				$tabla = "productos";
 
 				$datos = array("id_categoria" => $_POST["editarCategoria"],
-							   "imei" => $_POST["editarImei"],
+							   "cod_duocell" => $_POST["editarCod_duocell"],
 							   "descripcion" => $_POST["editarDescripcion"],
 							   "stock" => $_POST["editarStock"],
 							   "precio_compra" => $_POST["editarPrecioCompra"],
@@ -329,7 +329,7 @@ class ControladorProductos{
 			if($_GET["imagen"] != "" && $_GET["imagen"] != "vistas/img/productos/default/anonymous.png"){
 
 				unlink($_GET["imagen"]);
-				rmdir('vistas/img/productos/'.$_GET["imei"]);
+				rmdir('vistas/img/productos/'.$_GET["cod_duocell"]);
 
 			}
 

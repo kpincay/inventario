@@ -221,7 +221,7 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
       dataType:"json",
       success:function(respuesta){
 
-		  $("#editarImei").val(respuesta["imei"]);
+		  $("#editarCod_duocell").val(respuesta["cod_duocell"]);
 
 		  $("#editarDescripcion").val(respuesta["descripcion"]);
 
@@ -283,7 +283,7 @@ ELIMINAR PRODUCTO
 $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 
 	var idProducto = $(this).attr("idProducto");
-	var imei = $(this).attr("imei");
+	var cod_duocell = $(this).attr("cod_duocell");
 	var imagen = $(this).attr("imagen");
 	
 	swal({
@@ -299,7 +299,7 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
         }).then(function(result) {
         if (result.value) {
 
-        	window.location = "index.php?ruta=productos&idProducto="+idProducto+"&imagen="+imagen+"&imei="+imei;
+        	window.location = "index.php?ruta=productos&idProducto="+idProducto+"&imagen="+imagen+"&cod_duocell="+cod_duocell;
 
         }
 

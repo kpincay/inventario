@@ -310,7 +310,7 @@
                  <tr>
                   <th style="width: 10px">#</th>
                   <th>Imagen</th>
-                  <th>Imei</th>
+                  <th>Cod_duocell</th>
                   <th>Descripcion</th>
                   <th>Stock</th>
                   <th>Acciones</th>

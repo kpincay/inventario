@@ -141,7 +141,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Cod_duocell(s)" value="">'+
 	 
 	            '</div>'+
 	             
@@ -349,7 +349,7 @@ $(".btnAgregarProducto").click(function(){
 	             
 	          '</div>'+
 
-					'<!-- imei del producto -->'+
+					'<!-- cod_duocell del producto -->'+
 
 					'<div class="col-xs-6 ingresoPrecio" style="padding-left:0px">'+
 
@@ -357,7 +357,7 @@ $(".btnAgregarProducto").click(function(){
 
 					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-					'<input type="text" class="form-control nuevoImei" name="nuevoImeiProducto" placeholder="Ingrese Imei(s)" value="">'+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Cod_duocell(s)" value="">'+
 
 					'</div>'+
 
@@ -722,7 +722,7 @@ function listarProductos(){
 
 	var descripcion = $(".nuevaDescripcionProducto");
 
-	var imei = $(".nuevoImei");
+	var cod_duocell = $(".nuevoCod_duocell");
 
 
 	var cantidad = $(".nuevaCantidadProducto");
@@ -732,7 +732,7 @@ function listarProductos(){
 	for(var i = 0; i < descripcion.length; i++){
 
 		listaProductos.push({ 'id' : $(descripcion[i]).attr("idProducto"), 
-							  'imei' : $(imei[i]).val(),
+							  'cod_duocell' : $(cod_duocell[i]).val(),
 							  'descripcion' : $(descripcion[i]).val(),
 							  'cantidad' : $(cantidad[i]).val(),
 							  'stock' : $(cantidad[i]).attr("nuevoStock"),

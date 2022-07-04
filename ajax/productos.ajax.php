@@ -61,7 +61,7 @@ class AjaxProductos{
 
     }else if(isset($this->opCadena)){
         if ($this-> opCadena  != ""){
-            $item = "imei";
+            $item = "cod_duocell";
             $opCadena = $this->opCadena;
             $valor = $this->codCadena;
 

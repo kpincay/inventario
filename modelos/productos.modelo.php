@@ -87,10 +87,10 @@ class ModeloProductos{
 	=============================================*/
 	static public function mdlIngresarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, imei, descripcion, imagen, stock, precio_compra, precio_venta) VALUES (:id_categoria, :imei, :descripcion, :imagen, :stock, :precio_compra, :precio_venta)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, cod_duocell, descripcion, imagen, stock, precio_compra, precio_venta) VALUES (:id_categoria, :cod_duocell, :descripcion, :imagen, :stock, :precio_compra, :precio_venta)");
 
 		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
-		$stmt->bindParam(":imei", $datos["imei"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_duocell", $datos["cod_duocell"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
@@ -119,10 +119,10 @@ class ModeloProductos{
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, descripcion = :descripcion, imagen = :imagen, stock = :stock,
                  precio_compra = :precio_compra, precio_venta = :precio_venta, cod_artefacta = :cod_artefacta, cod_crecos = :cod_crecos, cod_de_pratti = :cod_de_pratti,
-                 cod_la_ganga = :cod_la_ganga, cod_marcimex = :cod_marcimex, cod_pycca = :cod_pycca  WHERE imei = :imei");
+                 cod_la_ganga = :cod_la_ganga, cod_marcimex = :cod_marcimex, cod_pycca = :cod_pycca  WHERE cod_duocell = :cod_duocell");
 
 		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
-		$stmt->bindParam(":imei", $datos["imei"], PDO::PARAM_STR);
+		$stmt->bindParam(":cod_duocell", $datos["cod_duocell"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);

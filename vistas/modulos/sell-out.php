@@ -85,8 +85,6 @@ if($_SESSION["perfil"] == "Especial"){
 
                     </select>
                 </div>
-                <br>
-                <br>
 
                 <button class="btn btn-primary" id="btnValidarGrid">
                     <i class="fa fa-check"></i>

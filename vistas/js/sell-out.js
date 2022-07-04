@@ -5,21 +5,20 @@ $.ajaxSetup({
 
         if (jqXHR.status === 0) {
 
-            alert('Error de red, veifique la red de internet');
+            console.log('Error de red, veifique la red de internet');
 
         } else if (jqXHR.status == 404) {
 
-            alert('Servidor no econtrado 404');
+            console.log('Servidor no econtrado 404');
 
         } else if (jqXHR.status == 500) {
 
 
-            alert('Error interno DEL SERVIDOR... ');
+            console.log('Error interno DEL SERVIDOR... ');
 
         } else if (textStatus === 'parsererror') {
 
             console.log("ERROR : " + jqXHR.responseText + "FIN ", errorThrown);
-            alert
         } else if (textStatus === 'timeout') {
 
             alert('Error de tiempo de espera ');
@@ -119,7 +118,6 @@ $(function() {
         selectionModel: { column: true },
         //	columnBorders: true,
         direction: "",
-        title: "<div class='uk-text-center uk-bebas-neue uk-h3 uk-text-primary uk-margin-top'>Data Sell Out.</div>",
         flexHeight: false,
         draggable: false,
         scrollModel: { horizontal: false },
@@ -216,6 +214,11 @@ $(function() {
             datos2.append("opCadena", opCadena);
             datos2.append("codCadena", row1Data.codigo);
 
+
+            if (row1Data.codigo_duocell == "OTROS" && opCadena == 4){
+                continue;
+            }
+
             $.ajax({
 
                 url:"ajax/productos.ajax.php",
@@ -227,12 +230,14 @@ $(function() {
                 dataType: "json",
                 success:function(respuesta){
 
-                    var codigo = respuesta.imei;
+                    var codigo = respuesta.cod_duocell;
                     var id = i;
                     var dato = "";
                     if (respuesta == 0){
+
                         $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'codigo_duocell' : 'NO DATA'} });
                         $("#grid_json_copy").pqGrid("addClass", { rowIndx: i, dataIndx: 'codigo_duocell', cls: "celdaError"  });
+
                     }else{
                         dato = codigo;
                         $("#grid_json_copy").pqGrid("updateRow", { rowIndx: i, newRow : { 'codigo_duocell' : codigo} });
@@ -423,7 +428,7 @@ $(function() {
             dataType: "json",
             success:function(respuesta){
 
-                var codigo = respuesta.imei;
+                var codigo = respuesta.cod_duocell;
                 var id = i;
                 var dato = "";
                 if (respuesta == 0){
@@ -473,19 +478,3 @@ $(function() {
         }
     })
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

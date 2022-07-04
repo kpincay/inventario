@@ -57,7 +57,7 @@ if($_SESSION["perfil"] == "Vendedor"){
            
            <th style="width:10px">#</th>
            <th>Imagen</th>
-<!--           <th>Imei</th>-->
+<!--           <th>Cod_duocell</th>-->
            <th>Descripción</th>
            <th>Categoría</th>
 <!--           <th>Stock</th>-->
@@ -155,7 +155,7 @@ MODAL AGREGAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoImei" name="nuevoImei" placeholder="Ingresar IMEI" maxlength="15" value="">
+                <input type="text" class="form-control input-lg" id="nuevoCod_duocell" name="nuevoCod_duocell" placeholder="Ingresar IMEI" maxlength="15" value="">
 
               </div>
 
@@ -357,7 +357,7 @@ MODAL EDITAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarImei" value="" placeholder="Cod Duocell" name="editarImei" readonly>
+                <input type="text" class="form-control input-lg" id="editarCod_duocell" value="" placeholder="Cod Duocell" name="editarCod_duocell" readonly>
 
               </div>
 
