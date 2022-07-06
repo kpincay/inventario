@@ -189,7 +189,7 @@ $(function() {
                 opCadena = 1;
             }else if (row1Data.cadena.toUpperCase() == "CRECOS"){
                 opCadena = 2;
-            }else if (row1Data.cadena.toUpperCase() == "DE PRATTI"){
+            }else if (row1Data.cadena.toUpperCase() == "DE PRATI"){
                 opCadena = 3;
             }else if (row1Data.cadena.toUpperCase() == "LA GANGA"){
                 opCadena = 4;
