@@ -141,7 +141,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Cod_duocell(s)" value="">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Imei(s)" value="">'+
 	 
 	            '</div>'+
 	             
@@ -357,7 +357,7 @@ $(".btnAgregarProducto").click(function(){
 
 					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Cod_duocell(s)" value="">'+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Imei(s)" value="">'+
 
 					'</div>'+
 
