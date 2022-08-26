@@ -5,100 +5,70 @@
 		<ul class="sidebar-menu">
 
 		<?php
-		if($_SESSION["perfil"] == "Administrador"){
 
-			echo '<li class="active">
+        echo '<li class="active">
 
-				<a href="inicio">
+            <a href="inicio">
 
-					<i class="fa fa-home"></i>
-					<span>Inicio</span>
+                <i class="fa fa-home"></i>
+                <span>Inicio</span>
 
-				</a>
+            </a>
 
-			</li>
+        </li>';
 
-			<li>
+        if($_SESSION["perfil"] == "Vendedor" || $_SESSION["perfil"] == "Administrador") {
+            echo '<li class="treeview">
 
-				<a href="usuarios">
+				<a href="#">
 
-					<i class="fa fa-user"></i>
-					<span>Usuarios</span>
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Promotoría</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
 
-				</a>
-
-			</li>
-			
-			<li>
-
-				<a href="cadenas">
-
-					<i class="fa fa-building"></i>
-					<span>Cadenas</span>
+					</span>
 
 				</a>
 
-			</li>
-			
-			<li>
+				<ul class="treeview-menu">
+					
+					<li>
 
-				<a href="tiendas">
+                        <a href="cadenas">
+        
+                            <i class="fa fa-building"></i>
+                            <span>Cadenas</span>
+        
+                        </a>
+        
+                    </li>
+                    
+                    <li>
+        
+                        <a href="tiendas">
+        
+                            <i class="fa fa-shopping-bag"></i>
+                            <span>Tiendas</span>
+        
+                        </a>
+        
+                    </li>
+                    <li>
 
-					<i class="fa fa-shopping-bag"></i>
-					<span>Tiendas</span>
-
-				</a>
-
-			</li>
-					 <li>
-
-		 		<a href="categorias">
-
-		 			<i class="fa fa-th"></i>
-		 			<span>Categorías</span>
-
-		 		</a>
-
-		 	</li>';
-
-		}
-
-		 if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
-
-		 	echo '
-
-		 	<li>
-
-		 		<a href="productos">
-
-		 			<i class="fa fa-product-hunt"></i>
-		 			<span>Productos</span>
-
-		 		</a>
-
-		 	</li>';
-
-		 }
-
-		// if($_SESSION["perfil"] == "Administrador"){
-
-		// 	echo '<li>
-
-		// 		<a href="clientes">
-
-		// 			<i class="fa fa-users"></i>
-		// 			<span>Clientes</span>
-
-		// 		</a>
-
-		// 	</li>';
-
-		// }
-
-		// if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
-			if($_SESSION["perfil"] == "Vendedor" || $_SESSION["perfil"] == "Administrador"){
-
-			echo '<li class="treeview">
+                        <a href="presupuesto">
+        
+                            <i class="fa fa-money"></i>
+                            <span>Presupuesto</span>
+        
+                        </a>
+        
+                    </li>
+                    
+                    <li class="treeview">
 
 				<a href="#">
 
@@ -136,48 +106,106 @@
 
 						</a>
 
-					</li>';
+					</li>
+					</ul>';
 
-					// if($_SESSION["perfil"] == "Administrador"){
 
-					// echo '<li>
-
-					// 	<a href="reportes">
-							
-					// 		<i class="fa fa-circle-o"></i>
-					// 		<span>Reporte de ventas</span>
-
-					// 	</a>
-
-					// </li>';
-
-					// }
-
-				
-
-				echo '</ul>
+            echo '</ul>
 
 			</li>';
-
-		}
-
-
-        if($_SESSION["perfil"] == "Administrador"){
-
-            echo '
-
-		 	<li>
-
-		 		<a href="presupuesto">
-
-		 			<i class="fa fa-money"></i>
-		 			<span>Presupuesto</span>
-
-		 		</a>
-
-		 	</li>';
-
         }
+
+
+
+
+        if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Mercaderista" ) {
+            echo '<li class="treeview">
+
+				<a href="#">
+
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Mercaderistas</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
+
+					</span>
+
+				</a>
+
+				<ul class="treeview-menu">
+					
+					<li>
+
+                        <a href="clientes">
+        
+                            <i class="fa fa-users"></i>
+                            <span>Clientes</span>
+        
+                        </a>
+        
+                    </li>
+                    <li>
+
+                        <a href="presupuesto-mercaderista">
+        
+                            <i class="fa fa-money"></i>
+                            <span>Presupuesto</span>
+        
+                        </a>
+        
+                    </li>
+                    
+                    <li class="treeview">
+
+				<a href="#">
+
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Ventas</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
+
+					</span>
+
+				</a>
+
+				<ul class="treeview-menu">
+					
+					<li>
+
+						<a href="ventas-mercaderistas">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Administrar ventas</span>
+
+						</a>
+
+					</li>
+
+					<li>
+
+						<a href="crear-venta-mercaderistas">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Crear venta</span>
+
+						</a>
+
+					</li>
+					</ul>';
+
+
+            echo '</ul>
+
+			</li>';
+        }
+
+
 
 
         if($_SESSION["perfil"] == "Administrador"){
@@ -196,6 +224,74 @@
 		 	</li>';
 
         }
+
+
+
+
+
+
+        if($_SESSION["perfil"] == "Administrador" ) {
+            echo '<li class="treeview">
+
+				<a href="#">
+
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Parametrización</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
+
+					</span>
+
+				</a>
+
+				<ul class="treeview-menu">
+					
+					<li>
+
+                        <a href="categorias">
+        
+                            <i class="fa fa-th"></i>
+                            <span>Categorías</span>
+        
+                        </a>
+        
+                    </li>
+                    
+                    <li>
+
+                        <a href="productos">
+    
+                            <i class="fa fa-product-hunt"></i>
+                            <span>Productos</span>
+        
+                        </a>
+        
+                    </li>
+                    
+                    <li>
+
+                        <a href="usuarios">
+        
+                            <i class="fa fa-user"></i>
+                            <span>Usuarios</span>
+        
+                        </a>
+        
+                    </li>
+					</ul>';
+
+
+            echo '</ul>
+
+			</li>';
+        }
+
+
+
+
 
 		?>
 
