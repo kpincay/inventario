@@ -29,7 +29,7 @@
 
              <?php
 
-             if($_SESSION["perfil"] =="Especial" || $_SESSION["perfil"] =="Vendedor" || $_SESSION["perfil"] =="Administrador"){
+             if($_SESSION["perfil"] =="Especial" || $_SESSION["perfil"] =="Vendedor" || $_SESSION["perfil"] =="Administrador" || $_SESSION["perfil"] =="Mercaderista"){
 
                  echo '<div class="box box-success">
 

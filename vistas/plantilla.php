@@ -152,10 +152,13 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "tiendas" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "crear-venta" ||
+         $_GET["ruta"] == "ventas-mercaderistas" ||
+         $_GET["ruta"] == "crear-venta-mercaderistas" ||
          $_GET["ruta"] == "editar-venta" ||
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "perfil" ||
          $_GET["ruta"] == "presupuesto" ||
+         $_GET["ruta"] == "presupuesto-mercaderista" ||
          $_GET["ruta"] == "sell-out" ||
          $_GET["ruta"] == "salir"){
 
@@ -197,8 +200,10 @@ CUERPO DOCUMENTO
 <script src="vistas/js/productos.js"></script>
 <script src="vistas/js/clientes.js"></script>
 <script src="vistas/js/presupuesto.js"></script>
+<script src="vistas/js/presupuesto_mercaderistas.js"></script>
 <script src="vistas/js/tiendas.js"></script>
 <script src="vistas/js/ventas.js"></script>
+<script src="vistas/js/ventas_mercaderistas.js"></script>
 <script src="vistas/js/reportes.js"></script>
 
   <!--    Select2-->
