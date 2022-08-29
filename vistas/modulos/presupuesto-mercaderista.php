@@ -60,26 +60,37 @@ if ($_SESSION["perfil"] == "Especial") {
 
             <div class="box-header with-border">
 
+<!--                <div class="col-md-2">-->
+<!--                    <h5><strong>Cadena</strong></h5>-->
+<!--                    <select class="form-control" id="seleccionarCadena" name="seleccionarCadena" required>-->
+<!---->
+<!--                        <option value="">Seleccionar cadena</option>-->
+<!---->
+<!--                        --><?php
+//
+//                        $item = null;
+//                        $valor = null;
+//
+//                        $categorias = ControladorCadenas::ctrMostrarCadenas($item, $valor);
+//
+//                        foreach ($categorias as $key => $value) {
+//
+//                            echo '<option value="' . $value["id"] . '">' . $value["nombre"] . '</option>';
+//
+//                        }
+//
+//                        ?>
+<!---->
+<!--                    </select>-->
+<!--                </div>-->
+
                 <div class="col-md-2">
-                    <h5><strong>Cadena</strong></h5>
+                    <h5><strong>Zona</strong></h5>
                     <select class="form-control" id="seleccionarCadena" name="seleccionarCadena" required>
 
-                        <option value="">Seleccionar cadena</option>
-
-                        <?php
-
-                        $item = null;
-                        $valor = null;
-
-                        $categorias = ControladorCadenas::ctrMostrarCadenas($item, $valor);
-
-                        foreach ($categorias as $key => $value) {
-
-                            echo '<option value="' . $value["id"] . '">' . $value["nombre"] . '</option>';
-
-                        }
-
-                        ?>
+                        <option value="">Seleccionar zona</option>
+                        <option value="">Quito</option>
+                        <option value="">Guayaquil</option>
 
                     </select>
                 </div>

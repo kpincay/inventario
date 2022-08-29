@@ -77,12 +77,12 @@ class TablaProductos{
 
   			}else{
 
-  				 $botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]["id"]."' imei='".$productos[$i]["imei"]."' imagen='".$productos[$i]["imagen"]."'><i class='fa fa-times'></i></button></div>";
+  				 $botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]["id"]."' cod_duocell='".$productos[$i]["cod_duocell"]."' imagen='".$productos[$i]["imagen"]."'><i class='fa fa-times'></i></button></div>";
 
   			}
 
 			$descr = str_replace(
-                    			array("'", "¨", '"', 'Ã‘', '°', 'ñ', 'Ñ', 'Â°', 'Â'),
+                    			array("'", "ï¿½", '"', 'Ã‘', 'ï¿½', 'ï¿½', 'ï¿½', 'Â°', 'ï¿½'),
                     			array(" ", " ", " ", 'N', ' ', 'ni', 'NI', ' ', ' '),
                    			 $productos[$i]["descripcion"]);
 

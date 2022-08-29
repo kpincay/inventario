@@ -138,95 +138,95 @@ if($_SESSION["perfil"] == "Especial"){
                    ENTRADA DE LA CADENA
                    ======================================-->
 
-                  <div class="form-group">
-
-                      <div class="input-group">
-
-                          <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                          <input type="hidden" name="nombreCadena" id="nombreCadena"> 
-
-                          <select class="form-control seleccionarCadena" id="seleccionarCadena" name="seleccionarCadena" onchange="cadenaSelected()" required>
-
-                              <option value="">Seleccionar cadena</option>
-
-                              <?php
-
-                              $item = null;
-                              $valor = null;
-
-                              $categorias = ControladorCadenas::ctrMostrarCadenas($item, $valor);
-
-                              foreach ($categorias as $key => $value) {
-
-                                  echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
-
-                              }
-
-                              ?>
-
-                          </select>
-
-                      </div>
-
-                  </div>
+<!--                  <div class="form-group">-->
+<!---->
+<!--                      <div class="input-group">-->
+<!---->
+<!--                          <span class="input-group-addon"><i class="fa fa-building"></i></span>-->
+<!--                          <input type="hidden" name="nombreCadena" id="nombreCadena"> -->
+<!---->
+<!--                          <select class="form-control seleccionarCadena" id="seleccionarCadena" name="seleccionarCadena" onchange="cadenaSelected()" required>-->
+<!---->
+<!--                              <option value="">Seleccionar cadena</option>-->
+<!---->
+<!--                              --><?php
+//
+//                              $item = null;
+//                              $valor = null;
+//
+//                              $categorias = ControladorCadenas::ctrMostrarCadenas($item, $valor);
+//
+//                              foreach ($categorias as $key => $value) {
+//
+//                                  echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+//
+//                              }
+//
+//                              ?>
+<!---->
+<!--                          </select>-->
+<!---->
+<!--                      </div>-->
+<!---->
+<!--                  </div>-->
 
                   <!--=====================================
                    ENTRADA DE LA TIENDA
                    ======================================-->
 
-                  <div class="form-group">
-
-                      <div class="input-group">
-                      <input type="hidden" name="nombreTienda" id="nombreTienda">
-
-                          <span class="input-group-addon"><i class="fa fa-building"></i></span>
-
-                          <select class="form-control seleccionarTienda" id="seleccionarTienda" name="seleccionarTienda" onchange="tiendaSelected()" required>
-
-                              <option value="">Seleccionar tienda</option>
-
-                          </select>
-
-                      </div>
-
-                  </div>
+<!--                  <div class="form-group">-->
+<!---->
+<!--                      <div class="input-group">-->
+<!--                      <input type="hidden" name="nombreTienda" id="nombreTienda">-->
+<!---->
+<!--                          <span class="input-group-addon"><i class="fa fa-building"></i></span>-->
+<!---->
+<!--                          <select class="form-control seleccionarTienda" id="seleccionarTienda" name="seleccionarTienda" onchange="tiendaSelected()" required>-->
+<!---->
+<!--                              <option value="">Seleccionar tienda</option>-->
+<!---->
+<!--                          </select>-->
+<!---->
+<!--                      </div>-->
+<!---->
+<!--                  </div>-->
 
                 <!--=====================================
                 ENTRADA DEL CLIENTE
                 ======================================--> 
 
-<!--                <div class="form-group">-->
-<!--                  -->
-<!--                  <div class="input-group">-->
-<!--                    -->
-<!--                    <span class="input-group-addon"><i class="fa fa-users"></i></span>-->
-<!--                    -->
-<!--                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>-->
-<!---->
-<!--                    <option value="">Seleccionar cliente</option>-->
-<!---->
-<!--                    --><?php
-//
-//                      $item = null;
-//                      $valor = null;
-//
-//                      $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
-//
-//                       foreach ($categorias as $key => $value) {
-//
-//                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
-//
-//                       }
-//
-//                    ?>
-<!---->
-<!--                    </select>-->
-<!--                    -->
-<!--                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>-->
-<!--                  -->
-<!--                  </div>-->
-<!--                -->
-<!--                </div>-->
+                <div class="form-group">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
+
+                    <option value="">Seleccionar cliente</option>
+
+                    <?php
+
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+                       foreach ($categorias as $key => $value) {
+
+                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+
+                       }
+
+                    ?>
+
+                    </select>
+
+                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>
+
+                  </div>
+
+                </div>
 
                 <!--=====================================
                 ENTRADA PARA AGREGAR PRODUCTO
