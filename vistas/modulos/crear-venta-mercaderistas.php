@@ -604,4 +604,9 @@ MODAL AGREGAR CLIENTE
 
     }
 
+
+    
+    $('.selecionarcliente').select2();
+
+
 </script>

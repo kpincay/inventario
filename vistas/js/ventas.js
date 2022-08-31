@@ -95,7 +95,11 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
           	// }
 
-          	$(".nuevoProducto").append(
+          	
+			
+		
+				/*AGREGA OTRO PRODUCTO INNECESARIO
+			$(".nuevoProducto").append(
 
           	'<div class="row" style="padding:5px 15px">'+
 
@@ -147,7 +151,8 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 	             
 	          '</div>'+
 
-	        '</div>') 
+	        '</div>') ;
+			*/
 
 	        // SUMAR TOTAL DE PRECIOS
 
@@ -304,7 +309,7 @@ $(".btnAgregarProducto").click(function(){
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
-      	    
+      	    /*ESTE CODIGO AGREGABA OTRA LINEA INNECESARIA
       	    	$(".nuevoProducto").append(
 
           	'<div class="row" style="padding:5px 15px">'+
@@ -365,6 +370,8 @@ $(".btnAgregarProducto").click(function(){
 
 	        '</div>');
 
+			*/
+
 
 	        // AGREGAR LOS PRODUCTOS AL SELECT 
 
@@ -384,6 +391,7 @@ $(".btnAgregarProducto").click(function(){
 
 	         }
 
+	
         	 // SUMAR TOTAL DE PRECIOS
 
     		sumarTotalPrecios()
@@ -396,14 +404,22 @@ $(".btnAgregarProducto").click(function(){
 
 	        $(".nuevoPrecioProducto").number(true, 2);
 
-			$('.nuevaDescripcionProducto').select2();
-
       	}
 
 	})
 
+	//setTimeout(cambiarselect, 3000);	
+
+
 })
 
+
+/*
+function cambiarselect(){
+	$('.nuevaDescripcionProducto').select2();
+	alert('cargado');		
+}
+*/
 
 
 
