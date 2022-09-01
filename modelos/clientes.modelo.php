@@ -42,27 +42,38 @@ class ModeloClientes{
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt_pg = Conexion_postgres::conectarP()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			//$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+			$stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
-			$stmt -> execute();
+			$stmt_pg -> execute();
 
-			return $stmt -> fetch();
+			return $stmt_pg -> fetch();
 
 		}else{
+            $dbhost = 'duocell.myocitel.com';
+            $dbname='fragata_duocell';
+            $dbuser = 'powerbi';
+            $dbpass = 'Fiscal2031';
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+            $dbconn = pg_connect("host=$dbhost dbname=$dbname user=$dbuser password=$dbpass")
+            or die('Could not connect: ' . pg_last_error());
 
-			$stmt -> execute();
+            $query = 'SELECT tipo_id_tercero,tercero_id as id,nombre_tercero as nombre,ciudad,provincia_id,email FROM financiero.terceros';
+            $result = pg_query($query) or die('Error message: ' . pg_last_error());
 
-			return $stmt -> fetchAll();
+            $final = pg_fetch_all($result);
+//            while ($row = pg_fetch_row($result)) {
+//                $final = $row;
+//            }
+
+            pg_close($dbconn);
+
+            return $final;
 
 		}
 
-		$stmt -> close();
-
-		$stmt = null;
 
 	}
 

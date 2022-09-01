@@ -23,6 +23,10 @@ if($xml){
 }
 
 ?>
+
+<head>
+    <script src="https://www.jqueryscript.net/demo/Export-Html-Table-To-Excel-Spreadsheet-using-jQuery-table2excel/src/jquery.table2excel.js"></script>
+</head>
 <div class="content-wrapper">
 
   <section class="content-header"> 
@@ -59,6 +63,12 @@ if($xml){
 
         </a>
 
+      <button class="btn btn-success" id="toExcel">
+
+        Exportar Excel
+
+      </button>
+
          <button type="button" class="btn btn-default pull-right" id="daterange-btn">
            
             <span>
@@ -87,7 +97,7 @@ if($xml){
 
       <div class="box-body">
         
-       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+       <table class="table table-bordered table-striped dt-responsive tablas" id="table2excel" width="100%">
          
         <thead>
          
@@ -213,6 +223,16 @@ if($xml){
 
 </div>
 
+<script type="text/javascript">
 
+    $(function() {
+        $("#toExcel").click(function(){
+            $("#table2excel").table2excel({
+                exclude: ".noExl",
+                name: "Excel Document Name"
+            });
+        });
+    });
+</script>
 
 

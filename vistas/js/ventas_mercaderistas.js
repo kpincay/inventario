@@ -15,6 +15,9 @@ CARGAR LA TABLA DINÁMICA DE VENTAS
 
 $('.tablaVentas').DataTable( {
     "ajax": "ajax/datatable-ventas.ajax.php",
+	"data" : {
+		"tipo" : "mercaderista"
+	},
     "deferRender": true,
 	"retrieve": true,
 	"processing": true,
@@ -214,6 +217,17 @@ CUANDO SELECCIONE UN ITEM DE CADENA
 =============================================*/
 
 $("#seleccionarCadena").on("onchange", function(){
+
+	alert("hola");
+
+})
+
+
+/*=============================================
+CUANDO SELECCIONE UN ITEM DE CADENA
+=============================================*/
+
+$("#seleccionarCliente").on("onchange", function(){
 
 	alert("hola");
 
@@ -536,7 +550,7 @@ function sumarTotalPrecios(){
 	}
 
 	var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
-	
+
 	$("#nuevoTotalVenta").val(sumaTotalPrecio);
 	$("#totalVenta").val(sumaTotalPrecio);
 	$("#nuevoTotalVenta").attr("total",sumaTotalPrecio);

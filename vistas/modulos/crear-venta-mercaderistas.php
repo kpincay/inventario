@@ -222,7 +222,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                     </select>
 
-                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>
+<!--                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>-->
 
                   </div>
 
@@ -323,10 +323,11 @@ if($_SESSION["perfil"] == "Especial"){
                     
                      <div class="input-group">
                   
-                      <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
+                      <select class="form-control" id="nuevoMetodoPago_" name="nuevoMetodoPago_" required>
                         <option value="">Seleccione método de pago</option>
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="TC">Crédito</option>
+                        <option value="Efectivo_">Efectivo</option>
+                        <option value="TC_">Crédito</option>
+                        <option value="Pj_">PayJoy</option>
                         <!-- <option value="TD">Tarjeta Débito</option>                   -->
                       </select>    
 
