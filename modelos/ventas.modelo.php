@@ -50,8 +50,43 @@ class ModeloVentas{
 
         static public function mdlIngresarVenta($tabla, $datos){
 
+            if ($datos["proceso"] == "mercaderista"){try {
+                // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda)");
+                $stmt = Conexion::conectar()->prepare("INSERT INTO ventas_mercaderistas(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda, fecha_registro) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda, :fecha_registro)");
 
-            try {
+                $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
+                $stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
+                $stmt->bindParam(":id_vendedor", $datos["id_vendedor"], PDO::PARAM_INT);
+                $stmt->bindParam(":productos", $datos["productos"], PDO::PARAM_STR);
+                $stmt->bindParam(":impuesto", $datos["impuesto"], PDO::PARAM_STR);
+                $stmt->bindParam(":neto", $datos["neto"], PDO::PARAM_STR);
+                $stmt->bindParam(":total", $datos["total"], PDO::PARAM_STR);
+                $stmt->bindParam(":metodo_pago", $datos["metodo_pago"], PDO::PARAM_STR);
+                $stmt->bindParam(":fecha_registro", $datos["fecha_registro"], PDO::PARAM_STR);
+
+
+
+                if($stmt->execute()){
+
+                    return "ok";
+
+                }else{
+
+                    return "error";
+
+                }
+
+                $stmt->close();
+                $stmt = null;
+            }
+            catch (PDOException $e) {
+                //error
+                $return = "Your fail message: " . $e->getMessage();
+                return $return;
+            }
+
+
+            }else{try {
                 // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda)");
                 $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda, fecha_registro) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda, :fecha_registro)");
 
@@ -87,6 +122,9 @@ class ModeloVentas{
                 $return = "Your fail message: " . $e->getMessage();
                 return $return;
             }
+
+            }
+
 
 
 

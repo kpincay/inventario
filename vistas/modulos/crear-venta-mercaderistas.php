@@ -295,7 +295,8 @@ if($_SESSION["perfil"] == "Especial"){
                               <input type="text" class="form-control input-lg" id="nuevoTotalVenta" name="nuevoTotalVenta" total="" placeholder="00000" readonly required>
 
                               <input type="hidden" name="totalVenta" id="totalVenta">
-                              
+
+                                <input type="text" class="form-control input-lg" id="proceso" name="proceso" value="mercaderista" readonly required>
                         
                             </div>
 
