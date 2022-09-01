@@ -52,6 +52,18 @@ class ModeloClientes{
 			return $stmt_pg -> fetch();
 
 		}else{
+
+            $stmt_pg = Conexion::conectar()->prepare("SELECT * FROM Clientes");
+            //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+            $stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+            $stmt_pg -> execute();
+
+            return $stmt_pg -> fetchAll();
+
+            /*
+
             $dbhost = 'duocell.myocitel.com';
             $dbname='fragata_duocell';
             $dbuser = 'powerbi';
@@ -74,7 +86,7 @@ class ModeloClientes{
 
 		}
 
-
+*/
 	}
 
 	/*=============================================
