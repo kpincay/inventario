@@ -83,10 +83,10 @@ class ModeloClientes{
             pg_close($dbconn);
 
             return $final;
-
+*/
 		}
 
-*/
+
 	}
 
 	/*=============================================
