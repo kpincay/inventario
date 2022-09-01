@@ -53,7 +53,7 @@ class ModeloClientes{
 
 		}else{
 
-            $stmt_pg = Conexion::conectar()->prepare("SELECT * FROM Clientes");
+            $stmt_pg = Conexion::conectar()->prepare("SELECT * FROM clientes");
             //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
             $stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
