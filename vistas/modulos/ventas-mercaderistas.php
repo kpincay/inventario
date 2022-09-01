@@ -104,12 +104,12 @@ if($xml){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Código factura</th>
+           <th>Cliente</th>
 <!--           <th>Cliente</th>-->
-           <th>Promotor</th>
-           <th>Forma de pago</th>
-           <th>Neto</th>
-           <th>Total</th> 
+           <th>Imei(s)</th>
+           <th>Cantidad</th>
+           <th>Modelo</th>
+           <th>Forma Pago</th>
            <th>Fecha</th>
            <th>Acciones</th>
 
@@ -139,9 +139,7 @@ if($xml){
            
            echo '<tr>
 
-                  <td>'.($key+1).'</td>
-
-                  <td>'.$value["codigo"].'</td>';
+                  <td>'.($key+1).'</td>';
 
 //                  $itemCliente = "id";
 //                  $valorCliente = $value["id_cliente"];
@@ -158,11 +156,15 @@ if($xml){
 
                   echo '<td>'.$respuestaUsuario["nombre"].'</td>
 
-                  <td>'.$value["metodo_pago"].'</td>
+
+                  <td>'.$value["codigo"].'</td>
 
                   <td>$ '.number_format($value["neto"],2).'</td>
 
                   <td>$ '.number_format($value["total"],2).'</td>
+                  
+                  
+                  <td>'.$value["metodo_pago"].'</td>
 
                   <td>'.$value["fecha"].'</td>
 
