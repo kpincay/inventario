@@ -1,6 +1,6 @@
 <?php
 
-class ControladorPresupuestos{
+class ControladorPresupuestosM{
 
 
 
@@ -11,7 +11,7 @@ class ControladorPresupuestos{
 	static public function ctrMostrarPresupuestos($cadena, $fechaDesde, $fechaHasta){
 
 		$tabla = "presupuestos";
-		$respuesta = ModeloPresupuestos::mdlMostrarPresupuestos($tabla, $cadena, $fechaDesde, $fechaHasta);
+		$respuesta = ModeloPresupuestosM::mdlMostrarPresupuestos($tabla, $cadena, $fechaDesde, $fechaHasta);
 		return $respuesta;
 
 	}
@@ -25,7 +25,7 @@ class ControladorPresupuestos{
 		$tabla = "Presupuestos";
         $item = "id_cadena";
 
-		$respuesta = ModeloPresupuestos::mdlMostrarPresupuestosPorCadenas($tabla, $item, $valor);
+		$respuesta = ModeloPresupuestosM::mdlMostrarPresupuestosPorCadenas($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -38,7 +38,7 @@ class ControladorPresupuestos{
 	static public function ctrGenerarPresupuestosPorCadenas($idCadena, $fecha){
 
 
-		$respuesta = ModeloPresupuestos::mdlGenerarPresupuesto($idCadena, $fecha);
+		$respuesta = ModeloPresupuestosM::mdlGenerarPresupuesto($idCadena, $fecha);
 
 		return $respuesta;
 
@@ -51,7 +51,7 @@ class ControladorPresupuestos{
 
     static public function ctrEditarPresupuestos($idPresupuesto, $valor){
 
-        $respuesta = ModeloPresupuestos::mdlEditarPresupuesto($idPresupuesto, $valor);
+        $respuesta = ModeloPresupuestosM::mdlEditarPresupuesto($idPresupuesto, $valor);
         return $respuesta;
     }
 
@@ -62,7 +62,7 @@ class ControladorPresupuestos{
 
     static public function ctrConsultarPresupuestos($cadena, $fechaDesde, $fechaHasta){
 
-        $respuesta = ModeloPresupuestos::mdlConsultarPresupuesto($cadena, $fechaDesde, $fechaHasta);
+        $respuesta = ModeloPresupuestosM::mdlConsultarPresupuesto($cadena, $fechaDesde, $fechaHasta);
         return $respuesta;
     }
 
@@ -77,7 +77,7 @@ class ControladorPresupuestos{
 			$tabla ="Presupuestos";
 			$datos = $_GET["idPresupuesto"];
 
-			$respuesta = ModeloPresupuestos::mdlEliminarPresupuesto($tabla, $datos);
+			$respuesta = ModeloPresupuestosM::mdlEliminarPresupuesto($tabla, $datos);
 
 			if($respuesta == "ok"){
 

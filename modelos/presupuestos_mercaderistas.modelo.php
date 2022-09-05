@@ -2,7 +2,7 @@
 
 require_once "conexion.php";
 
-class ModeloPresupuestos{
+class ModeloPresupuestosM{
 
 	/*=============================================
 	CREAR Presupuesto
@@ -213,7 +213,7 @@ class ModeloPresupuestos{
             return "Registros ya generados previamente para la fecha  $fecha";
         }
 
-        $stmt = Conexion::conectar()->prepare("CALL obtenerTiendasPorCadena($idCadena, '$fecha');");
+        $stmt = Conexion::conectar()->prepare("CALL obtenerTiendasPorCadenaM($idCadena, '$fecha');");
 
 
 		if($stmt -> execute()){

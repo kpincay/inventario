@@ -149,7 +149,7 @@ $("#btnGenerarPlantillaM").click(async function () {
     var fechaHasta = $("#mesHasta").val();
 
 
-    if (idCadena == ''){
+    if (nombreCadena == ''){
         swal({
             title: 'Alerta',
             text: "Seleccione una Zona",
@@ -236,7 +236,7 @@ $("#btnGenerarPlantillaM").click(async function () {
         var datosInsert = new FormData();
 
         datosInsert.append("fecha", fechaFinal);
-        datosInsert.append("idCadena", idCadena);
+        datosInsert.append("idCadena", nombreCadena);
         datosInsert.append("metodo", "generar");
         $.ajax({
 
