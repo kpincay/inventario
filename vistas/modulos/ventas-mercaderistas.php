@@ -12,7 +12,7 @@ if($_SESSION["perfil"] == "Especial"){
 
 }
 
-$xml = ControladorVentas::ctrDescargarXML();
+$xml = ControladorVentasM::ctrDescargarXML();
 
 if($xml){
 
@@ -133,7 +133,7 @@ if($xml){
 
           }
 
-          $respuesta = ControladorVentas::ctrRangoFechasVentas($fechaInicial, $fechaFinal);
+          $respuesta = ControladorVentasM::ctrRangoFechasVentas($fechaInicial, $fechaFinal);
 
           foreach ($respuesta as $key => $value) {
            
@@ -211,7 +211,7 @@ if($xml){
 
        <?php
 
-      $eliminarVenta = new ControladorVentas();
+      $eliminarVenta = new ControladorVentasM();
       $eliminarVenta -> ctrEliminarVenta();
 
       ?>

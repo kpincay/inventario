@@ -1,7 +1,7 @@
 /*=============================================
 CAPTURA DE DATOS
 =============================================*/
-$("#btnConsultarPlantilla").click(function () {
+$("#btnConsultarPlantillaM").click(function () {
     $(".loader").show();
     var idCadena = $('#seleccionarCadena').find(":selected").text();
     var fechaDesde = $("#mesDesde").val();
@@ -52,7 +52,7 @@ $("#btnConsultarPlantilla").click(function () {
 
     /*CONSULTA DE TIENDAS SEGUN CADENA SELECCIONADA*/
 
-    // $('#tablaPresupuesto').DataTable();
+    // $('#tablaPresupuestoM').DataTable();
     $('.odd').remove();
 
     var datos2 = new FormData();
@@ -61,7 +61,7 @@ $("#btnConsultarPlantilla").click(function () {
     datos2.append("fechaHasta", fechaHasta);
     $.ajax({
 
-        url:"ajax/prespuestos.ajax.php",
+        url:"ajax/prespuestos_mercaderistas.ajax.php",
         method: "POST",
         data: datos2,
         cache: false,
@@ -87,15 +87,15 @@ $("#btnConsultarPlantilla").click(function () {
             var reg2 = new RegExp("(((([1][9][0-9][0-9])|([2][0-9][0-9][0-9]))-(0[123456789]|10|11|12)))");
             var cabecera = "";
             var cabecerah = "";
-            $("#tablaPresupuesto tbody").append('<th><strong>Tienda</strong></th><th><strong>Promotor</strong></th>');
+            $("#tablaPresupuestoM tbody").append('<th><strong>Tienda</strong></th><th><strong>Promotor</strong></th>');
             for (var key1 in respuesta[0]) {
 
                 if (reg.test(key1)){
                     cabecerah = key1.valueOf();
-                    $("#tablaPresupuesto tbody").append('<th style="display: none;"><strong>' + cabecerah+ '</strong></th>');
+                    $("#tablaPresupuestoM tbody").append('<th style="display: none;"><strong>' + cabecerah+ '</strong></th>');
                 }else if (reg2.test(key1)){
                     cabecera = key1.valueOf();
-                    $("#tablaPresupuesto tbody").append('<th class="text-center"><strong>' + cabecera+ '</strong></th>');
+                    $("#tablaPresupuestoM tbody").append('<th class="text-center"><strong>' + cabecera+ '</strong></th>');
                 }
             }
 
@@ -118,7 +118,7 @@ $("#btnConsultarPlantilla").click(function () {
                     }
                 }
                 html += '</tr>';
-                $("#tablaPresupuesto").append(html);
+                $("#tablaPresupuestoM").append(html);
 
             });
         },
@@ -139,7 +139,7 @@ $("#btnConsultarPlantilla").click(function () {
 /*=============================================
 GENERACION DE DATOS
 =============================================*/
-$("#btnGenerarPlantilla").click(async function () {
+$("#btnGenerarPlantillaM").click(async function () {
     $(".loader").show();
     limpiarTabla();
     var idCadena = $("#seleccionarCadena").val();
@@ -151,7 +151,7 @@ $("#btnGenerarPlantilla").click(async function () {
     if (idCadena == ''){
         swal({
             title: 'Alerta',
-            text: "Seleccione una Cadena",
+            text: "Seleccione una Zona",
             type: 'warning'
         });
         $(".loader").hide();
@@ -239,7 +239,7 @@ $("#btnGenerarPlantilla").click(async function () {
         datosInsert.append("metodo", "generar");
         $.ajax({
 
-            url:"ajax/prespuestos.ajax.php",
+            url:"ajax/prespuestos_mercaderistas.ajax.php",
             method: "POST",
             data: datosInsert,
             cache: false,
@@ -274,10 +274,10 @@ CAPTURA DE DATOS
 $("#btnActualizarPlantilla").click(function(){
     $(".loader").show();
     var filas = [];
-    var cont = $("#tablaPresupuesto tr:last td").length -2;
+    var cont = $("#tablaPresupuestoM tr:last td").length -2;
     var e = 0;
     var f = 0;
-    $('#tablaPresupuesto tbody tr').each(async function() {
+    $('#tablaPresupuestoM tbody tr').each(async function() {
         for (let index = 0; index < cont; index++){
             var tienda = $(this).find('td').eq(0).text();
             var promotor = $(this).find('td').eq(1).text();
@@ -293,7 +293,7 @@ $("#btnActualizarPlantilla").click(function(){
             datosInsert.append("valorPresupuesto", valor);
             $.ajax({
 
-                url:"ajax/prespuestos.ajax.php",
+                url:"ajax/prespuestos_mercaderistas.ajax.php",
                 method: "POST",
                 data: datosInsert,
                 cache: false,
@@ -333,7 +333,7 @@ function eliminaFilas()
 {
 //OBTIENE EL NÚMERO DE FILAS DE LA TABLA
     var n=0;
-    $("#tablaPresupuesto tbody tr").each(function ()
+    $("#tablaPresupuestoM tbody tr").each(function ()
     {
         n++;
     });
@@ -342,7 +342,7 @@ function eliminaFilas()
 //DEJANDO LA PRIMERA FILA VISIBLE, MÁS LA FILA PLANTILLA OCULTA
     for(i=n-1;i>1;i--)
     {
-        $("#tablaPresupuesto tbody tr:eq('"+i+"')").remove();
+        $("#tablaPresupuestoM tbody tr:eq('"+i+"')").remove();
     };
 };
 
@@ -394,8 +394,8 @@ function fechaCompletaQuery($fecha) {
 
 
 function limpiarTabla() {
-    if ($("#tablaPresupuesto tr").length > 2){
-    $("#tablaPresupuesto tr").remove();
-    $("#tablaPresupuesto th").remove();
+    if ($("#tablaPresupuestoM tr").length > 2){
+    $("#tablaPresupuestoM tr").remove();
+    $("#tablaPresupuestoM th").remove();
     }
 }

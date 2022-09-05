@@ -108,13 +108,13 @@ if ($_SESSION["perfil"] == "Especial") {
 
                 <br>
 
-                <button class="btn btn-primary" id="btnGenerarPlantilla">
+                <button class="btn btn-primary" id="btnGenerarPlantillaM">
                     <i class="fa fa-calendar"></i>
                     Generar Plantilla
 
                 </button>
 
-                <button class="btn btn-success" id="btnConsultarPlantilla">
+                <button class="btn btn-success" id="btnConsultarPlantillaM">
                     <i class="fa fa-search"></i>
                     Consultar
 
@@ -126,7 +126,7 @@ if ($_SESSION["perfil"] == "Especial") {
             <div class="box-body">
 
                 <div class="loader" style="align-self: center; display: none;"></div>
-                <table class="table dt-responsive " id="tablaPresupuesto" style="display: block; overflow-x: auto; "
+                <table class="table dt-responsive " id="tablaPresupuestoM" style="display: block; overflow-x: auto; "
                        width="100%">
 
                     <thead>
@@ -210,38 +210,38 @@ MODAL AGREGAR PRESUPUESTO
                         <!--=====================================
                              ENTRADA DE LA CADENA
                              ======================================-->
-
-                        <div class="form-group">
-
-                            <div class="input-group">
-
-                                <span class="input-group-addon"><i class="fa fa-building"></i></span>
-
-                                <select class="form-control" id="seleccionarCadena" name="seleccionarCadena"
-                                        onchange="cadenaSelected()" required>
-
-                                    <option value="">Seleccionar cadena</option>
-
-                                    <?php
-
-                                    $item = null;
-                                    $valor = null;
-
-                                    $categorias = ControladorCadenas::ctrMostrarCadenas($item, $valor);
-
-                                    foreach ($categorias as $key => $value) {
-
-                                        echo '<option value="' . $value["id"] . '">' . $value["nombre"] . '</option>';
-
-                                    }
-
-                                    ?>
-
-                                </select>
-
-                            </div>
-
-                        </div>
+<!---->
+<!--                        <div class="form-group">-->
+<!---->
+<!--                            <div class="input-group">-->
+<!---->
+<!--                                <span class="input-group-addon"><i class="fa fa-building"></i></span>-->
+<!---->
+<!--                                <select class="form-control" id="seleccionarCadena" name="seleccionarCadena"-->
+<!--                                        onchange="cadenaSelected()" required>-->
+<!---->
+<!--                                    <option value="">Seleccionar cadena</option>-->
+<!---->
+<!--                                    --><?php
+//
+//                                    $item = null;
+//                                    $valor = null;
+//
+//                                    $categorias = ControladorCadenas::ctrMostrarCadenas($item, $valor);
+//
+//                                    foreach ($categorias as $key => $value) {
+//
+//                                        echo '<option value="' . $value["id"] . '">' . $value["nombre"] . '</option>';
+//
+//                                    }
+//
+//                                    ?>
+<!---->
+<!--                                </select>-->
+<!---->
+<!--                            </div>-->
+<!---->
+<!--                        </div>-->
 
                         <!-- ENTRADA PARA LA CIUDAD -->
 
