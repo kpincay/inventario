@@ -2,6 +2,7 @@
 CAPTURA DE DATOS
 =============================================*/
 $("#btnConsultarPlantillaM").click(function () {
+    debugger;
     $(".loader").show();
     var idCadena = $('#seleccionarCadena').find(":selected").text();
     var fechaDesde = $("#mesDesde").val();
