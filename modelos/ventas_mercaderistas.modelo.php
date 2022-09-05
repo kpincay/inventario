@@ -2,7 +2,7 @@
 
 require_once "conexion.php";
 
-class ModeloVentas{
+class ModeloVentasM{
 
 	/*=============================================
 	MOSTRAR VENTAS

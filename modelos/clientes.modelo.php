@@ -40,6 +40,7 @@ class ModeloClientes{
 
 	static public function mdlMostrarClientes($tabla, $item, $valor){
 
+        $item = null;
 		if($item != null){
 
 			$stmt_pg = Conexion_postgres::conectarP()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
@@ -53,37 +54,42 @@ class ModeloClientes{
 
 		}else{
 
-            $stmt_pg = Conexion::conectar()->prepare("SELECT * FROM clientes");
-            //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+//            $stmt_pg = Conexion::conectar()->prepare("SELECT * FROM clientes");
+//            //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+//
+//            $stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+//
+//            $stmt_pg -> execute();
+//
+//            return $stmt_pg -> fetchAll();
 
-            $stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
-            $stmt_pg -> execute();
+            try {
 
-            return $stmt_pg -> fetchAll();
+                $dbhost = 'duocell.myocitel.com';
+                $dbname='fragata_duocell';
+                $dbuser = 'powerbi';
+                $dbpass = 'Fiscal2031';
 
-            /*
+                $dbconn = pg_connect("host=$dbhost dbname=$dbname user=$dbuser password=$dbpass")
+                or die('Could not connect: ' . pg_last_error());
 
-            $dbhost = 'duocell.myocitel.com';
-            $dbname='fragata_duocell';
-            $dbuser = 'powerbi';
-            $dbpass = 'Fiscal2031';
+                $query = 'SELECT tipo_id_tercero,tercero_id as id,nombre_tercero as nombre,ciudad,provincia_id,email FROM financiero.terceros';
+                $result = pg_query($query) or die('Error message: ' . pg_last_error());
 
-            $dbconn = pg_connect("host=$dbhost dbname=$dbname user=$dbuser password=$dbpass")
-            or die('Could not connect: ' . pg_last_error());
-
-            $query = 'SELECT tipo_id_tercero,tercero_id as id,nombre_tercero as nombre,ciudad,provincia_id,email FROM financiero.terceros';
-            $result = pg_query($query) or die('Error message: ' . pg_last_error());
-
-            $final = pg_fetch_all($result);
+                $final = pg_fetch_all($result);
 //            while ($row = pg_fetch_row($result)) {
 //                $final = $row;
 //            }
 
-            pg_close($dbconn);
+                pg_close($dbconn);
 
-            return $final;
-*/
+                return $final;
+
+            }catch (Exception $exception){
+
+            }
+
 		}
 
 

@@ -50,7 +50,8 @@ class ModeloVentas{
 
         static public function mdlIngresarVenta($tabla, $datos){
 
-            if ($datos["proceso"] == "mercaderista"){try {
+            if ($datos["proceso"] == "mercaderista"){
+                try {
                 // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda)");
                 $stmt = Conexion::conectar()->prepare("INSERT INTO ventas_mercaderistas(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda, fecha_registro) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda, :fecha_registro)");
 

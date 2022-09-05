@@ -9,6 +9,7 @@ require_once "controladores/cadenas.controlador.php";
 require_once "controladores/tiendas.controlador.php";
 require_once "controladores/presupuestos.controlador.php";
 require_once "controladores/ventas.controlador.php";
+require_once "controladores/ventas_mercaderistas.controlador.php";
 
 require_once "modelos/usuarios.modelo.php";
 require_once "modelos/categorias.modelo.php";
@@ -18,6 +19,7 @@ require_once "modelos/cadenas.modelo.php";
 require_once "modelos/tiendas.modelo.php";
 require_once "modelos/presupuestos.modelo.php";
 require_once "modelos/ventas.modelo.php";
+require_once "modelos/ventas_mercaderistas.modelo.php";
 require_once "extensiones/vendor/autoload.php";
 
 $plantilla = new ControladorPlantilla();

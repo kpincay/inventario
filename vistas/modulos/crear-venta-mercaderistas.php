@@ -103,7 +103,7 @@ if($_SESSION["perfil"] == "Especial"){
                     $item = null;
                     $valor = null;
 
-                    $ventas = ControladorVentas::ctrMostrarVentas($item, $valor);
+                    $ventas = ControladorVentasM::ctrMostrarVentas($item, $valor);
 
                     if(!$ventas){
 
@@ -358,7 +358,7 @@ if($_SESSION["perfil"] == "Especial"){
 
         <?php
 
-          $guardarVenta = new ControladorVentas();
+          $guardarVenta = new ControladorVentasM();
           $guardarVenta -> ctrCrearVenta();
           
         ?>

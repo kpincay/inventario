@@ -5,7 +5,7 @@ use Mike42\Escpos\EscposImage;
 use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
 
-class ControladorVentas{
+class ControladorVentasM{
 
 	/*=============================================
 	MOSTRAR VENTAS
@@ -13,9 +13,9 @@ class ControladorVentas{
 
 	static public function ctrMostrarVentas($item, $valor){
 
-		$tabla = "ventas";
+		$tabla = "ventas_mercaderistas";
 
-		$respuesta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+		$respuesta = ModeloVentasM::mdlMostrarVentas($tabla, $item, $valor);
  
 		return $respuesta;
 
@@ -45,7 +45,7 @@ class ControladorVentas{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas";
+								window.location = "ventas_mercaderistas";
 
 								}
 							})
@@ -72,8 +72,8 @@ class ControladorVentas{
 
 			    $traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
 
-				$item1a = "ventas";
-				$valor1a = $value["cantidad"] + $traerProducto["ventas"];
+				$item1a = "ventas_mercaderistas";
+				$valor1a = $value["cantidad"] + $traerProducto["ventas_mercaderistas"];
 
 			    //$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
@@ -111,7 +111,7 @@ class ControladorVentas{
 			GUARDAR LA COMPRA
 			=============================================*/	
 
-			$tabla = "ventas";
+			$tabla = "ventas_mercaderistas";
 
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
 						   "id_cliente"=>1,
@@ -126,7 +126,7 @@ class ControladorVentas{
 						   "proceso"=>$_POST["proceso"],
 						   "fecha_registro"=>$_POST["fecha_registro"]);
 
-			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
+			$respuesta = ModeloVentasM::mdlIngresarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -225,7 +225,7 @@ class ControladorVentas{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas";
+								window.location = "ventas_mercaderistas";
 
 								}
 							})
@@ -249,12 +249,12 @@ class ControladorVentas{
 			/*=============================================
 			FORMATEAR TABLA DE PRODUCTOS Y LA DE CLIENTES
 			=============================================*/
-			$tabla = "ventas";
+			$tabla = "ventas_mercaderistas";
 
 			$item = "codigo";
 			$valor = $_POST["editarVenta"];
 
-			$traerVenta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+			$traerVenta = ModeloVentasM::mdlMostrarVentas($tabla, $item, $valor);
 
 			/*=============================================
 			REVISAR SI VIENE PRODUCTOS EDITADOS
@@ -290,8 +290,8 @@ class ControladorVentas{
 
 					$traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
 
-					$item1a = "ventas";
-					$valor1a = $traerProducto["ventas"] - $value["cantidad"];
+					$item1a = "ventas_mercaderistas";
+					$valor1a = $traerProducto["ventas_mercaderistas"] - $value["cantidad"];
 
 					$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
@@ -334,8 +334,8 @@ class ControladorVentas{
 
 					$traerProducto_2 = ModeloProductos::mdlMostrarProductos($tablaProductos_2, $item_2, $valor_2, $orden);
 
-					$item1a_2 = "ventas";
-					$valor1a_2 = $value["cantidad"] + $traerProducto_2["ventas"];
+					$item1a_2 = "ventas_mercaderistas";
+					$valor1a_2 = $value["cantidad"] + $traerProducto_2["ventas_mercaderistas"];
 
 					$nuevasVentas_2 = ModeloProductos::mdlActualizarProducto($tablaProductos_2, $item1a_2, $valor1a_2, $valor_2);
 
@@ -386,7 +386,7 @@ class ControladorVentas{
 						   "fecha_registro"=>$_POST["fecha_registro"]);
 
 
-			$respuesta = ModeloVentas::mdlEditarVenta($tabla, $datos);
+			$respuesta = ModeloVentasM::mdlEditarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -402,7 +402,7 @@ class ControladorVentas{
 					  }).then((result) => {
 								if (result.value) {
 
-								window.location = "ventas";
+								window.location = "ventas_mercaderistas";
 
 								}
 							})
@@ -424,12 +424,12 @@ class ControladorVentas{
 
 		if(isset($_GET["idVenta"])){
 
-			$tabla = "ventas";
+			$tabla = "ventas_mercaderistas";
 
 			$item = "id";
 			$valor = $_GET["idVenta"];
 
-			$traerVenta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+			$traerVenta = ModeloVentasM::mdlMostrarVentas($tabla, $item, $valor);
 
 			/*=============================================
 			ACTUALIZAR FECHA ÚLTIMA COMPRA
@@ -440,7 +440,7 @@ class ControladorVentas{
 			$itemVentas = null;
 			$valorVentas = null;
 
-			$traerVentas = ModeloVentas::mdlMostrarVentas($tabla, $itemVentas, $valorVentas);
+			$traerVentas = ModeloVentasM::mdlMostrarVentas($tabla, $itemVentas, $valorVentas);
 
 			$guardarFechas = array();
 
@@ -505,8 +505,8 @@ class ControladorVentas{
 
 				$traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
 
-				$item1a = "ventas";
-				$valor1a = $traerProducto["ventas"] - $value["cantidad"];
+				$item1a = "ventas_mercaderistas";
+				$valor1a = $traerProducto["ventas_mercaderistas"] - $value["cantidad"];
 
 				$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
@@ -533,7 +533,7 @@ class ControladorVentas{
 			ELIMINAR VENTA
 			=============================================*/
 
-			$respuesta = ModeloVentas::mdlEliminarVenta($tabla, $_GET["idVenta"]);
+			$respuesta = ModeloVentasM::mdlEliminarVenta($tabla, $_GET["idVenta"]);
 
 			if($respuesta == "ok"){
 
@@ -547,7 +547,7 @@ class ControladorVentas{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas";
+								window.location = "ventas_mercaderistas";
 
 								}
 							})
@@ -565,9 +565,9 @@ class ControladorVentas{
 
 	static public function ctrRangoFechasVentas($fechaInicial, $fechaFinal){
 
-		$tabla = "ventas";
+		$tabla = "ventas_mercaderistas";
 
-		$respuesta = ModeloVentas::mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal);
+		$respuesta = ModeloVentasM::mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal);
 
 		return $respuesta;
 		
@@ -581,18 +581,18 @@ class ControladorVentas{
 
 		if(isset($_GET["reporte"])){
 
-			$tabla = "ventas";
+			$tabla = "ventas_mercaderistas";
 
 			if(isset($_GET["fechaInicial"]) && isset($_GET["fechaFinal"])){
 
-				$ventas = ModeloVentas::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
+				$ventas = ModeloVentasM::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
 
 			}else{
 
 				$item = null;
 				$valor = null;
 
-				$ventas = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+				$ventas = ModeloVentasM::mdlMostrarVentas($tabla, $item, $valor);
 
 			}
 
@@ -679,9 +679,9 @@ class ControladorVentas{
 
 	public function ctrSumaTotalVentas(){
 
-		$tabla = "ventas";
+		$tabla = "ventas_mercaderistas";
 
-		$respuesta = ModeloVentas::mdlSumaTotalVentas($tabla);
+		$respuesta = ModeloVentasM::mdlSumaTotalVentas($tabla);
 
 		return $respuesta;
 
@@ -696,11 +696,11 @@ class ControladorVentas{
 		if(isset($_GET["xml"])){
 
 
-			$tabla = "ventas";
+			$tabla = "ventas_mercaderistas";
 			$item = "codigo";
 			$valor = $_GET["xml"];
 
-			$ventas = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+			$ventas = ModeloVentasM::mdlMostrarVentas($tabla, $item, $valor);
 
 			// PRODUCTOS
 
