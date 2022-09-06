@@ -40,19 +40,19 @@ class ModeloClientes{
 
 	static public function mdlMostrarClientes($tabla, $item, $valor){
 
-        $item = null;
-		if($item != null){
-
-			$stmt_pg = Conexion_postgres::conectarP()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-			//$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-
-			$stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
-			$stmt_pg -> execute();
-
-			return $stmt_pg -> fetch();
-
-		}else{
+//        $item = null;
+//		if($item != null){
+//
+//			$stmt_pg = Conexion_postgres::conectarP()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+//			//$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+//
+//			$stmt_pg -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+//
+//			$stmt_pg -> execute();
+//
+//			return $stmt_pg -> fetch();
+//
+//		}else{
 
 //            $stmt_pg = Conexion::conectar()->prepare("SELECT * FROM clientes");
 //            //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
@@ -87,10 +87,10 @@ class ModeloClientes{
                 return $final;
 
             }catch (Exception $exception){
-
+                echo $exception;
             }
 
-		}
+
 
 
 	}
