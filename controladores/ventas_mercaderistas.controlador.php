@@ -73,7 +73,7 @@ class ControladorVentasM{
 			    $traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
 
 				$item1a = "ventas_mercaderistas";
-				$valor1a = $value["cantidad"] + $traerProducto["ventas_mercaderistas"];
+				$valor1a = $value["cantidad"]; // + $traerProducto["ventas_mercaderistas"];
 
 			    //$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
