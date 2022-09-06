@@ -48,7 +48,7 @@ class ModeloVentasM{
 	REGISTRO DE VENTA
 	=============================================*/
 
-        static public function mdlIngresarVentaM($tabla, $datos){
+        static public function mdlIngresarVenta($tabla, $datos){
 
 
             try {
