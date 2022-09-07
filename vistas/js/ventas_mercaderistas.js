@@ -275,7 +275,7 @@ function ValidaImei(id){
 
 	})
 
-	listaImeis();
+	listaImeis(identify);
 
 }
 
@@ -284,27 +284,16 @@ function ValidaImei(id){
 LISTAR TODOS LOS IMEIS
 =============================================*/
 
-function listaImeis(){
+function listaImeis($elemento){
 
 	var listaImeis = [];
 
-	var descripcion = $(".nuevaDescripcionProducto");
 
-	var cod_duocell = $(".nuevoCod_duocell");
+	listaImeis.push({
+			'imei' : $elemento.value})
 
 
-	var cantidad = $(".nuevaCantidadProducto");
-
-	var precio = $(".nuevoPrecioProducto");
-
-	for(var i = 0; i < descripcion.length; i++){
-
-		listaProductos.push({
-			'descripcion' : $(descripcion[i]).val()})
-
-	}
-
-	$("#listaImeis").val(JSON.stringify(listaProductos));
+	$("#listaImeis").val(JSON.stringify(listaImeis));
 
 }
 

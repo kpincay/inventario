@@ -117,7 +117,7 @@ class ControladorVentasM{
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
-						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
+						   "impuesto"=>$_POST["listaImeis"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["nuevoMetodoPago_"],
