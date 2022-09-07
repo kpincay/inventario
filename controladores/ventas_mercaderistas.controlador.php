@@ -120,7 +120,7 @@ class ControladorVentasM{
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
-						   "metodo_pago"=>$_POST["listaMetodoPago"],
+						   "metodo_pago"=>$_POST["nuevoMetodoPago_"],
 //						   "cadena"=>$_POST["nombreCadena"],
 //						   "tienda"=>$_POST["nombreTienda"],
 						   "proceso"=>$_POST["proceso"],

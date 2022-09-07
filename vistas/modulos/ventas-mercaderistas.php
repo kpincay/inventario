@@ -161,7 +161,7 @@ if($xml){
 
                   <td>$ '.number_format($value["neto"],2).'</td>
 
-                  <td>$ '.number_format($value["total"],2).'</td>
+                  <td>$ '.number_format($value["productos"],2).'</td>
                   
                   
                   <td>'.$value["metodo_pago"].'</td>
