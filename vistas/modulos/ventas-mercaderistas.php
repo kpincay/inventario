@@ -153,13 +153,15 @@ if($xml){
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
-                  echo '<td>'.$respuestaUsuario["nombre"].'</td>
+                  $obj = json_decode($value);
 
-                  <td>'.$value["productos"].'</td>
+                  echo '<td>'.$value["id_cliente"].'</td>
 
-                  <td>$ '.number_format($value["neto"],2).'</td>
+                  <td>'.$obj->{'cod_duocell'}.'</td>
 
-                  <td>'.$value["productos"].'</td>
+                  <td>$ '.$obj->{'cantidad'}.'</td>
+
+                  <td>'.$obj->{'descripcion'}.'</td>
                   
                   <td>'.$value["metodo_pago"].'</td>
 
