@@ -53,7 +53,7 @@ if($xml){
 
       <div class="box-header with-border">
   
-        <a href="crear-venta">
+        <a href="crear-venta-mercaderistas">
 
           <button class="btn btn-primary">
             
