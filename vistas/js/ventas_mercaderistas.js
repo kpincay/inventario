@@ -919,8 +919,13 @@ function listarProductos(){
 
 	for(var i = 0; i < descripcion.length; i++){
 
-		listaProductos.push({
-							  'descripcion' : $(descripcion[i]).val()})
+		listaProductos.push({ 'id' : $(descripcion[i]).attr("idProducto"),
+			'cod_duocell' : $(cod_duocell[i]).val(),
+			'descripcion' : $(descripcion[i]).val(),
+			'cantidad' : $(cantidad[i]).val(),
+			'stock' : $(cantidad[i]).attr("nuevoStock"),
+			'precio' : $(precio[i]).attr("precioReal"),
+			'total' : $(precio[i]).val()})
 
 	}
 
