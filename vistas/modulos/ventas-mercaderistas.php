@@ -153,16 +153,13 @@ if($xml){
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
-
                   echo '<td>'.$respuestaUsuario["nombre"].'</td>
 
-
-                  <td>'.$value["codigo"].'</td>
+                  <td>'.$value["productos"].'</td>
 
                   <td>$ '.number_format($value["neto"],2).'</td>
 
-                  <td>$ '.number_format($value["productos"],2).'</td>
-                  
+                  <td>'.$value["productos"].'</td>
                   
                   <td>'.$value["metodo_pago"].'</td>
 

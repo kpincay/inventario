@@ -214,7 +214,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                        foreach ($categorias as $key => $value) {
 
-                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                         echo '<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
 
                        }
 
