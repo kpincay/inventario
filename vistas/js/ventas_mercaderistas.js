@@ -144,8 +144,56 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Imei(s)" value="">'+
-	 
+	              '<input type="text" class="form-control nuevoCod_duocell1" name="nuevoCod_duocellProducto1" id="nuevoCod_duocellProducto1" placeholder="Ingrese Imei"  minlength="15" maxlength="15" onchange="ValidaImei(1)">'+
+
+	            '</div>'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+	              '<input type="text" class="form-control nuevoCod_duocell2" name="nuevoCod_duocellProducto2" id="nuevoCod_duocellProducto2" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(2)">'+
+
+	            '</div>'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+	              '<input type="text" class="form-control nuevoCod_duocell3" name="nuevoCod_duocellProducto3" id="nuevoCod_duocellProducto3" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(3)">'+
+
+	            '</div>'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+	              '<input type="text" class="form-control nuevoCod_duocell4" name="nuevoCod_duocellProducto4" id="nuevoCod_duocellProducto4" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(4)">'+
+
+	            '</div>'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+	              '<input type="text" class="form-control nuevoCod_duocell5" name="nuevoCod_duocellProducto5" id="nuevoCod_duocellProducto5" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(5)">'+
+
+	            '</div>'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+	              '<input type="text" class="form-control nuevoCod_duocell5" name="nuevoCod_duocellProducto6" id="nuevoCod_duocellProducto6" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(6)">'+
+
+	            '</div>'+
+
+	            '<div class="input-group">'+
+
+	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+	              '<input type="text" class="form-control nuevoCod_duocell5" name="nuevoCod_duocellProducto7" id="nuevoCod_duocellProducto7" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(7)">'+
+
 	            '</div>'+
 	             
 	          '</div>'+
@@ -176,6 +224,59 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
      })
 
 });
+
+function ValidaImei(id){
+	var elemento = "nuevoCod_duocellProducto" + id;
+	var identify = document.getElementById(elemento);
+
+	if (identify.value.length < 15){
+		alert("El Imei debe tener 15 números");
+		identify.style.backgroundColor = 'red'
+		identify.style.color = 'white'
+		identify.focus();
+		return;
+	}
+
+	var datos = new FormData();
+	datos.append("imei_prod", identify.value);
+
+
+	$.ajax({
+
+		url:"ajax/productos.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType:"json",
+		success:function(respuesta){
+
+			console.log(respuesta);
+			 if (respuesta == "VENDID"){
+				alert("Imei se encuentra facturado")
+				identify.style.backgroundColor = 'red'
+				identify.style.color = 'white'
+				identify.focus();
+			}
+			 if (respuesta == "NOINV"){
+				alert("Imei no se encuentra en inventario")
+				identify.style.backgroundColor = 'red'
+				identify.style.color = 'white'
+				identify.focus();
+			}
+			if (respuesta == "OK"){
+				identify.style.backgroundColor = 'green'
+				identify.style.color = 'white'
+				identify.focus();
+			}
+
+		}
+
+	})
+
+
+}
 
 function cambios(){
 	sumarTotalPrecios();
@@ -549,7 +650,8 @@ function sumarTotalPrecios(){
 
 	}
 
-	var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
+	// var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
+	var sumaTotalPrecio = 10;
 
 	$("#nuevoTotalVenta").val(sumaTotalPrecio);
 	$("#totalVenta").val(sumaTotalPrecio);

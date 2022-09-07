@@ -25,6 +25,57 @@ class AjaxProductos{
 
   }
 
+  /*=============================================
+  VALIDAR IMEI
+  =============================================*/
+  public function ajaxValidarImeiProducto()
+  {
+
+      $res = "";
+      $valor = $this->idCategoria;
+
+      try {
+
+          $dbhost = 'duocell.myocitel.com';
+          $dbname = 'fragata_duocell';
+          $dbuser = 'powerbi';
+          $dbpass = 'Fiscal2031';
+
+          $dbconn = pg_connect("host=$dbhost dbname=$dbname user=$dbuser password=$dbpass")
+          or die('Could not connect: ' . pg_last_error());
+
+          $query = "SELECT id_ref_doc_in FROM public.inv_inventario_serie where serie = $valor";
+          $result = pg_query($query) or die('Error message: ' . pg_last_error());
+
+          $final = pg_fetch_all($result);
+          if ($final == null) {
+              echo json_encode("NOINV"); //Imei no se encuentra registrado en inventario
+              return;
+          }
+
+          $query2 = "SELECT * FROM public.inv_ingresobodega_xoc where id_ref_doc in (SELECT id_ref_doc_out FROM public.inv_inventario_serie where serie = $valor) and factura_id > 0";
+          $result2 = pg_query($query2) or die('Error message: ' . pg_last_error());
+
+
+          $final2 = pg_fetch_all($result2);
+
+          if ($final2 != null) {
+              echo json_encode("VENDID"); //Imei se encuentra fuera de inventario
+              return;
+          } else {
+              echo json_encode("OK");
+              return;
+          }
+          pg_close($dbconn);
+
+
+      } catch (Exception $exception) {
+          echo $exception;
+      }
+
+
+  }
+
 
   /*=============================================
   EDITAR PRODUCTO
@@ -89,8 +140,21 @@ class AjaxProductos{
 
 
 /*=============================================
-GENERAR CÓDIGO A PARTIR DE ID CATEGORIA
+VALIDAR IMEI DE PRODUCTO CON FRAGATA
 =============================================*/	
+
+if(isset($_POST["imei_prod"])){
+
+	$codigoProducto = new AjaxProductos();
+	$codigoProducto -> idCategoria = $_POST["imei_prod"];
+	$codigoProducto -> ajaxValidarImeiProducto();
+
+}
+
+
+/*=============================================
+GENERAR CÓDIGO A PARTIR DE ID CATEGORIA
+=============================================*/
 
 if(isset($_POST["idCategoria"])){
 
@@ -99,6 +163,8 @@ if(isset($_POST["idCategoria"])){
 	$codigoProducto -> ajaxCrearCodigoProducto();
 
 }
+
+
 /*=============================================
 EDITAR PRODUCTO
 =============================================*/ 

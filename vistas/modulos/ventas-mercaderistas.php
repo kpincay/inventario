@@ -148,20 +148,21 @@ if($xml){
 //
 //                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
 
-                  $itemUsuario = "id";
-                  $valorUsuario = $value["id_cliente"];
+              $itemUsuario = "id";
+              $valorUsuario = $value["id_cliente"];
 
-                  $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
+              $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
-                  $obj = json_decode($value["productos"]);
+              $obj = json_decode($value["productos"], true);
+//var_dump($obj[0]['id']);
 
-                  echo '<td>'.$value["id_cliente"].'</td>
+              echo '<td>'.$value["id_cliente"].'</td>
 
-                  <td>'.$obj->{'cod_duocell'}.'</td>
+                  <td>'.$obj[0]['cod_duocell'].'</td>
 
-                  <td>$ '.$obj->{'cantidad'}.'</td>
+                  <td> '.$obj[0]['cantidad'].'</td>
 
-                  <td>'.$obj->{'descripcion'}.'</td>
+                  <td>'.$obj[0]['descripcion'].'</td>
                   
                   <td>'.$value["metodo_pago"].'</td>
 
