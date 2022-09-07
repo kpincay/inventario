@@ -158,7 +158,7 @@ if($xml){
 
               echo '<td>'.$value["id_cliente"].'</td>
 
-                  <td>'.$obj[0]['cod_duocell'].'</td>
+                  <td>'.$obj[0]['impuesto'].'</td>
 
                   <td> '.$obj[0]['cantidad'].'</td>
 
