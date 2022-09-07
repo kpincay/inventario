@@ -114,7 +114,7 @@ class ControladorVentasM{
 			$tabla = "ventas_mercaderistas";
 
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
-						   "id_cliente"=>1,
+						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
@@ -225,7 +225,7 @@ class ControladorVentasM{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas_mercaderistas";
+								window.location = "ventas-mercaderistas";
 
 								}
 							})

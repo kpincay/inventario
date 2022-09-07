@@ -149,7 +149,7 @@ if($xml){
 //                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
 
                   $itemUsuario = "id";
-                  $valorUsuario = $value["id_vendedor"];
+                  $valorUsuario = $value["id_cliente"];
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
