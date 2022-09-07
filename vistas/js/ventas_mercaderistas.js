@@ -929,7 +929,7 @@ function listarProductos(){
 
 	}
 
-	$("#listaProductos").val(JSON.stringify(listaProductos)); 
+	$("#listaProductos").val(JSON.stringify(listaProductos));
 
 }
 

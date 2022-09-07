@@ -52,7 +52,7 @@ class ModeloVentasM{
 
 
             try {
-                echo $datos;
+
                 // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda)");
                 $stmt = Conexion::conectar()->prepare("INSERT INTO ventas_mercaderistas(codigo, id_cliente, id_vendedor, productos, impuesto, neto, total, metodo_pago, cadena, tienda, fecha_registro) VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :neto, :total, :metodo_pago, :cadena, :tienda, :fecha_registro)");
 

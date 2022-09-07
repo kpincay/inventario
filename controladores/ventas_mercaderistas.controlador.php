@@ -62,23 +62,27 @@ class ControladorVentasM{
 
 			foreach ($listaProductos as $key => $value) {
 
-			   array_push($totalProductosComprados, $value["cantidad"]);
-				
+			   array_push($totalProductosComprados, 1);
+//			   array_push($totalProductosComprados, $value["cantidad"]);
+
 			   $tablaProductos = "productos";
 
 			    $item = "id";
-			    $valor = $value["id"];
+			    $valor = 1;
+//			    $valor = $value["id"];
 			    $orden = "id";
 
 			    $traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
 
 				$item1a = "ventas_mercaderistas";
-				$valor1a = $value["cantidad"]; // + $traerProducto["ventas_mercaderistas"];
+				$valor1a = 1; // + $traerProducto["ventas_mercaderistas"];
+//				$valor1a = $value["cantidad"]; // + $traerProducto["ventas_mercaderistas"];
 
 			    //$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
 				$item1b = "stock";
-				$valor1b = $value["stock"];
+				$valor1b = 1;
+//				$valor1b = $value["stock"];
 
 				//$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
 
