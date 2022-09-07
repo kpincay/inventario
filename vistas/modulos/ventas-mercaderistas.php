@@ -153,7 +153,7 @@ if($xml){
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
-                  $obj = json_decode($value);
+                  $obj = json_decode($value["productos"]);
 
                   echo '<td>'.$value["id_cliente"].'</td>
 
