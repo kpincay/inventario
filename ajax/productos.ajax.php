@@ -62,11 +62,11 @@ class AjaxProductos{
           if ($final2 != null) {
               echo json_encode("VENDID"); //Imei se encuentra fuera de inventario
               return;
-          } else {
-              echo json_encode("OK");
-              return;
           }
+
+          echo json_encode("OK");
           pg_close($dbconn);
+          return;
 
 
       } catch (Exception $exception) {

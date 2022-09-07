@@ -144,7 +144,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 	                 
-	              '<input type="text" class="form-control nuevoCod_duocell1" name="nuevoCod_duocellProducto1" id="nuevoCod_duocellProducto1" placeholder="Ingrese Imei"  minlength="15" maxlength="15" onchange="ValidaImei(1)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto1" id="nuevoCod_duocellProducto1" placeholder="Ingrese Imei"  minlength="15" maxlength="15" onchange="ValidaImei(1)">'+
 
 	            '</div>'+
 
@@ -152,7 +152,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-	              '<input type="text" class="form-control nuevoCod_duocell2" name="nuevoCod_duocellProducto2" id="nuevoCod_duocellProducto2" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(2)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto2" id="nuevoCod_duocellProducto2" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(2)">'+
 
 	            '</div>'+
 
@@ -160,7 +160,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-	              '<input type="text" class="form-control nuevoCod_duocell3" name="nuevoCod_duocellProducto3" id="nuevoCod_duocellProducto3" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(3)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto3" id="nuevoCod_duocellProducto3" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(3)">'+
 
 	            '</div>'+
 
@@ -168,7 +168,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-	              '<input type="text" class="form-control nuevoCod_duocell4" name="nuevoCod_duocellProducto4" id="nuevoCod_duocellProducto4" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(4)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto4" id="nuevoCod_duocellProducto4" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(4)">'+
 
 	            '</div>'+
 
@@ -176,7 +176,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-	              '<input type="text" class="form-control nuevoCod_duocell5" name="nuevoCod_duocellProducto5" id="nuevoCod_duocellProducto5" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(5)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto5" id="nuevoCod_duocellProducto5" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(5)">'+
 
 	            '</div>'+
 
@@ -184,7 +184,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-	              '<input type="text" class="form-control nuevoCod_duocell5" name="nuevoCod_duocellProducto6" id="nuevoCod_duocellProducto6" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(6)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto6" id="nuevoCod_duocellProducto6" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(6)">'+
 
 	            '</div>'+
 
@@ -192,7 +192,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	              '<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-	              '<input type="text" class="form-control nuevoCod_duocell5" name="nuevoCod_duocellProducto7" id="nuevoCod_duocellProducto7" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(7)">'+
+	              '<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto7" id="nuevoCod_duocellProducto7" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(7)">'+
 
 	            '</div>'+
 	             
@@ -275,8 +275,43 @@ function ValidaImei(id){
 
 	})
 
+	listaImeis();
 
 }
+
+
+/*=============================================
+LISTAR TODOS LOS IMEIS
+=============================================*/
+
+function listaImeis(){
+
+	var listaImeis = [];
+
+	var descripcion = $(".nuevaDescripcionProducto");
+
+	var cod_duocell = $(".nuevoCod_duocell");
+
+
+	var cantidad = $(".nuevaCantidadProducto");
+
+	var precio = $(".nuevoPrecioProducto");
+
+	for(var i = 0; i < descripcion.length; i++){
+
+		listaProductos.push({
+			'descripcion' : $(descripcion[i]).val()})
+
+	}
+
+	$("#listaImeis").val(JSON.stringify(listaProductos));
+
+}
+
+
+
+
+
 
 function cambios(){
 	sumarTotalPrecios();
@@ -472,7 +507,55 @@ $(".btnAgregarProducto").click(function(){
 
 					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
 
-					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto" placeholder="Ingrese Imei(s)" value="">'+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto1" id="nuevoCod_duocellProducto1" placeholder="Ingrese Imei"  minlength="15" maxlength="15" onchange="ValidaImei(1)">'+
+
+					'</div>'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto2" id="nuevoCod_duocellProducto2" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(2)">'+
+
+					'</div>'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto3" id="nuevoCod_duocellProducto3" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(3)">'+
+
+					'</div>'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto4" id="nuevoCod_duocellProducto4" placeholder="Ingrese Imei" minlength="15" maxlength="15" onchange="ValidaImei(4)">'+
+
+					'</div>'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto5" id="nuevoCod_duocellProducto5" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(5)">'+
+
+					'</div>'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto6" id="nuevoCod_duocellProducto6" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(6)">'+
+
+					'</div>'+
+
+					'<div class="input-group">'+
+
+					'<span class="input-group-addon"><i class="fa fa-code"></i></span>'+
+
+					'<input type="text" class="form-control nuevoCod_duocell" name="nuevoCod_duocellProducto7" id="nuevoCod_duocellProducto7" placeholder="Ingrese Imei" minlength="15" maxlength="15"  onchange="ValidaImei(7)">'+
 
 					'</div>'+
 
@@ -847,13 +930,8 @@ function listarProductos(){
 
 	for(var i = 0; i < descripcion.length; i++){
 
-		listaProductos.push({ 'id' : $(descripcion[i]).attr("idProducto"), 
-							  'cod_duocell' : $(cod_duocell[i]).val(),
-							  'descripcion' : $(descripcion[i]).val(),
-							  'cantidad' : $(cantidad[i]).val(),
-							  'stock' : $(cantidad[i]).attr("nuevoStock"),
-							  'precio' : $(precio[i]).attr("precioReal"),
-							  'total' : $(precio[i]).val()})
+		listaProductos.push({
+							  'descripcion' : $(descripcion[i]).val()})
 
 	}
 

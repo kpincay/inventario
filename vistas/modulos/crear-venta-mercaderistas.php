@@ -239,6 +239,7 @@ if($_SESSION["perfil"] == "Especial"){
                 </div>
 
                 <input type="hidden" id="listaProductos" name="listaProductos">
+                <input type="hidden" id="listaImeis" name="listaImeis">
 
                 <!--=====================================
                 BOTÓN PARA AGREGAR PRODUCTO
