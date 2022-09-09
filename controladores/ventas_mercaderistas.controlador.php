@@ -45,7 +45,7 @@ class ControladorVentasM{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas_mercaderistas";
+								window.location = "ventas-mercaderistas";
 
 								}
 							})
@@ -406,7 +406,7 @@ class ControladorVentasM{
 					  }).then((result) => {
 								if (result.value) {
 
-								window.location = "ventas_mercaderistas";
+								window.location = "ventas-mercaderistas";
 
 								}
 							})
@@ -551,7 +551,7 @@ class ControladorVentasM{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas_mercaderistas";
+								window.location = "ventas-mercaderistas";
 
 								}
 							})

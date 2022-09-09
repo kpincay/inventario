@@ -275,7 +275,7 @@ function ValidaImei(id){
 
 	})
 
-	listaImeis(identify);
+	listaImeis();
 
 }
 
@@ -284,16 +284,31 @@ function ValidaImei(id){
 LISTAR TODOS LOS IMEIS
 =============================================*/
 
-function listaImeis($elemento){
+function listaImeis(){
 
-	var listaImeis = [];
+	var listaImeis_ = [];
+
+	for ( let i = 1; i < 7; i++ ){
+		var elemento = "nuevoCod_duocellProducto" + [i];
+		var identify = document.getElementById(elemento);
+
+		debugger;
+		// if (identify.style.backgroundColor == 'red'){
+		// 	alert("Hay códigos que no son admitidos, por favor verifique");
+		// 	return;
+		// }
+
+		if (identify.value.length == 15){
+			listaImeis_.push({
+				'imei' : identify.value})
+		}
+	}
 
 
-	listaImeis.push({
-			'imei' : $elemento.value})
 
 
-	$("#listaImeis").val(JSON.stringify(listaImeis));
+
+	$("#listaImeis").val(JSON.stringify(listaImeis_));
 
 }
 
@@ -956,7 +971,7 @@ function listarMetodos(){
 /*=============================================
 BOTON EDITAR VENTA
 =============================================*/
-$(".tablas").on("click", ".btnEditarVenta", function(){
+$(".tablas").on("click", ".btnEditarVentaM", function(){
 
 	var idVenta = $(this).attr("idVenta");
 
@@ -1012,7 +1027,7 @@ $('.tablaVentas').on( 'draw.dt', function(){
 /*=============================================
 BORRAR VENTA
 =============================================*/
-$(".tablas").on("click", ".btnEliminarVenta", function(){
+$(".tablas").on("click", ".btnEliminarVentaM", function(){
 
   var idVenta = $(this).attr("idVenta");
 
@@ -1028,7 +1043,7 @@ $(".tablas").on("click", ".btnEliminarVenta", function(){
       }).then(function(result){
         if (result.value) {
           
-            window.location = "index.php?ruta=ventas&idVenta="+idVenta;
+            window.location = "index.php?ruta=ventas-mercaderistas&idVenta="+idVenta;
         }
 
   })

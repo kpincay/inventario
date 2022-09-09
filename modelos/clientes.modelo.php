@@ -90,9 +90,6 @@ class ModeloClientes{
                 echo $exception;
             }
 
-
-
-
 	}
 
 	/*=============================================

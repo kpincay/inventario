@@ -154,13 +154,20 @@ if($xml){
               $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
               $obj = json_decode($value["productos"], true);
-//var_dump($obj[0]['id']);
+              $obj_imei = json_decode($value["impuesto"], true);
+
+              $imeis = "";
+              $conteo = 0;
+              foreach ($obj_imei as $item) {
+                  $imeis .= " *" . $item["imei"];
+                  $conteo += 1;
+              }
 
               echo '<td>'.$value["id_cliente"].'</td>
 
-                  <td>'.$obj[0]['impuesto'].'</td>
+                  <td style="width: 200px;">'.$imeis.'</td>
 
-                  <td> '.$obj[0]['cantidad'].'</td>
+                  <td> '.$conteo.'</td>
 
                   <td>'.$obj[0]['descripcion'].'</td>
                   
@@ -191,8 +198,8 @@ if($xml){
                       if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
 //                          <button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
                       echo '
-                      <button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btnEliminarVenta" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                      <button class="btn btn-warning btnEditarVentaM" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-danger btnEliminarVentaM" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 
                     }
 
