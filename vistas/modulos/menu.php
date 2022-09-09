@@ -118,7 +118,7 @@
 
 
 
-        if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Mercaderista" ) {
+        if($_SESSION["perfil"] == "Administrador" ) {
             echo '<li class="treeview">
 
 				<a href="#">
@@ -189,6 +189,71 @@
 					</li>
 					</ul>';
 
+
+            echo '</ul>
+
+			</li>';
+        }
+        else if($_SESSION["perfil"] == "Mercaderista" ) {
+
+            echo '<li class="treeview">
+
+				<a href="#">
+
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Mercaderistas</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
+
+					</span>
+
+				</a>
+
+				<ul class="treeview-menu">
+
+                    <li class="treeview">
+
+				<a href="#">
+
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Ventas</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
+
+					</span>
+
+				</a>
+
+				<ul class="treeview-menu">
+					
+					<li>
+
+						<a href="ventas-mercaderistas">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Administrar ventas</span>
+
+						</a>
+
+					</li>
+
+					<li>
+
+						<a href="crear-venta-mercaderistas">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Crear venta</span>
+
+						</a>
+
+					</li>
+                    ';
 
             echo '</ul>
 
