@@ -136,17 +136,7 @@
 				</a>
 
 				<ul class="treeview-menu">
-					
-					<li>
 
-                        <a href="clientes">
-        
-                            <i class="fa fa-users"></i>
-                            <span>Clientes</span>
-        
-                        </a>
-        
-                    </li>
                     <li>
 
                         <a href="presupuesto-mercaderista">
