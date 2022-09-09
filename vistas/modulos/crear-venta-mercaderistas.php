@@ -328,9 +328,9 @@ if($_SESSION["perfil"] == "Especial"){
                   
                       <select class="form-control" id="nuevoMetodoPago_" name="nuevoMetodoPago_" required>
                         <option value="">Seleccione método de pago</option>
-                        <option value="Efectivo_">Efectivo</option>
-                        <option value="Credito_">Crédito</option>
-                        <option value="Payjoy_">PayJoy</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Credito">Crédito</option>
+                        <option value="Payjoy">PayJoy</option>
                         <!-- <option value="TD">Tarjeta Débito</option>                   -->
                       </select>    
 
