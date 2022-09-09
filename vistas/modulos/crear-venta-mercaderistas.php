@@ -240,6 +240,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                 <input type="hidden" id="listaProductos" name="listaProductos">
                 <input type="hidden" id="listaImeis" name="listaImeis">
+                 <input type="hidden" id="errores" name="errores">
 
                 <!--=====================================
                 BOTÓN PARA AGREGAR PRODUCTO
@@ -297,7 +298,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                               <input type="hidden" name="totalVenta" id="totalVenta">
 
-                                <input type="text" class="form-control input-lg" id="proceso" name="proceso" value="mercaderista" readonly required>
+                                <input type="hidden" class="form-control input-lg" id="proceso" name="proceso" value="mercaderista" readonly required>
                         
                             </div>
 

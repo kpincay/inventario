@@ -54,6 +54,22 @@ class ControladorVentasM{
 
 				return;
 			}
+			if($_POST["errores"] == "error"){
+
+					echo'<script>
+
+				swal({
+					  type: "error",
+					  title: "Corrija errores en imei",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then(function(result){
+							})
+
+				</script>';
+
+				return;
+			}
 
 
 			$listaProductos = json_decode($_POST["listaProductos"], true);

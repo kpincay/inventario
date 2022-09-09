@@ -258,17 +258,20 @@ function ValidaImei(id){
 				identify.style.backgroundColor = 'red'
 				identify.style.color = 'white'
 				identify.focus();
+				$("#errores").val("error");
 			}
 			 if (respuesta == "NOINV"){
 				alert("Imei no se encuentra en inventario")
 				identify.style.backgroundColor = 'red'
 				identify.style.color = 'white'
 				identify.focus();
+				 $("#errores").val("error");
 			}
 			if (respuesta == "OK"){
 				identify.style.backgroundColor = 'green'
 				identify.style.color = 'white'
 				identify.focus();
+				$("#errores").val("");
 			}
 
 		}
@@ -292,20 +295,12 @@ function listaImeis(){
 		var elemento = "nuevoCod_duocellProducto" + [i];
 		var identify = document.getElementById(elemento);
 
-		debugger;
-		// if (identify.style.backgroundColor == 'red'){
-		// 	alert("Hay códigos que no son admitidos, por favor verifique");
-		// 	return;
-		// }
-
 		if (identify.value.length == 15){
 			listaImeis_.push({
 				'imei' : identify.value})
 		}
+
 	}
-
-
-
 
 
 	$("#listaImeis").val(JSON.stringify(listaImeis_));
@@ -737,8 +732,8 @@ function sumarTotalPrecios(){
 
 	}
 
-	// var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
-	var sumaTotalPrecio = 10;
+	 var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
+	//var sumaTotalPrecio = 10;
 
 	$("#nuevoTotalVenta").val(sumaTotalPrecio);
 	$("#totalVenta").val(sumaTotalPrecio);
