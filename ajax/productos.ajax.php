@@ -53,7 +53,7 @@ class AjaxProductos{
               return;
           }
 
-          $query2 = "SELECT * FROM public.inv_ingresobodega_xoc where id_ref_doc in (SELECT id_ref_doc_out FROM public.inv_inventario_serie where serie = $valor) and factura_id > 0";
+          $query2 = "SELECT * FROM public.inv_ingresobodega_xoc where id_ref_doc in (SELECT id_ref_doc_out FROM public.inv_inventario_serie where serie = $valor)";
           $result2 = pg_query($query2) or die('Error message: ' . pg_last_error());
 
 
